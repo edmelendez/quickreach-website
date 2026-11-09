@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>QUICKREACH Privacy Policy</title>
+<meta name="description" content="How QUICKREACH and QUICKREACH KIDS handle your information: stored on your phone, shared only when you send it.">
+<link rel="icon" type="image/png" href="img/icon-quickreach.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F4C6B; --sky: #29ABE2; --qr-red: #DE1F4C; --kids-yellow: #F9B509; --red: #DC2E3E; --green: #22A852;
+    --bg: #F2FAFD; --surface: #FFFFFF; --surface-2: #E7F5FB; --text: #12324A; --text-soft: #4A6476; --border: #CFE7F2;
+    --notice-bg: #FDECEE; --notice-text: #8E1622; --band: #0F4C6B; --band-soft: #D2E7F2; --chip-on: #0F4C6B;
+    --logo-light: inline-block; --logo-dark: none;
+    --font: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #08202D; --surface: #0E2C3D; --surface-2: #123649; --text: #E6F3FA; --text-soft: #A9C3D2; --border: #1E4A61;
+      --notice-bg: #3A1218; --notice-text: #FFC7CD; --band: #0B3A52; --band-soft: #BFD8E6; --chip-on: #29ABE2;
+      --logo-light: none; --logo-dark: inline-block; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #08202D; --surface: #0E2C3D; --surface-2: #123649; --text: #E6F3FA; --text-soft: #A9C3D2; --border: #1E4A61;
+    --notice-bg: #3A1218; --notice-text: #FFC7CD; --band: #0B3A52; --band-soft: #BFD8E6; --chip-on: #29ABE2;
+    --logo-light: none; --logo-dark: inline-block; color-scheme: dark;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { text-wrap: balance; font-weight: 900; margin: 0; }
+  :focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 8px; }
+  .wrap { max-width: 900px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+  .topbar { position: sticky; top: 0; z-index: 9; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding-top: env(safe-area-inset-top, 0px); }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+  .brand img { height: 34px; width: auto; }
+  .brand .on-light { display: var(--logo-light); } .brand .on-dark { display: var(--logo-dark); }
+  .nav { display: flex; gap: 2px; }
+  .nav a { text-decoration: none; font-weight: 800; font-size: 15px; padding: 8px 12px; border-radius: 999px; color: var(--text-soft); }
+  .nav a:hover { background: var(--surface-2); color: var(--text); }
+
+  header.page { padding-block: 40px 12px; }
+  .eyebrow { font-weight: 900; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--sky); }
+  header.page h1 { font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; margin: 8px 0 10px; }
+  header.page p { margin: 0; color: var(--text-soft); font-size: 19px; max-width: 56ch; }
+
+  .notice { display: flex; gap: 14px; align-items: flex-start; background: var(--notice-bg); color: var(--notice-text); border-left: 6px solid var(--red); border-radius: 16px; padding: 16px 18px; margin: 24px 0 8px; }
+  .notice strong { display: block; font-weight: 900; }
+  .notice p { margin: 2px 0 0; }
+
+  .contact { margin: 28px 0; background: var(--band); color: #fff; border-radius: 24px; padding: 26px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+  .contact h2 { font-size: 1.5rem; color: #fff; }
+  .contact p { margin: 6px 0 0; color: var(--band-soft); }
+  .contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; align-items: center; }
+  .contact dt { font-size: 13px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--band-soft); }
+  .contact dd { margin: 0; font-weight: 900; font-size: 1.1rem; overflow-wrap: normal; }
+  .contact dd a { color: #fff; text-underline-offset: 4px; }
+  .contact .tip { grid-column: 1 / -1; font-size: 15px; border-top: 1px solid rgba(255,255,255,.2); padding-top: 14px; }
+  @media (max-width: 680px) { .contact { grid-template-columns: 1fr; } }
+
+  .tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 32px 0 18px; }
+  .tools h2 { font-size: 1.6rem; margin-right: auto; }
+  .chip { font: inherit; font-size: 14px; font-weight: 900; cursor: pointer; padding: 7px 14px; border-radius: 999px; border: 2px solid var(--border); background: var(--surface); color: var(--text-soft); letter-spacing: .02em; }
+  .chip[aria-pressed="true"] { background: var(--chip-on); border-color: var(--chip-on); color: #fff; }
+  .search { position: relative; width: 100%; }
+  .search input { width: 100%; font: inherit; font-size: 16px; font-weight: 700; padding: 12px 16px; border-radius: 999px; border: 2px solid var(--border); background: var(--surface); color: var(--text); }
+  .search input:focus { outline: none; border-color: var(--sky); }
+
+  .group { margin-bottom: 26px; }
+  .group h3 { font-size: 14px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); margin: 0 0 10px; }
+  details { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 10px; }
+  summary { list-style: none; cursor: pointer; padding: 15px 50px 15px 18px; position: relative; font-weight: 800; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: ""; position: absolute; right: 20px; top: 50%; width: 9px; height: 9px; border-right: 3px solid var(--sky); border-bottom: 3px solid var(--sky); transform: translateY(-70%) rotate(45deg); }
+  details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+  .tag { display: inline-block; font-size: 11px; font-weight: 900; letter-spacing: .06em; padding: 1px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 2px; background: var(--surface-2); color: var(--text-soft); }
+  .answer { padding: 0 18px 16px; color: var(--text-soft); }
+  .answer p { margin: 0 0 10px; } .answer p:last-child, .answer ol:last-child, .answer ul:last-child { margin-bottom: 0; }
+  .answer ol, .answer ul { margin: 0 0 10px; padding-left: 22px; }
+  .answer strong { color: var(--text); }
+  .empty { padding: 18px; border: 2px dashed var(--border); border-radius: 16px; color: var(--text-soft); text-align: center; }
+
+  footer { margin-top: 40px; padding-block: 24px 40px; border-top: 1px solid var(--border); color: var(--text-soft); font-size: 15px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  footer a { font-weight: 800; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  .legal section { padding-block: 22px; border-top: 1px solid var(--border); }
+  .legal header.page + .toc + section { border-top: 0; }
+  .legal h2 { font-size: 1.45rem; margin-bottom: 10px; }
+  .legal p, .legal li { max-width: 68ch; }
+  .legal ul, .legal ol { padding-left: 22px; } .legal li { margin-bottom: 6px; }
+  .legal li strong, .legal p strong { color: var(--text); }
+  .legal p, .legal li { color: var(--text-soft); }
+  .toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 6px; }
+  .toc a { text-decoration: none; font-weight: 800; font-size: 14px; padding: 6px 12px; border-radius: 999px; border: 2px solid var(--border); background: var(--surface); color: var(--text-soft); }
+  .toc a:hover { color: var(--text); }
+  .keys { list-style: none; padding: 0 !important; display: grid; gap: 10px; }
+  .keys li { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 12px 16px; margin: 0; }
+  .dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 0; }
+  .dl dt { font-size: 13px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); }
+  .dl dd { margin: 0; font-weight: 900; overflow-wrap: normal; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="QUICKREACH home">
+      <img class="on-light" src="img/quickreach-logo.png" alt="QUICKREACH" width="596" height="163">
+      <img class="on-dark" src="img/quickreach-logo-white.png" alt="QUICKREACH" width="596" height="163">
+    </a>
+    <nav class="nav" aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap legal">
+  <header class="page">
+    <span class="eyebrow">Privacy Policy</span>
+    <h1>Privacy Policy for QUICKREACH and QUICKREACH KIDS</h1>
+    <p>Effective November 8, 2026</p>
+  </header>
+
+  <nav class="toc" aria-label="On this page">
+    <a href="#short">The short version</a>
+    <a href="#stored">On your phone</a>
+    <a href="#location">Location</a>
+    <a href="#health">Apple Health &amp; photos</a>
+    <a href="#leaves">When information leaves the phone</a>
+    <a href="#kids">Children</a>
+    <a href="#consent">Consent &amp; deleting</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="short">
+    <h2>The short version</h2>
+    <ul class="keys">
+      <li><strong>No account.</strong> You never sign up or log in.</li>
+      <li><strong>We don't collect your information.</strong> What you enter stays on your phone. We have no server that receives it.</li>
+      <li><strong>You decide what gets shared.</strong> Information leaves the phone when you place a call or send a text, plus the few lookups listed below.</li>
+      <li><strong>No ads, no analytics, no tracking.</strong> We don't sell or rent information, and the apps contain no advertising or analytics tools.</li>
+    </ul>
+    <p>This policy covers the QUICKREACH and QUICKREACH KIDS apps for iPhone and Apple Watch (together, "the apps"), and this website.</p>
+  </section>
+
+  <section id="stored">
+    <h2>What the apps keep on your phone</h2>
+    <p>The apps save the following only on your device, so the Call Button and Health ID work without an internet connection:</p>
+    <ul>
+      <li><strong>Contacts you add:</strong> names and phone numbers of the people the Call Button calls and texts.</li>
+      <li><strong>Health ID:</strong> name, date of birth or age, sex, blood type, wheelchair use, medications, allergies, medical conditions, notes, emergency contacts and an optional photo.</li>
+      <li><strong>Safe Zones</strong> (QUICKREACH KIDS): the names and addresses of places you save, such as Home and School.</li>
+      <li><strong>Your PIN and settings:</strong> the PIN is kept in the phone's secure storage. Settings include the language and which contacts are on.</li>
+    </ul>
+    <p>The apps don't put this information in iCloud Drive or any other cloud service. The Apple Watch app and the widgets get the Call Button contact directly from the iPhone.</p>
+  </section>
+
+  <section id="location">
+    <h2>Location</h2>
+    <p>With your permission, the apps read the phone's location <strong>only while the app is open on the screen</strong>. Location isn't tracked in the background. It's used to:</p>
+    <ul>
+      <li>show your current address under the Call Button;</li>
+      <li>add your address, GPS position and map links to a help text you choose to send;</li>
+      <li>in QUICKREACH KIDS, show when your child is in a Safe Zone.</li>
+    </ul>
+    <p>To turn a GPS position into a street address, the phone uses its built-in map service (Apple on iPhone, Google on Android devices). Your location is never sent to us.</p>
+  </section>
+
+  <section id="health">
+    <h2>Apple Health and photos</h2>
+    <p><strong>Apple Health:</strong> if you allow it, the apps read your date of birth, sex, blood type, wheelchair use and medications from Apple Health to fill in the Health ID. The apps never write to Apple Health. Health information is never used for advertising or marketing and is never shared with anyone except in a help text that you send.</p>
+    <p><strong>Photos:</strong> if you allow it, you can choose a photo for the Health ID, and the apps can save a picture of your recovery code to your Photos. The apps don't read any other photos.</p>
+  </section>
+
+  <section id="leaves">
+    <h2>When information leaves your phone</h2>
+    <p>Information leaves your phone only in these cases:</p>
+    <ol>
+      <li><strong>Calls and texts you make.</strong> The Call Button calls the contact you set. A help text, with your address, map links and, if you choose, Health ID details, goes through your phone's Messages app only after you tap Send. Calls and texts are handled by your phone carrier, Apple and the recipients.</li>
+      <li><strong>Your recovery code.</strong> During setup you choose a phone number or email for your PIN recovery code. The app opens Messages or Mail with the code, and you send it.</li>
+      <li><strong>Internet time check.</strong> When a PIN reset is waiting, the app asks apple.com or google.com for the current time. This is a basic web request with no personal information.</li>
+      <li><strong>Place search</strong> (QUICKREACH KIDS). When a grown-up adds a Safe Zone, the area on the map goes to Apple Maps, the phone's built-in map service, to list nearby places such as schools and parks. When the grown-up types a place or an address, the search words and the area on the map go to Photon (photon.komoot.io), a free OpenStreetMap search service, or, if it can't be reached, to Nominatim (nominatim.openstreetmap.org). No name, contact or account information is sent to any of them.</li>
+      <li><strong>App updates.</strong> The apps check Expo's update service for fixes. This sends the app's version and the phone's platform, not personal information.</li>
+    </ol>
+  </section>
+
+  <section id="kids">
+    <h2>Children's privacy (QUICKREACH KIDS)</h2>
+    <p>QUICKREACH KIDS is meant to be set up by a parent or legal guardian on a child's phone. We take children's privacy seriously and follow the U.S. Children's Online Privacy Protection Act (COPPA) and similar laws.</p>
+    <ul>
+      <li>We don't collect personal information from children. A child's name, Health ID, places and location stay on the phone.</li>
+      <li>A child's location is shared only in a text that is sent from the phone to the family members and helpers the parent set up. When a grown-up adds a Safe Zone, the place search described above is used.</li>
+      <li>There are no ads, no analytics, no in-app purchases, no chat with strangers and no account.</li>
+      <li>The parent's PIN protects contacts, the Health ID, Safe Zones and the language, and is needed to open this policy on the web from the app.</li>
+      <li>A parent can review, change or delete the child's information at any time in the app, or by deleting the app.</li>
+    </ul>
+  </section>
+
+  <section id="consent">
+    <h2>Consent, keeping and deleting</h2>
+    <p>QUICKREACH should only be used with the agreement of the person using the phone, set up by them or by their legal guardian.</p>
+    <p>You can review this information or <strong>withdraw consent</strong> at any time with the <strong>ⓘ</strong> button at the top of the screen (the PIN is needed).</p>
+    <p>Information stays on the phone until you change it, withdraw consent or delete the app. Deleting the app removes everything it stored on the phone. Texts you already sent stay on the recipients' phones. Because we don't receive or store your information, we have nothing to delete on our side. If you have a question about your data, contact us.</p>
+  </section>
+
+  <section>
+    <h2>This website</h2>
+    <p>QUICKREACH.COM has no sign-up forms, no advertising and no analytics. Our web host may keep standard server logs, such as IP address and browser type, for security.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p>If we change how the apps handle information, we'll update this page and the effective date above before the change reaches the apps.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Questions about privacy, or a parent's request about a child's information:</p>
+    <dl class="dl">
+      <dt>Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Privacy">edwin.vgwhiz@<wbr>gmail.com</a></dd>
+      <dt>Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
+      <dt>Web</dt><dd><a href="index.html">QUICKREACH.COM</a></dd>
+    </dl>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 QUICKREACH · QUICKREACH.COM</span>
+    <nav aria-label="Legal">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

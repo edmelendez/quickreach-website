@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>QUICKREACH Support</title>
+<meta name="description" content="Help and contact for QUICKREACH and QUICKREACH KIDS: the Call Button, sharing your location, Safe Zones, the Health ID and the PIN.">
+<link rel="icon" type="image/png" href="img/icon-quickreach.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F4C6B; --sky: #29ABE2; --qr-red: #DE1F4C; --kids-yellow: #F9B509; --red: #DC2E3E; --green: #22A852;
+    --bg: #F2FAFD; --surface: #FFFFFF; --surface-2: #E7F5FB; --text: #12324A; --text-soft: #4A6476; --border: #CFE7F2;
+    --notice-bg: #FDECEE; --notice-text: #8E1622; --band: #0F4C6B; --band-soft: #D2E7F2; --chip-on: #0F4C6B;
+    --logo-light: inline-block; --logo-dark: none;
+    --font: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #08202D; --surface: #0E2C3D; --surface-2: #123649; --text: #E6F3FA; --text-soft: #A9C3D2; --border: #1E4A61;
+      --notice-bg: #3A1218; --notice-text: #FFC7CD; --band: #0B3A52; --band-soft: #BFD8E6; --chip-on: #29ABE2;
+      --logo-light: none; --logo-dark: inline-block; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #08202D; --surface: #0E2C3D; --surface-2: #123649; --text: #E6F3FA; --text-soft: #A9C3D2; --border: #1E4A61;
+    --notice-bg: #3A1218; --notice-text: #FFC7CD; --band: #0B3A52; --band-soft: #BFD8E6; --chip-on: #29ABE2;
+    --logo-light: none; --logo-dark: inline-block; color-scheme: dark;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { text-wrap: balance; font-weight: 900; margin: 0; }
+  :focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 8px; }
+  .wrap { max-width: 900px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+  .topbar { position: sticky; top: 0; z-index: 9; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding-top: env(safe-area-inset-top, 0px); }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+  .brand img { height: 34px; width: auto; }
+  .brand .on-light { display: var(--logo-light); } .brand .on-dark { display: var(--logo-dark); }
+  .nav { display: flex; gap: 2px; }
+  .nav a { text-decoration: none; font-weight: 800; font-size: 15px; padding: 8px 12px; border-radius: 999px; color: var(--text-soft); }
+  .nav a:hover { background: var(--surface-2); color: var(--text); }
+
+  header.page { padding-block: 40px 12px; }
+  .eyebrow { font-weight: 900; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--sky); }
+  header.page h1 { font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; margin: 8px 0 10px; }
+  header.page p { margin: 0; color: var(--text-soft); font-size: 19px; max-width: 56ch; }
+
+  .notice { display: flex; gap: 14px; align-items: flex-start; background: var(--notice-bg); color: var(--notice-text); border-left: 6px solid var(--red); border-radius: 16px; padding: 16px 18px; margin: 24px 0 8px; }
+  .notice strong { display: block; font-weight: 900; }
+  .notice p { margin: 2px 0 0; }
+
+  .contact { margin: 28px 0; background: var(--band); color: #fff; border-radius: 24px; padding: 26px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+  .contact h2 { font-size: 1.5rem; color: #fff; }
+  .contact p { margin: 6px 0 0; color: var(--band-soft); }
+  .contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; align-items: center; }
+  .contact dt { font-size: 13px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--band-soft); }
+  .contact dd { margin: 0; font-weight: 900; font-size: 1.1rem; overflow-wrap: normal; }
+  .contact dd a { color: #fff; text-underline-offset: 4px; }
+  .contact .tip { grid-column: 1 / -1; font-size: 15px; border-top: 1px solid rgba(255,255,255,.2); padding-top: 14px; }
+  @media (max-width: 680px) { .contact { grid-template-columns: 1fr; } }
+
+  .tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 32px 0 18px; }
+  .tools h2 { font-size: 1.6rem; margin-right: auto; }
+  .chip { font: inherit; font-size: 14px; font-weight: 900; cursor: pointer; padding: 7px 14px; border-radius: 999px; border: 2px solid var(--border); background: var(--surface); color: var(--text-soft); letter-spacing: .02em; }
+  .chip[aria-pressed="true"] { background: var(--chip-on); border-color: var(--chip-on); color: #fff; }
+  .search { position: relative; width: 100%; }
+  .search input { width: 100%; font: inherit; font-size: 16px; font-weight: 700; padding: 12px 16px; border-radius: 999px; border: 2px solid var(--border); background: var(--surface); color: var(--text); }
+  .search input:focus { outline: none; border-color: var(--sky); }
+
+  .group { margin-bottom: 26px; }
+  .group h3 { font-size: 14px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); margin: 0 0 10px; }
+  details { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 10px; }
+  summary { list-style: none; cursor: pointer; padding: 15px 50px 15px 18px; position: relative; font-weight: 800; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: ""; position: absolute; right: 20px; top: 50%; width: 9px; height: 9px; border-right: 3px solid var(--sky); border-bottom: 3px solid var(--sky); transform: translateY(-70%) rotate(45deg); }
+  details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+  .tag { display: inline-block; font-size: 11px; font-weight: 900; letter-spacing: .06em; padding: 1px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 2px; background: var(--surface-2); color: var(--text-soft); }
+  .answer { padding: 0 18px 16px; color: var(--text-soft); }
+  .answer p { margin: 0 0 10px; } .answer p:last-child, .answer ol:last-child, .answer ul:last-child { margin-bottom: 0; }
+  .answer ol, .answer ul { margin: 0 0 10px; padding-left: 22px; }
+  .answer strong { color: var(--text); }
+  .empty { padding: 18px; border: 2px dashed var(--border); border-radius: 16px; color: var(--text-soft); text-align: center; }
+
+  footer { margin-top: 40px; padding-block: 24px 40px; border-top: 1px solid var(--border); color: var(--text-soft); font-size: 15px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 22px; justify-content: space-between; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  footer a { font-weight: 800; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="QUICKREACH home">
+      <img class="on-light" src="img/quickreach-logo.png" alt="QUICKREACH" width="596" height="163">
+      <img class="on-dark" src="img/quickreach-logo-white.png" alt="QUICKREACH" width="596" height="163">
+    </a>
+    <nav class="nav" aria-label="Site">
+      <a href="index.html">Home</a>
+      <a href="#faq">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <header class="page">
+    <span class="eyebrow">Support</span>
+    <h1>How can we help?</h1>
+    <p>Help for QUICKREACH and QUICKREACH KIDS. Find an answer below, or contact us directly.</p>
+  </header>
+
+  <div class="notice" role="note">
+    <div>
+      <strong>QUICKREACH and QUICKREACH KIDS do not call 911.</strong>
+      <p>They contact your family and friends, not the police or an ambulance. In an emergency, call 911 yourself from your phone.</p>
+    </div>
+  </div>
+
+  <section class="contact" aria-labelledby="contact-title" id="contact">
+    <div>
+      <h2 id="contact-title">Contact us</h2>
+      <p>A real person reads every message. Tell us which app you use, your iPhone model and what happened.</p>
+    </div>
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Support">edwin.vgwhiz@<wbr>gmail.com</a></dd>
+      <dt>Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
+      <dt>Web</dt><dd><a href="index.html">QUICKREACH.COM</a></dd>
+    </dl>
+    <p class="tip">Please don't send a PIN, a recovery code or anyone's health details.</p>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="tools">
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <button class="chip" type="button" data-app="all" aria-pressed="true">Both apps</button>
+      <button class="chip" type="button" data-app="qr" aria-pressed="false">QUICKREACH</button>
+      <button class="chip" type="button" data-app="kids" aria-pressed="false">QUICKREACH KIDS</button>
+      <label class="search"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search the FAQ</span><input id="q" type="search" placeholder="Search: PIN, location, Health ID…" autocomplete="off"></label>
+    </div>
+
+    <div class="group">
+      <h3>Getting started</h3>
+      <details data-app="all"><summary>What do the apps do?</summary><div class="answer">
+        <p>Both apps put the people who care for you behind one big Call Button. Hold it to call, then send a text with your location. <strong>QUICKREACH</strong> is for adults and older relatives. <strong>QUICKREACH KIDS</strong> is set up by a parent or guardian on a child's phone.</p></div></details>
+      <details data-app="all"><summary>Do I need an account?</summary><div class="answer">
+        <p>No. There is no sign-up and no login. Everything you enter stays on the phone.</p></div></details>
+      <details data-app="all"><summary>How do I set up the app?</summary><div class="answer"><ol>
+        <li>Choose <strong>It's for me</strong> or <strong>I'm helping someone</strong>, and agree to the privacy details. If you set it up for someone else, they need to agree to it.</li>
+        <li>Create a 4-digit PIN, and send yourself the recovery code by text or email.</li>
+        <li>Add the phone numbers to call.</li></ol></div></details>
+      <details data-app="all"><summary>Does it cost anything?</summary><div class="answer">
+        <p>No. Both apps are free, with no in-app purchases, ads or subscriptions.</p></div></details>
+      <details data-app="all"><summary>Which languages are supported?</summary><div class="answer">
+        <p>English, Español, Français, Deutsch, Italiano, Português, हिन्दी, 日本語 and Filipino. Change the language with the <strong>EN</strong> button at the top of the screen.</p></div></details>
+    </div>
+
+    <div class="group">
+      <h3>Calling</h3>
+      <details data-app="all"><summary>How does the Call Button work?</summary><div class="answer"><ol>
+        <li>Press and hold the Call Button for 1.5 seconds. A ring fills around it.</li>
+        <li>The app raises the volume and says who it's calling.</li>
+        <li>The call starts.</li>
+        <li>A text with your address and map links is ready. Tap <strong>Send</strong> in Messages.</li></ol></div></details>
+      <details data-app="qr"><summary>Who does QUICKREACH call?<span class="tag">QUICKREACH</span></summary><div class="answer">
+        <p>Your main contact. Change it by tapping <strong>LOCKED</strong> next to the contact and entering the PIN.</p></div></details>
+      <details data-app="kids"><summary>Who does QUICKREACH KIDS call?<span class="tag">KIDS</span></summary><div class="answer">
+        <ul><li><strong>Mom &amp; Dad</strong> are on unless a grown-up turns them off with the PIN.</li>
+        <li>Only one of <strong>Caregiver</strong> or <strong>Nanny/Sitter</strong> can be on. When one is on, the Call Button calls that helper.</li></ul>
+        <p>To switch helpers, tap the circle on a tile.</p></div></details>
+      <details data-app="all"><summary>Why do I have to hold the button?</summary><div class="answer">
+        <p>Holding for 1.5 seconds stops calls from a quick tap or a phone in a pocket.</p></div></details>
+      <details data-app="all"><summary>Does it work on Apple Watch?</summary><div class="answer">
+        <p>Yes. The Apple Watch app has the Call Button, and you can add it to your watch face. After a call, you can text your location from the watch.</p></div></details>
+    </div>
+
+    <div class="group">
+      <h3>Location</h3>
+      <details data-app="all"><summary>How do I send my location?</summary><div class="answer">
+        <p>After a call, or by tapping the red pin under the Call Button, the app prepares a text with your street address and Apple Maps and Google Maps links. Tap <strong>Send</strong> in Messages.</p></div></details>
+      <details data-app="all"><summary>Are texts sent automatically?</summary><div class="answer">
+        <p>No. The app writes the text and opens Messages. A person always taps Send.</p></div></details>
+      <details data-app="all"><summary>Does the app track me?</summary><div class="answer">
+        <p>No. Location is read only while the app is open on the screen. It isn't tracked in the background and isn't sent to us.</p></div></details>
+      <details data-app="all"><summary>Why is the address sometimes a little off?</summary><div class="answer">
+        <p>Indoors or with a weak signal, the address can be off by a few houses. The map links use the GPS position, which is usually closer.</p></div></details>
+    </div>
+
+    <div class="group">
+      <h3>QUICKREACH KIDS features</h3>
+      <details data-app="kids"><summary>What are Safe Zones and I'M SAFE?<span class="tag">KIDS</span></summary><div class="answer">
+        <p>Safe Zones are places your child goes often: Home, School and Nanny/Sitter. When your child arrives, the banner turns green. Tapping <strong>I'M SAFE</strong> texts the family that they arrived.</p></div></details>
+      <details data-app="kids"><summary>How do I add a place?<span class="tag">KIDS</span></summary><div class="answer"><ol>
+        <li>Open <strong>Safe Zone / Health</strong>, tap <strong>Edit</strong> and enter the PIN.</li>
+        <li>Choose a place from the nearby list (from Apple Maps), or search for a place or an address (the search uses OpenStreetMap).</li>
+        <li>Tap <strong>Use this place</strong>, then <strong>Save</strong>.</li></ol></div></details>
+      <details data-app="kids"><summary>How does the siren work?<span class="tag">KIDS</span></summary><div class="answer">
+        <p>Hold the logo at the bottom of the screen for 3 seconds. A loud siren plays, even on silent, and the phone vibrates. Tap anywhere to stop. The volume goes back to where it was.</p></div></details>
+    </div>
+
+    <div class="group">
+      <h3>Health ID</h3>
+      <details data-app="all"><summary>What is the Health ID?</summary><div class="answer">
+        <p>A card with what a helper needs to know: name, age, blood type, medications, allergies, conditions, notes and emergency contacts. It can be included in the help text. Tap <strong>LOCKED</strong> and enter the PIN to change it.</p></div></details>
+      <details data-app="all"><summary>Can it read from Apple Health?</summary><div class="answer">
+        <p>Only if you allow it. The app can fill in date of birth, sex, blood type, wheelchair use and medications from Apple Health. It never writes to Apple Health.</p></div></details>
+    </div>
+
+    <div class="group">
+      <h3>PIN &amp; privacy</h3>
+      <details data-app="all"><summary>What does the PIN protect?</summary><div class="answer">
+        <p>Phone numbers, the Health ID, the language and withdrawing consent all need the PIN. In QUICKREACH KIDS, Safe Zones and turning Mom &amp; Dad off need it too.</p></div></details>
+      <details data-app="all"><summary>I forgot my PIN.</summary><div class="answer">
+        <p>Tap <strong>Forgot PIN?</strong> and enter the recovery code you sent yourself during setup. Without the code, you can reset the PIN after a 24-hour wait. Entering the right PIN during the wait cancels the reset.</p></div></details>
+      <details data-app="all"><summary>How do I withdraw consent or delete my information?</summary><div class="answer">
+        <p>Tap the <strong>ⓘ</strong> button at the top of the screen and choose <strong>Withdraw consent</strong> (needs the PIN). Deleting the app removes everything it stored on the phone. We don't keep a copy. Read the <a href="privacy.html">Privacy Policy</a>.</p></div></details>
+    </div>
+
+
+    <p class="empty" id="empty" hidden>No questions match. <a href="#contact">Contact us</a> and we'll help.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 QUICKREACH · QUICKREACH.COM</span>
+    <nav aria-label="Legal">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var q = document.getElementById('q');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var empty = document.getElementById('empty');
+  var app = 'all';
+  function apply() {
+    var term = (q.value || '').trim().toLowerCase(), any = false;
+    Array.prototype.forEach.call(document.querySelectorAll('.group'), function (g) {
+      var shown = 0;
+      Array.prototype.forEach.call(g.querySelectorAll('details'), function (d) {
+        var a = d.getAttribute('data-app');
+        var ok = (app === 'all' || a === 'all' || a === app) && (!term || d.textContent.toLowerCase().indexOf(term) !== -1);
+        d.hidden = !ok; if (ok) { shown++; if (term) d.open = true; }
+      });
+      g.hidden = !shown; if (shown) any = true;
+    });
+    empty.hidden = any;
+  }
+  q.addEventListener('input', apply);
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      app = c.getAttribute('data-app');
+      chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      apply();
+    });
+  });
+})();
+</script>
+</body>
+</html>

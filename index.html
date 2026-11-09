@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>QUICKREACH Apps</title>
+<meta name="description" content="QUICKREACH makes one-button apps that reach the people who care for you: QUICKREACH and QUICKREACH KIDS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="img/icon-quickreach.png">
+<link rel="apple-touch-icon" href="img/icon-quickreach.png">
+<style>
+  /* Layout: sticky bar, split hero with the real Call Button screen, then
+     full-width bands (apps, screens, how it works, features, latest builds,
+     privacy, support) on a 1120px column. */
+  :root {
+    --navy: #0F4C6B;
+    --sky: #29ABE2;
+    --qr-red: #DE1F4C;
+    --qr-red-hi: #F45373;
+    --kids-yellow: #F9B509;
+    --kids-orange: #F7941D;
+    --red: #DC2E3E;
+    --green: #22A852;
+    --yellow: #FFD600;
+
+    --bg: #F2FAFD;
+    --surface: #FFFFFF;
+    --surface-2: #E7F5FB;
+    --text: #12324A;
+    --text-soft: #4A6476;
+    --border: #CFE7F2;
+    --shadow: 0 10px 30px rgba(15, 76, 107, 0.10);
+    --notice-bg: #FDECEE;
+    --notice-text: #8E1622;
+    --band: #0F4C6B;
+    --band-text: #FFFFFF;
+    --band-soft: #D2E7F2;
+    --pin-dot: #0F4C6B;
+    --tab-on: #0F4C6B;
+    --logo-light: inline-block;
+    --logo-dark: none;
+
+    --font: "Nunito", ui-rounded, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --step--1: 0.875rem;
+    --step-0: 1.0625rem;
+    --step-1: 1.25rem;
+    --step-2: clamp(1.6rem, 3.4vw, 2.15rem);
+    --step-3: clamp(2.2rem, 5.6vw, 3.6rem);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #08202D; --surface: #0E2C3D; --surface-2: #123649;
+      --text: #E6F3FA; --text-soft: #A9C3D2; --border: #1E4A61;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --notice-bg: #3A1218; --notice-text: #FFC7CD;
+      --band: #0B3A52; --band-text: #FFFFFF; --band-soft: #BFD8E6; --pin-dot: #6FA8C7;
+      --tab-on: #29ABE2; --logo-light: none; --logo-dark: inline-block;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #08202D; --surface: #0E2C3D; --surface-2: #123649;
+    --text: #E6F3FA; --text-soft: #A9C3D2; --border: #1E4A61;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --notice-bg: #3A1218; --notice-text: #FFC7CD;
+    --band: #0B3A52; --band-text: #FFFFFF; --band-soft: #BFD8E6; --pin-dot: #6FA8C7;
+    --tab-on: #29ABE2; --logo-light: none; --logo-dark: inline-block;
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: var(--font); font-size: var(--step-0); line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+    z-index: 10; background: var(--bg);
+  }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { text-wrap: balance; font-weight: 900; margin: 0; }
+  :focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 10px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .wrap {
+    max-width: 1120px; margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  section { padding-block: 64px; }
+  .eyebrow {
+    display: inline-block; font-weight: 900; font-size: var(--step--1);
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--sky);
+  }
+  h2 { font-size: var(--step-2); line-height: 1.15; }
+  .lead { color: var(--text-soft); margin: 10px 0 0; max-width: 60ch; font-size: var(--step-1); line-height: 1.5; }
+  .sec-head { display: grid; gap: 6px; margin-bottom: 32px; }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+  .brand { display: flex; align-items: center; text-decoration: none; flex: none; }
+  .brand img { height: 38px; width: auto; }
+  .brand .on-light { display: var(--logo-light); }
+  .brand .on-dark { display: var(--logo-dark); }
+  .nav { display: flex; gap: 2px; }
+  .nav a { text-decoration: none; font-weight: 800; font-size: 15px; padding: 8px 12px; border-radius: 999px; color: var(--text-soft); }
+  .nav a:hover { background: var(--surface-2); color: var(--text); }
+  @media (max-width: 700px) { .nav a.hide-sm { display: none; } .nav a { padding: 8px 9px; } .brand img { height: 32px; } }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px; font: inherit; font-weight: 900; font-size: var(--step-0);
+    text-decoration: none; padding: 14px 22px; border-radius: 999px; border: 0; cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+  .btn-primary { background: linear-gradient(180deg, var(--qr-red-hi), var(--qr-red)); color: #fff; box-shadow: 0 8px 20px rgba(222, 31, 76, .3); }
+  .btn-ghost { background: var(--surface); color: var(--text); border: 2px solid var(--border); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: 48px 40px; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 48px; align-items: center; }
+  .hero h1 { font-size: var(--step-3); line-height: 1.04; letter-spacing: -0.015em; margin: 12px 0 16px; }
+  .hero h1 .hl { color: var(--qr-red); }
+  .hero p.sub { font-size: var(--step-1); color: var(--text-soft); margin: 0 0 26px; max-width: 40ch; line-height: 1.5; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  .spec { display: flex; flex-wrap: wrap; gap: 10px 28px; margin: 34px 0 0; padding: 18px 0 0; border-top: 2px dashed var(--border); list-style: none; padding-left: 0; }
+  .spec li { display: grid; }
+  .spec b { font-size: 1.6rem; font-weight: 900; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .spec b small { font-size: 0.9rem; font-weight: 800; color: var(--text-soft); margin-left: 2px; }
+  .spec span { font-size: var(--step--1); color: var(--text-soft); font-weight: 700; }
+
+  .stage { display: grid; justify-items: center; gap: 16px; }
+  .switch { display: inline-flex; padding: 4px; border-radius: 999px; background: var(--surface); border: 2px solid var(--border); }
+  .switch button {
+    font: inherit; font-weight: 900; font-size: 15px; border: 0; cursor: pointer; padding: 8px 16px; border-radius: 999px;
+    background: transparent; color: var(--text-soft); letter-spacing: .02em;
+  }
+  .switch button[aria-selected="true"] { background: var(--tab-on); color: #fff; }
+  .stage-note { font-size: var(--step--1); color: var(--text-soft); font-weight: 700; text-align: center; max-width: 32ch; margin: 0; }
+
+  /* ---------- Phone with the real screenshot ---------- */
+  .phone {
+    --cx: 0.5; --cy: 0.5185; --d: 0.8176; --ring: #DE1F4C;
+    width: min(300px, 100%); max-width: 100%; position: relative;
+    border-radius: 46px; border: 10px solid #1E2B33; background: #1E2B33;
+    box-shadow: 0 30px 60px rgba(15, 76, 107, 0.28);
+  }
+  .phone[data-app="kids"] { --cx: 0.4992; --cy: 0.5904; --d: 0.7273; --ring: #DE1F4C; }
+  .phone .shot { position: relative; border-radius: 36px; overflow: hidden; aspect-ratio: 1206 / 2622; background: #F4F7F9; }
+  .phone .shot img { width: 100%; height: 100%; object-fit: cover; }
+  .hold {
+    position: absolute; aspect-ratio: 1; width: calc(var(--d) * 100%);
+    left: calc((var(--cx) - var(--d) / 2) * 100%); top: calc(var(--cy) * 100%); transform: translateY(-50%);
+    border-radius: 50%; border: 0; padding: 0; background: transparent; cursor: pointer;
+    touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+    transition: transform .12s ease;
+  }
+  .hold.holding { transform: translateY(-50%) scale(0.96); }
+  .hold:focus-visible { outline-offset: 4px; border-radius: 50%; }
+  .hold svg { position: absolute; inset: -4%; width: 108%; height: 108%; transform: rotate(-90deg); pointer-events: none; overflow: visible; }
+  .hold .prog { stroke: var(--ring); transition: stroke-dashoffset .06s linear; }
+
+  .overlay {
+    position: absolute; inset: 0; border-radius: 36px; background: #0F4C6B; color: #fff;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 22px; text-align: center;
+  }
+  .overlay .pulse { width: 86px; height: 86px; border-radius: 50%; background: var(--green); display: grid; place-items: center; animation: pulse 1.2s ease-out infinite; }
+  .overlay .pulse svg { width: 38px; height: 38px; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(34,168,82,.55); } 100% { box-shadow: 0 0 0 28px rgba(34,168,82,0); } }
+  .overlay h4 { margin: 0; font-size: 20px; font-weight: 900; }
+  .overlay p { margin: 0; font-size: 12.5px; color: #D2E7F2; font-weight: 700; }
+  .msg { background: #fff; color: #12324A; border-radius: 18px 18px 6px 18px; padding: 12px 14px; text-align: left; font-size: 12px; font-weight: 700; line-height: 1.45; width: 100%; }
+  .msg u { color: #1E7FB0; text-decoration: none; font-weight: 800; }
+  .overlay .close { font: inherit; font-size: 12px; font-weight: 900; border: 2px solid rgba(255,255,255,.4); background: transparent; color: #fff; border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+
+  @media (max-width: 860px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
+    .stage { order: -1; }
+  }
+
+  /* ---------- 911 notice ---------- */
+  .notice {
+    display: flex; gap: 16px; align-items: flex-start; background: var(--notice-bg); color: var(--notice-text);
+    border-left: 6px solid var(--red); border-radius: 16px; padding: 18px 20px;
+  }
+  .notice .ico { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--red); display: grid; place-items: center; }
+  .notice .ico svg { width: 22px; height: 22px; color: #fff; }
+  .notice strong { display: block; font-size: 18px; font-weight: 900; }
+  .notice p { margin: 2px 0 0; }
+
+  /* ---------- Apps ---------- */
+  .apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .app {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 28px; padding: 28px;
+    box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 16px; min-width: 0;
+  }
+  .app-top { display: flex; align-items: center; gap: 14px; }
+  .app-icon { width: 64px; height: 64px; border-radius: 15px; flex: none; box-shadow: 0 4px 10px rgba(15,76,107,.18); }
+  .app h3 { font-size: 1.5rem; line-height: 1.15; letter-spacing: .01em; }
+  .app .for { font-size: var(--step--1); font-weight: 900; letter-spacing: .08em; text-transform: uppercase; color: var(--text-soft); }
+  .app p { margin: 0; color: var(--text-soft); }
+  .build-line { font-size: var(--step--1); font-weight: 800; color: var(--text-soft); display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill { display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--surface-2); color: var(--text); font-variant-numeric: tabular-nums; }
+  .checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 9px; }
+  .checks li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; }
+  .checks li::before {
+    content: ""; width: 22px; height: 22px; border-radius: 50%; margin-top: 2px;
+    background: var(--surface-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322A852' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E") center / 14px no-repeat;
+  }
+  .checks strong { color: var(--text); }
+  .app .avail { margin-top: auto; padding-top: 12px; border-top: 1px dashed var(--border); font-size: var(--step--1); font-weight: 800; color: var(--text-soft); }
+  @media (max-width: 860px) { .apps { grid-template-columns: 1fr; } }
+
+  /* ---------- Alternate band ---------- */
+  .alt { background: var(--surface); border-block: 1px solid var(--border); }
+
+  /* ---------- How it works ---------- */
+  .flow { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .flow li { display: grid; gap: 8px; align-content: start; padding: 22px 20px; border-radius: 22px; background: var(--surface); border: 1px solid var(--border); }
+  .flow .n {
+    width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; font-weight: 900; font-size: 19px; color: #fff;
+    background: var(--qr-red); font-variant-numeric: tabular-nums;
+  }
+  .flow h3 { font-size: 1.12rem; line-height: 1.25; }
+  .flow p { margin: 0; color: var(--text-soft); font-size: 15.5px; }
+  @media (max-width: 960px) { .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .flow { grid-template-columns: 1fr; } }
+
+  /* ---------- Features ---------- */
+  .feats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; background: var(--surface); }
+  .feat { padding: 24px 22px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; gap: 6px; align-content: start; min-width: 0; }
+  .feat:nth-child(3n) { border-right: 0; }
+  .feat:nth-last-child(-n+3) { border-bottom: 0; }
+  .feat h3 { display: flex; align-items: center; gap: 10px; font-size: 1.08rem; }
+  .feat p { margin: 0; color: var(--text-soft); font-size: 15.5px; }
+  .tag { font-size: 11px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--text-soft); justify-self: start; }
+  .dot { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+  .c-call { background: var(--qr-red); } .c-loc { background: var(--red); } .c-safe { background: var(--green); }
+  .c-health { background: var(--sky); } .c-pin { background: var(--pin-dot); } .c-kids { background: var(--kids-yellow); }
+  @media (max-width: 760px) {
+    .feats { grid-template-columns: 1fr; }
+    .feat { border-right: 0 !important; border-bottom: 1px solid var(--border) !important; }
+    .feat:last-child { border-bottom: 0 !important; }
+  }
+  .langs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; align-items: center; }
+  .langs .lbl { font-weight: 900; font-size: var(--step--1); letter-spacing: .08em; text-transform: uppercase; color: var(--text-soft); margin-right: 4px; }
+  .langs span[lang] { border: 2px solid var(--sky); border-radius: 999px; padding: 3px 12px; font-weight: 800; font-size: 15px; }
+
+  /* ---------- Latest builds ---------- */
+  .builds { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .bcard { border: 1px solid var(--border); border-radius: 24px; padding: 24px; background: var(--surface); display: grid; gap: 14px; align-content: start; min-width: 0; }
+  .bcard header { display: flex; align-items: center; gap: 12px; }
+  .bcard header img { width: 44px; height: 44px; border-radius: 11px; }
+  .bcard h3 { font-size: 1.15rem; letter-spacing: .02em; }
+  .bcard .meta { font-size: var(--step--1); font-weight: 800; color: var(--text-soft); }
+  .log { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .log li { display: grid; grid-template-columns: 64px 1fr; gap: 12px; font-size: 15.5px; }
+  .log time { font-weight: 900; font-size: 13px; color: var(--text-soft); padding-top: 2px; font-variant-numeric: tabular-nums; }
+  @media (max-width: 860px) { .builds { grid-template-columns: 1fr; } }
+
+  /* ---------- Privacy band ---------- */
+  .band { background: var(--band); color: var(--band-text); }
+  .band .wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 40px; align-items: start; }
+  .band h2 { color: var(--band-text); }
+  .band .lead { color: var(--band-soft); }
+  .band .eyebrow { color: var(--yellow); }
+  .band-link { color: var(--band-text); font-weight: 900; text-underline-offset: 4px; }
+  .facts { display: grid; gap: 14px; }
+  .fact { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 18px; border-radius: 18px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); }
+  .fact .fi { width: 44px; height: 44px; border-radius: 14px; background: rgba(255,255,255,.12); display: grid; place-items: center; }
+  .fact .fi svg { width: 22px; height: 22px; color: var(--yellow); }
+  .fact h3 { font-size: 1.05rem; color: var(--band-text); }
+  .fact p { margin: 2px 0 0; color: var(--band-soft); font-size: 15.5px; }
+  @media (max-width: 860px) { .band .wrap { grid-template-columns: 1fr; gap: 24px; } }
+
+  /* ---------- Support ---------- */
+  .support { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 26px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+  .card h3 { font-size: 1.25rem; }
+  .card p { margin: 0; color: var(--text-soft); }
+  .contact { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 4px 0; align-items: center; }
+  .contact dt { font-size: var(--step--1); font-weight: 900; letter-spacing: .08em; text-transform: uppercase; color: var(--text-soft); }
+  .contact dd { margin: 0; font-weight: 900; font-size: 1.08rem; overflow-wrap: normal; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .contact a { text-decoration: none; }
+  .contact a:hover { text-decoration: underline; }
+  .copy { font: inherit; font-size: 14px; font-weight: 900; border: 2px solid var(--border); background: var(--surface-2); color: var(--text); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+  .small-note { font-size: 14.5px; color: var(--text-soft); }
+  @media (max-width: 760px) { .support { grid-template-columns: 1fr; } }
+
+  footer { padding-block: 28px 44px; color: var(--text-soft); font-size: 15px; border-top: 1px solid var(--border); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; }
+  footer nav { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  footer a { font-weight: 800; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .hold, .hold .prog { transition: none; }
+    .overlay .pulse { animation: none; }
+  }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="QUICKREACH home">
+      <img class="on-light" src="img/quickreach-logo.png" alt="QUICKREACH" width="596" height="163">
+      <img class="on-dark" src="img/quickreach-logo-white.png" alt="QUICKREACH" width="596" height="163">
+    </a>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#apps">Apps</a>
+      <a href="#features" class="hide-sm">Features</a>
+      <a href="#latest" class="hide-sm">What's new</a>
+      <a href="#support">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">QUICKREACH · QUICKREACH KIDS</span>
+        <h1 id="hero-title">One button to reach the people who <span class="hl">care for you.</span></h1>
+        <p class="sub">Press and hold the big Call Button. QUICKREACH says who it's calling, starts the call, and gets your location ready to text.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#apps">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg>
+            Meet the apps
+          </a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <ul class="spec" aria-label="Key numbers">
+          <li><b>1.5<small>sec</small></b><span>hold to call</span></li>
+          <li><b>9</b><span>languages</span></li>
+          <li><b>4<small>digit</small></b><span>PIN guards settings</span></li>
+          <li><b>0</b><span>accounts, ads or tracking</span></li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <div class="switch" role="tablist" aria-label="Choose an app to preview">
+          <button type="button" role="tab" id="tab-adult" aria-selected="true" aria-controls="phone" data-app="adult">QUICKREACH</button>
+          <button type="button" role="tab" id="tab-kids" aria-selected="false" aria-controls="phone" data-app="kids">QUICKREACH KIDS</button>
+        </div>
+
+        <div class="phone" id="phone" data-app="adult" role="tabpanel" aria-labelledby="tab-adult">
+          <div class="shot">
+            <img id="phone-img" src="img/qr-call-b41.jpg" alt="QUICKREACH home screen: the red Call Button, the emergency contact Millie Melendez, and the current address" width="600" height="1304">
+            <button type="button" class="hold" id="hold" aria-label="Call Button demo: press and hold" aria-describedby="call-hint">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="prog" id="ring" cx="50" cy="50" r="47" fill="none" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="295.31" stroke-dashoffset="295.31"/>
+              </svg>
+            </button>
+            <div class="overlay" id="ov-calling" hidden>
+              <div class="pulse"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div>
+              <h4 id="ov-title">Calling Millie Melendez</h4>
+              <p>The name is said out loud</p>
+            </div>
+            <div class="overlay" id="ov-text" hidden>
+              <h4>Text ready to send</h4>
+              <div class="msg" id="ov-msg"></div>
+              <p>A person always taps Send in Messages.</p>
+              <button type="button" class="close" id="ov-close">Back to the Call Button</button>
+            </div>
+          </div>
+        </div>
+        <p class="stage-note" id="call-hint">Try it: press and hold the Call Button. This is a demo; nothing is called.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="notice" role="note">
+      <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div>
+      <div>
+        <strong>QUICKREACH does not call 911.</strong>
+        <p>QUICKREACH and QUICKREACH KIDS contact your family and friends, not the police or an ambulance.</p> <p>In an emergency, call 911 yourself from your phone.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="apps" aria-labelledby="apps-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The apps</span>
+        <h2 id="apps-title">Same big button, built for two kinds of people</h2>
+        <p class="lead">Set it up for yourself or for someone you're helping. After setup, everything is on one screen.</p>
+      </div>
+      <div class="apps">
+        <article class="app" aria-labelledby="app-adult">
+          <div class="app-top">
+            <img class="app-icon" src="img/icon-quickreach.png" alt="" width="240" height="240">
+            <div>
+              <span class="for">For adults &amp; older relatives</span>
+              <h3 id="app-adult">QUICKREACH</h3>
+            </div>
+          </div>
+          <div class="build-line" data-build="quickreach"></div>
+          <p>Help one press away, for a parent living alone, a grandparent, or anyone who wants their people close without hunting through a contact list.</p>
+          <ul class="checks">
+            <li><span><strong>One red Call Button</strong> for your main contact</span></li>
+            <li><span><strong>Help text</strong> with your street address and Apple Maps and Google Maps links</span></li>
+            <li><span><strong>Health ID</strong> with medications, allergies, conditions and emergency contacts</span></li>
+            <li><span><strong>Apple Watch</strong>, widgets and a Control Center button</span></li>
+          </ul>
+          <p class="avail">Coming soon to the App Store for iPhone and Apple Watch.</p>
+        </article>
+
+        <article class="app" aria-labelledby="app-kids">
+          <div class="app-top">
+            <img class="app-icon" src="img/icon-quickreach-kids.png" alt="" width="240" height="240">
+            <div>
+              <span class="for">For kids &amp; their grown-ups</span>
+              <h3 id="app-kids">QUICKREACH KIDS</h3>
+            </div>
+          </div>
+          <div class="build-line" data-build="kids"></div>
+          <p>A first phone's most important button. Kids reach Mom &amp; Dad or a trusted helper, check in when they arrive, and can't change the settings by accident.</p>
+          <ul class="checks">
+            <li><span><strong>Mom &amp; Dad always on</strong>; turning them off or changing them needs the PIN</span></li>
+            <li><span><strong>Caregiver or Nanny/Sitter</strong>: when one is on, the Call Button calls them</span></li>
+            <li><span><strong>Safe Zones</strong> with an <strong>I'M SAFE</strong> check-in, plus a loud <strong>Siren</strong></span></li>
+            <li><span><strong>Apple Watch</strong> Call Button on the wrist</span></li>
+          </ul>
+          <p class="avail">Coming soon to the App Store for iPhone and Apple Watch.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">How it works</span>
+        <h2 id="how-title">From press to call in four steps</h2>
+        <p class="lead">Holding the button, instead of tapping it, keeps a phone in a pocket from calling anyone by mistake.</p>
+      </div>
+      <ol class="flow">
+        <li><span class="n" aria-hidden="true">1</span><h3>Press and hold</h3><p>Hold the Call Button for 1.5 seconds. A ring fills around it to show how long.</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h3>Hear who's being called</h3><p>The app raises the volume and says the person's name out loud.</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h3>The call starts</h3><p>It goes to the contact that's on, and the app says their name out loud.</p></li>
+        <li><span class="n" aria-hidden="true">4</span><h3>Text your location</h3><p>A help text with the street address and Apple Maps and Google Maps links is ready. Tap Send.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="features" class="alt" aria-labelledby="feat-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Features</span>
+        <h2 id="feat-title">Everything on one screen</h2>
+      </div>
+      <div class="feats">
+        <div class="feat"><h3><span class="dot c-call" aria-hidden="true"></span>Call Button</h3><p>One big button. Hold 1.5 seconds and the call starts.</p><span class="tag">Both apps</span></div>
+        <div class="feat"><h3><span class="dot c-loc" aria-hidden="true"></span>Text my location</h3><p>The street address, plus Apple Maps and Google Maps links that open on the exact spot.</p><span class="tag">Both apps</span></div>
+        <div class="feat"><h3><span class="dot c-health" aria-hidden="true"></span>Health ID</h3><p>Name, age, blood type, medications, allergies, conditions and emergency contacts.</p><span class="tag">Both apps</span></div>
+        <div class="feat"><h3><span class="dot c-pin" aria-hidden="true"></span>Apple Watch</h3><p>The Call Button on the wrist, plus a watch-face complication.</p><span class="tag">Both apps</span></div>
+        <div class="feat"><h3><span class="dot c-health" aria-hidden="true"></span>Widgets</h3><p>Home Screen and Lock Screen widgets. QUICKREACH adds a Control Center button.</p><span class="tag">Both apps</span></div>
+        <div class="feat"><h3><span class="dot c-pin" aria-hidden="true"></span>PIN-protected settings</h3><p>Contacts, the Health ID and the language need the 4-digit PIN. A recovery code gets you back in.</p><span class="tag">Both apps</span></div>
+        <div class="feat"><h3><span class="dot c-kids" aria-hidden="true"></span>Siren</h3><p>Hold the logo for 3 seconds for a loud siren that plays even on silent. Tap to stop.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3><span class="dot c-safe" aria-hidden="true"></span>Safe Zones</h3><p>Home, School and Nanny/Sitter. The banner turns green when your child arrives.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3><span class="dot c-safe" aria-hidden="true"></span>I'M SAFE</h3><p>One tap texts the family that your child arrived.</p><span class="tag">QUICKREACH KIDS</span></div>
+      </div>
+      <div class="langs" aria-label="Supported languages">
+        <span class="lbl">Both apps speak</span>
+        <span lang="en">English</span><span lang="es">Español</span><span lang="fr">Français</span>
+        <span lang="de">Deutsch</span><span lang="it">Italiano</span><span lang="pt">Português</span>
+        <span lang="hi">हिन्दी</span><span lang="ja">日本語</span><span lang="fil">Filipino</span>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="latest" class="alt" aria-labelledby="latest-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Latest builds</span>
+        <h2 id="latest-title">What's new</h2>
+        <p class="lead">Recent improvements in each app.</p>
+      </div>
+      <div class="builds" id="builds-out"></div>
+    </div>
+  </section>
+
+  <section class="band" id="privacy" aria-labelledby="priv-title">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Privacy</span>
+        <h2 id="priv-title">Your information stays on this phone</h2>
+        <p class="lead">Contacts, places and the Health ID are saved on the device. Your location is sent only when you call for help. Both apps are free, with no in-app purchases.</p>
+        <p class="lead"><a href="privacy.html" class="band-link">Read the Privacy Policy</a></p>
+      </div>
+      <div class="facts">
+        <div class="fact">
+          <div class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg></div>
+          <div><h3>No account, no ads, no tracking</h3><p>QUICKREACH doesn't track you in the background. Location is read only while the app is on screen.</p></div>
+        </div>
+        <div class="fact">
+          <div class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.2 7.5L3 21l2-5.8A8.4 8.4 0 1 1 21 11.5z"/></svg></div>
+          <div><h3>A person always taps Send</h3><p>The app writes the help text and opens Messages. Nothing is sent on its own.</p></div>
+        </div>
+        <div class="fact">
+          <div class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+          <div><h3>Locked by a PIN</h3><p>Curious fingers can't change numbers, places or health details.</p></div>
+        </div>
+        <div class="fact">
+          <div class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></div>
+          <div><h3>Set up with permission</h3><p>When you set up QUICKREACH for someone else, they need to agree to it. A parent or guardian sets up QUICKREACH KIDS.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="support" aria-labelledby="sup-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Support</span>
+        <h2 id="sup-title">Questions? We're here.</h2>
+      </div>
+      <div class="support">
+        <div class="card">
+          <h3>Help &amp; FAQ</h3>
+          <p>Setup, the Call Button, sharing your location, Safe Zones, the Health ID and the PIN, with step-by-step answers for both apps.</p>
+          <div><a class="btn btn-ghost" href="support.html">Open Support</a></div>
+        </div>
+        <div class="card">
+          <h3>Contact us</h3>
+          <p>A real person answers. Tell us which app, your phone model and what happened.</p>
+          <dl class="contact">
+            <dt>Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Support" id="email">edwin.vgwhiz@<wbr>gmail.com</a> <button type="button" class="copy" id="copy-email">Copy</button></dd>
+            <dt>Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
+            <dt>Web</dt><dd>QUICKREACH.COM</dd>
+          </dl>
+          <p class="small-note">Please don't send a PIN, a recovery code or anyone's health details.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 QUICKREACH · QUICKREACH.COM</span>
+    <nav aria-label="Legal">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Build details. Update this block when a new build ships; the page renders from it. -->
+<script type="application/json" id="builds">
+{
+  "quickreach": {
+    "name": "QUICKREACH",
+    "icon": "img/icon-quickreach.png",
+    "version": "1.0.0",
+    "build": "42",
+    "updated": "2026-11-08",
+    "changes": [
+      ["2026-11-08", "Home Screen widgets show the Call Button and the logo correctly again."],
+      ["2026-11-08", "About & Privacy has a link to the full Privacy Policy. Clearer Apple Health and Photos permission messages."],
+      ["2026-11-07", "Faint blue dots and soft-red plus signs behind the main screen, about half the size of the QUICKREACH KIDS stars and circles."],
+      ["2026-11-06", "New app icon: the white hand with orange sparks on red. New branding logo with red sparks."],
+      ["2026-11-06", "Call Button sets the volume to 75% before announcing the contact, so the name plays even on silent."]
+    ]
+  },
+  "kids": {
+    "name": "QUICKREACH KIDS",
+    "icon": "img/icon-quickreach-kids.png",
+    "version": "1.0.0",
+    "build": "23",
+    "updated": "2026-11-06",
+    "changes": [
+      ["2026-11-06", "New Apple Watch app: the Call Button on the wrist, then Dad and Text My Location, plus a watch-face complication."],
+      ["2026-11-06", "New app icon: the white hand with red sparks on golden yellow."],
+      ["2026-11-06", "Call Button sets the volume to 75% before announcing the contact."],
+      ["2026-11-06", "Health ID: kid-friendly choices for medications, allergies and conditions; larger photo."],
+      ["2026-11-04", "The red pin texts the same person the Call Button calls."]
+    ]
+  }
+}
+</script>
+
+<script>
+(function () {
+  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function fmt(d, withYear) { var p = d.split('-'); return MON[+p[1] - 1] + ' ' + (+p[2]) + (withYear ? ', ' + p[0] : ''); }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+  // ----- Build details -----
+  var B = {};
+  try { B = JSON.parse(document.getElementById('builds').textContent); } catch (e) {}
+  Array.prototype.forEach.call(document.querySelectorAll('[data-build]'), function (el) {
+    var b = B[el.getAttribute('data-build')]; if (!b) return;
+    el.innerHTML = '<span class="pill">Version ' + esc(b.version) + '</span><span class="pill">Build ' + esc(b.build) + '</span><span class="pill">Updated ' + fmt(b.updated, true) + '</span>';
+  });
+  var out = document.getElementById('builds-out');
+  out.innerHTML = ['quickreach', 'kids'].filter(function (k) { return B[k]; }).map(function (k) {
+    var b = B[k];
+    return '<article class="bcard"><header><img src="' + esc(b.icon) + '" alt="" width="240" height="240"><div><h3>' + esc(b.name) +
+      '</h3><div class="meta">Version ' + esc(b.version) + ' · Build ' + esc(b.build) + ' · ' + fmt(b.updated, true) + '</div></div></header><ul class="log">' +
+      b.changes.map(function (c) { return '<li><time datetime="' + c[0] + '">' + fmt(c[0]) + '</time><span>' + esc(c[1]) + '</span></li>'; }).join('') +
+      '</ul></article>';
+  }).join('');
+
+  // ----- Hero phone: real screens + hold-to-call demo -----
+  var APPS = {
+    adult: {
+      img: 'img/qr-call-b41.jpg',
+      alt: 'QUICKREACH home screen: the red Call Button, the emergency contact Millie Melendez, and the current address',
+      calling: 'Calling Millie Melendez',
+      msg: 'This is a QUICKREACH ALERT:<br>This is Maria. Please call me ASAP. I\'m near 154 Pehle Ave, Saddle Brook, NJ 07663.<br><br><u>Apple Maps</u><br><u>Google Maps</u>'
+    },
+    kids: {
+      img: 'img/kids-call-b23.jpg',
+      alt: 'QUICKREACH KIDS Call Family screen: Mom & Dad and Caregiver tiles above the orange Call Button',
+      calling: 'Calling Millie',
+      msg: 'QUICKREACH KIDS: Here\'s where I am. This is Emma. I\'m near 154 Pehle Ave, Saddle Brook, NJ 07663.<br><br><u>Apple Maps</u><br><u>Google Maps</u>'
+    }
+  };
+  var phone = document.getElementById('phone');
+  var img = document.getElementById('phone-img');
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.switch button'));
+  var btn = document.getElementById('hold');
+  var ring = document.getElementById('ring');
+  var ovCall = document.getElementById('ov-calling');
+  var ovText = document.getElementById('ov-text');
+  var C = 295.31, HOLD = 1500;
+  var current = 'adult', start = 0, raf = 0, busy = false, timers = [];
+
+  function render(key) {
+    var a = APPS[key]; current = key;
+    phone.setAttribute('data-app', key);
+    phone.setAttribute('aria-labelledby', 'tab-' + key);
+    img.src = a.img; img.alt = a.alt;
+    tabs.forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-app') === key ? 'true' : 'false'); });
+    reset();
+  }
+  function setRing(p) { ring.setAttribute('stroke-dashoffset', String(C * (1 - p))); }
+  function tick(now) {
+    var p = Math.min(1, (now - start) / HOLD);
+    setRing(p);
+    if (p >= 1) { fire(); return; }
+    raf = requestAnimationFrame(tick);
+  }
+  function begin(e) {
+    if (busy) return;
+    if (e && e.type === 'keydown') { if (e.repeat || (e.key !== ' ' && e.key !== 'Enter')) return; e.preventDefault(); }
+    if (e && e.pointerId !== undefined) { try { btn.setPointerCapture(e.pointerId); } catch (_) {} }
+    btn.classList.add('holding');
+    start = performance.now();
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(tick);
+  }
+  function release(e) {
+    if (e && e.type === 'keyup' && e.key !== ' ' && e.key !== 'Enter') return;
+    btn.classList.remove('holding');
+    if (busy) return;
+    cancelAnimationFrame(raf);
+    setRing(0);
+  }
+  function fire() {
+    busy = true;
+    btn.classList.remove('holding');
+    document.getElementById('ov-title').textContent = APPS[current].calling;
+    document.getElementById('ov-msg').innerHTML = APPS[current].msg;
+    ovCall.hidden = false;
+    timers.push(setTimeout(function () { ovCall.hidden = true; ovText.hidden = false; document.getElementById('ov-close').focus(); }, 2200));
+  }
+  function reset() {
+    timers.forEach(clearTimeout); timers = [];
+    cancelAnimationFrame(raf);
+    busy = false; ovCall.hidden = true; ovText.hidden = true; setRing(0);
+  }
+
+  btn.addEventListener('pointerdown', begin);
+  btn.addEventListener('pointerup', release);
+  btn.addEventListener('pointercancel', release);
+  btn.addEventListener('keydown', begin);
+  btn.addEventListener('keyup', release);
+  btn.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  document.getElementById('ov-close').addEventListener('click', function () { reset(); btn.focus(); });
+
+  tabs.forEach(function (b) {
+    b.addEventListener('click', function () { render(b.getAttribute('data-app')); });
+    b.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var next = tabs[(tabs.indexOf(b) + 1) % tabs.length];
+      next.focus(); render(next.getAttribute('data-app'));
+    });
+  });
+  // Preload the second screen so switching is instant
+  var pre = new Image(); pre.src = APPS.kids.img;
+
+
+  var copyBtn = document.getElementById('copy-email');
+  copyBtn.addEventListener('click', function () {
+    var text = document.getElementById('email').textContent.trim();
+    function done() { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1600); }
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      copyBtn.textContent = 'Selected';
+    }
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (_) { fallback(); }
+  });
+
+  render('adult');
+})();
+</script>
+</body>
+</html>
