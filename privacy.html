@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>QUICKREACH Privacy Policy</title>
 <meta name="description" content="How QUICKREACH and QUICKREACH KIDS handle your information: stored on your phone, shared only when you send it.">
+<link rel="alternate" hreflang="en" href="https://quickreach.com/privacy.html">
+<link rel="alternate" hreflang="de" href="https://quickreach.com/privacy.html?lang=de">
+<link rel="alternate" hreflang="es" href="https://quickreach.com/privacy.html?lang=es">
+<link rel="alternate" hreflang="fil" href="https://quickreach.com/privacy.html?lang=fil">
+<link rel="alternate" hreflang="fr" href="https://quickreach.com/privacy.html?lang=fr">
+<link rel="alternate" hreflang="hi" href="https://quickreach.com/privacy.html?lang=hi">
+<link rel="alternate" hreflang="it" href="https://quickreach.com/privacy.html?lang=it">
+<link rel="alternate" hreflang="ja" href="https://quickreach.com/privacy.html?lang=ja">
+<link rel="alternate" hreflang="pt" href="https://quickreach.com/privacy.html?lang=pt">
 <link rel="icon" type="image/png" href="img/icon-quickreach.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,6 +120,15 @@
   .dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 0; }
   .dl dt { font-size: 13px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--text-soft); }
   .dl dd { margin: 0; font-weight: 900; overflow-wrap: normal; }
+  .nav { align-items: center; }
+  .lang { position: relative; display: inline-flex; align-items: center; gap: 6px; margin-left: 6px; padding: 0 10px; border: 2px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text-soft); }
+  .lang:focus-within { border-color: var(--sky); }
+  .lang select { font: inherit; font-size: 15px; font-weight: 800; color: var(--text); background: transparent; border: 0; padding: 7px 2px; cursor: pointer; appearance: auto; }
+  .lang select:focus { outline: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  header.page p.note { font-size: 15px; margin-top: 8px; }
+  .brand { flex-shrink: 0; }
+  @media (max-width: 520px) { .brand img { height: 28px; } .nav a { padding: 8px 6px; font-size: 14px; } .nav a[data-i18n="nav_home"] { display: none; } .lang { padding: 0 6px; margin-left: 2px; } .lang select { font-size: 14px; } }
 </style>
 </head>
 <body>
@@ -121,118 +139,134 @@
       <img class="on-dark" src="img/quickreach-logo-white.png" alt="QUICKREACH" width="596" height="163">
     </a>
     <nav class="nav" aria-label="Site">
-      <a href="index.html">Home</a>
-      <a href="support.html">Support</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="support.html" data-i18n="nav_support">Support</a>
+      <label class="lang">
+        <span class="sr-only" data-i18n="lang_label">Language</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <select id="lang" aria-label="Language">
+          <option value="en" lang="en">English</option>
+          <option value="de" lang="de">Deutsch</option>
+          <option value="es" lang="es">Español</option>
+          <option value="fil" lang="fil">Filipino</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="hi" lang="hi">हिन्दी</option>
+          <option value="it" lang="it">Italiano</option>
+          <option value="ja" lang="ja">日本語</option>
+          <option value="pt" lang="pt">Português</option>
+        </select>
+      </label>
     </nav>
   </div>
 </div>
 
 <main class="wrap legal">
   <header class="page">
-    <span class="eyebrow">Privacy Policy</span>
-    <h1>Privacy Policy for QUICKREACH and QUICKREACH KIDS</h1>
-    <p>Effective November 8, 2026</p>
+    <span class="eyebrow" data-i18n="eyebrow">Privacy Policy</span>
+    <h1 data-i18n="h1">Privacy Policy for QUICKREACH and QUICKREACH KIDS</h1>
+    <p data-i18n="effective">Effective November 8, 2026</p>
+    <p class="note" data-i18n="english_note" hidden></p>
   </header>
 
   <nav class="toc" aria-label="On this page">
-    <a href="#short">The short version</a>
-    <a href="#stored">On your phone</a>
-    <a href="#location">Location</a>
-    <a href="#health">Apple Health &amp; photos</a>
-    <a href="#leaves">When information leaves the phone</a>
-    <a href="#kids">Children</a>
-    <a href="#consent">Consent &amp; deleting</a>
-    <a href="#contact">Contact</a>
+    <a href="#short" data-i18n="toc_short">The short version</a>
+    <a href="#stored" data-i18n="toc_stored">On your phone</a>
+    <a href="#location" data-i18n="toc_location">Location</a>
+    <a href="#health" data-i18n="toc_health">Apple Health &amp; photos</a>
+    <a href="#leaves" data-i18n="toc_leaves">When information leaves the phone</a>
+    <a href="#kids" data-i18n="toc_kids">Children</a>
+    <a href="#consent" data-i18n="toc_consent">Consent &amp; deleting</a>
+    <a href="#contact" data-i18n="toc_contact">Contact</a>
   </nav>
 
   <section id="short">
-    <h2>The short version</h2>
+    <h2 data-i18n="short_h2">The short version</h2>
     <ul class="keys">
-      <li><strong>No account.</strong> You never sign up or log in.</li>
-      <li><strong>We don't collect your information.</strong> What you enter stays on your phone. We have no server that receives it.</li>
-      <li><strong>You decide what gets shared.</strong> Information leaves the phone when you place a call or send a text, plus the few lookups listed below.</li>
-      <li><strong>No ads, no analytics, no tracking.</strong> We don't sell or rent information, and the apps contain no advertising or analytics tools.</li>
+      <li data-i18n="k1"><strong>No account.</strong> You never sign up or log in.</li>
+      <li data-i18n="k2"><strong>We don't collect your information.</strong> What you enter stays on your phone. We have no server that receives it.</li>
+      <li data-i18n="k3"><strong>You decide what gets shared.</strong> Information leaves the phone when you place a call or send a text, plus the few lookups listed below.</li>
+      <li data-i18n="k4"><strong>No ads, no analytics, no tracking.</strong> We don't sell or rent information, and the apps contain no advertising or analytics tools.</li>
     </ul>
-    <p>This policy covers the QUICKREACH and QUICKREACH KIDS apps for iPhone and Apple Watch (together, "the apps"), and this website.</p>
+    <p data-i18n="covers">This policy covers the QUICKREACH and QUICKREACH KIDS apps for iPhone and Apple Watch (together, "the apps"), and this website.</p>
   </section>
 
   <section id="stored">
-    <h2>What the apps keep on your phone</h2>
-    <p>The apps save the following only on your device, so the Call Button and Health ID work without an internet connection:</p>
+    <h2 data-i18n="stored_h2">What the apps keep on your phone</h2>
+    <p data-i18n="stored_intro">The apps save the following only on your device, so the Call Button and Health ID work without an internet connection:</p>
     <ul>
-      <li><strong>Contacts you add:</strong> names and phone numbers of the people the Call Button calls and texts.</li>
-      <li><strong>Health ID:</strong> name, date of birth or age, sex, blood type, wheelchair use, medications, allergies, medical conditions, notes, emergency contacts and an optional photo.</li>
-      <li><strong>Safe Zones</strong> (QUICKREACH KIDS): the names and addresses of places you save, such as Home and School.</li>
-      <li><strong>Your PIN and settings:</strong> the PIN is kept in the phone's secure storage. Settings include the language and which contacts are on.</li>
+      <li data-i18n="s1"><strong>Contacts you add:</strong> names and phone numbers of the people the Call Button calls and texts.</li>
+      <li data-i18n="s2"><strong>Health ID:</strong> name, date of birth or age, sex, blood type, wheelchair use, medications, allergies, medical conditions, notes, emergency contacts and an optional photo.</li>
+      <li data-i18n="s3"><strong>Safe Zones</strong> (QUICKREACH KIDS): the names and addresses of places you save, such as Home and School.</li>
+      <li data-i18n="s4"><strong>Your PIN and settings:</strong> the PIN is kept in the phone's secure storage. Settings include the language and which contacts are on.</li>
     </ul>
-    <p>The apps don't put this information in iCloud Drive or any other cloud service. The Apple Watch app and the widgets get the Call Button contact directly from the iPhone.</p>
+    <p data-i18n="stored_after">The apps don't put this information in iCloud Drive or any other cloud service. The Apple Watch app and the widgets get the Call Button contact directly from the iPhone.</p>
   </section>
 
   <section id="location">
-    <h2>Location</h2>
-    <p>With your permission, the apps read the phone's location <strong>only while the app is open on the screen</strong>. Location isn't tracked in the background. It's used to:</p>
+    <h2 data-i18n="loc_h2">Location</h2>
+    <p data-i18n="loc_intro">With your permission, the apps read the phone's location <strong>only while the app is open on the screen</strong>. Location isn't tracked in the background. It's used to:</p>
     <ul>
-      <li>show your current address under the Call Button;</li>
-      <li>add your address, GPS position and map links to a help text you choose to send;</li>
-      <li>in QUICKREACH KIDS, show when your child is in a Safe Zone.</li>
+      <li data-i18n="l1">show your current address under the Call Button;</li>
+      <li data-i18n="l2">add your address, GPS position and map links to a help text you choose to send;</li>
+      <li data-i18n="l3">in QUICKREACH KIDS, show when your child is in a Safe Zone.</li>
     </ul>
-    <p>To turn a GPS position into a street address, the phone uses its built-in map service (Apple on iPhone, Google on Android devices). Your location is never sent to us.</p>
+    <p data-i18n="loc_after">To turn a GPS position into a street address, the phone uses its built-in map service (Apple on iPhone, Google on Android devices). Your location is never sent to us.</p>
   </section>
 
   <section id="health">
-    <h2>Apple Health and photos</h2>
-    <p><strong>Apple Health:</strong> if you allow it, the apps read your date of birth, sex, blood type, wheelchair use and medications from Apple Health to fill in the Health ID. The apps never write to Apple Health. Health information is never used for advertising or marketing and is never shared with anyone except in a help text that you send.</p>
-    <p><strong>Photos:</strong> if you allow it, you can choose a photo for the Health ID, and the apps can save a picture of your recovery code to your Photos. The apps don't read any other photos.</p>
+    <h2 data-i18n="health_h2">Apple Health and photos</h2>
+    <p data-i18n="h_health"><strong>Apple Health:</strong> if you allow it, the apps read your date of birth, sex, blood type, wheelchair use and medications from Apple Health to fill in the Health ID. The apps never write to Apple Health. Health information is never used for advertising or marketing and is never shared with anyone except in a help text that you send.</p>
+    <p data-i18n="h_photos"><strong>Photos:</strong> if you allow it, you can choose a photo for the Health ID, and the apps can save a picture of your recovery code to your Photos. The apps don't read any other photos.</p>
   </section>
 
   <section id="leaves">
-    <h2>When information leaves your phone</h2>
-    <p>Information leaves your phone only in these cases:</p>
+    <h2 data-i18n="leaves_h2">When information leaves your phone</h2>
+    <p data-i18n="leaves_intro">Information leaves your phone only in these cases:</p>
     <ol>
-      <li><strong>Calls and texts you make.</strong> The Call Button calls the contact you set. A help text, with your address, map links and, if you choose, Health ID details, goes through your phone's Messages app only after you tap Send. Calls and texts are handled by your phone carrier, Apple and the recipients.</li>
-      <li><strong>Your recovery code.</strong> During setup you choose a phone number or email for your PIN recovery code. The app opens Messages or Mail with the code, and you send it.</li>
-      <li><strong>Internet time check.</strong> When a PIN reset is waiting, the app asks apple.com or google.com for the current time. This is a basic web request with no personal information.</li>
-      <li><strong>Place search</strong> (QUICKREACH KIDS). When a grown-up adds a Safe Zone, the area on the map goes to Apple Maps, the phone's built-in map service, to list nearby places such as schools and parks. When the grown-up types a place or an address, the search words and the area on the map go to Photon (photon.komoot.io), a free OpenStreetMap search service, or, if it can't be reached, to Nominatim (nominatim.openstreetmap.org). No name, contact or account information is sent to any of them.</li>
-      <li><strong>App updates.</strong> The apps check Expo's update service for fixes. This sends the app's version and the phone's platform, not personal information.</li>
+      <li data-i18n="v1"><strong>Calls and texts you make.</strong> The Call Button calls the contact you set. A help text, with your address, map links and, if you choose, Health ID details, goes through your phone's Messages app only after you tap Send. Calls and texts are handled by your phone carrier, Apple and the recipients.</li>
+      <li data-i18n="v2"><strong>Your recovery code.</strong> During setup you choose a phone number or email for your PIN recovery code. The app opens Messages or Mail with the code, and you send it.</li>
+      <li data-i18n="v3"><strong>Internet time check.</strong> When a PIN reset is waiting, the app asks apple.com or google.com for the current time. This is a basic web request with no personal information.</li>
+      <li data-i18n="v4"><strong>Place search</strong> (QUICKREACH KIDS). When a grown-up adds a Safe Zone, the area on the map goes to Apple Maps, the phone's built-in map service, to list nearby places such as schools and parks. When the grown-up types a place or an address, the search words and the area on the map go to Photon (photon.komoot.io), a free OpenStreetMap search service, or, if it can't be reached, to Nominatim (nominatim.openstreetmap.org). No name, contact or account information is sent to any of them.</li>
+      <li data-i18n="v5"><strong>App updates.</strong> The apps check Expo's update service for fixes. This sends the app's version and the phone's platform, not personal information.</li>
     </ol>
   </section>
 
   <section id="kids">
-    <h2>Children's privacy (QUICKREACH KIDS)</h2>
-    <p>QUICKREACH KIDS is meant to be set up by a parent or legal guardian on a child's phone. We take children's privacy seriously and follow the U.S. Children's Online Privacy Protection Act (COPPA) and similar laws.</p>
+    <h2 data-i18n="kids_h2">Children's privacy (QUICKREACH KIDS)</h2>
+    <p data-i18n="kids_intro">QUICKREACH KIDS is meant to be set up by a parent or legal guardian on a child's phone. We take children's privacy seriously and follow the U.S. Children's Online Privacy Protection Act (COPPA) and similar laws.</p>
     <ul>
-      <li>We don't collect personal information from children. A child's name, Health ID, places and location stay on the phone.</li>
-      <li>A child's location is shared only in a text that is sent from the phone to the family members and helpers the parent set up. When a grown-up adds a Safe Zone, the place search described above is used.</li>
-      <li>There are no ads, no analytics, no in-app purchases, no chat with strangers and no account.</li>
-      <li>The parent's PIN protects contacts, the Health ID, Safe Zones and the language, and is needed to open this policy on the web from the app.</li>
-      <li>A parent can review, change or delete the child's information at any time in the app, or by deleting the app.</li>
+      <li data-i18n="c1">We don't collect personal information from children. A child's name, Health ID, places and location stay on the phone.</li>
+      <li data-i18n="c2">A child's location is shared only in a text that is sent from the phone to the family members and helpers the parent set up. When a grown-up adds a Safe Zone, the place search described above is used.</li>
+      <li data-i18n="c3">There are no ads, no analytics, no in-app purchases, no chat with strangers and no account.</li>
+      <li data-i18n="c4">The parent's PIN protects contacts, the Health ID, Safe Zones and the language, and is needed to open this policy on the web from the app.</li>
+      <li data-i18n="c5">A parent can review, change or delete the child's information at any time in the app, or by deleting the app.</li>
     </ul>
   </section>
 
   <section id="consent">
-    <h2>Consent, keeping and deleting</h2>
-    <p>QUICKREACH should only be used with the agreement of the person using the phone, set up by them or by their legal guardian.</p>
-    <p>You can review this information or <strong>withdraw consent</strong> at any time with the <strong>ⓘ</strong> button at the top of the screen (the PIN is needed).</p>
-    <p>Information stays on the phone until you change it, withdraw consent or delete the app. Deleting the app removes everything it stored on the phone. Texts you already sent stay on the recipients' phones. Because we don't receive or store your information, we have nothing to delete on our side. If you have a question about your data, contact us.</p>
+    <h2 data-i18n="consent_h2">Consent, keeping and deleting</h2>
+    <p data-i18n="cn1">QUICKREACH should only be used with the agreement of the person using the phone, set up by them or by their legal guardian.</p>
+    <p data-i18n="cn2">You can review this information or <strong>withdraw consent</strong> at any time with the <strong>ⓘ</strong> button at the top of the screen (the PIN is needed).</p>
+    <p data-i18n="cn3">Information stays on the phone until you change it, withdraw consent or delete the app. Deleting the app removes everything it stored on the phone. Texts you already sent stay on the recipients' phones. Because we don't receive or store your information, we have nothing to delete on our side. If you have a question about your data, contact us.</p>
   </section>
 
   <section>
-    <h2>This website</h2>
-    <p>QUICKREACH.COM has no sign-up forms, no advertising and no analytics. Our web host may keep standard server logs, such as IP address and browser type, for security.</p>
+    <h2 data-i18n="site_h2">This website</h2>
+    <p data-i18n="site_p">QUICKREACH.COM has no sign-up forms, no advertising and no analytics. Our web host may keep standard server logs, such as IP address and browser type, for security.</p>
   </section>
 
   <section>
-    <h2>Changes to this policy</h2>
-    <p>If we change how the apps handle information, we'll update this page and the effective date above before the change reaches the apps.</p>
+    <h2 data-i18n="changes_h2">Changes to this policy</h2>
+    <p data-i18n="changes_p">If we change how the apps handle information, we'll update this page and the effective date above before the change reaches the apps.</p>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Questions about privacy, or a parent's request about a child's information:</p>
+    <h2 data-i18n="contact_h2">Contact</h2>
+    <p data-i18n="contact_p">Questions about privacy, or a parent's request about a child's information:</p>
     <dl class="dl">
-      <dt>Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Privacy">edwin.vgwhiz@<wbr>gmail.com</a></dd>
-      <dt>Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
-      <dt>Web</dt><dd><a href="index.html">QUICKREACH.COM</a></dd>
+      <dt data-i18n="dt_email">Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Privacy">edwin.vgwhiz@<wbr>gmail.com</a></dd>
+      <dt data-i18n="dt_phone">Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
+      <dt data-i18n="dt_web">Web</dt><dd><a href="index.html">QUICKREACH.COM</a></dd>
     </dl>
   </section>
 </main>
@@ -241,11 +275,695 @@
   <div class="wrap">
     <span>© 2026 QUICKREACH · QUICKREACH.COM</span>
     <nav aria-label="Legal">
-      <a href="index.html">Home</a>
-      <a href="support.html">Support</a>
-      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+      <a href="index.html" data-i18n="foot_home">Home</a>
+      <a href="support.html" data-i18n="foot_support">Support</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" data-i18n="foot_terms">Terms of Use (EULA)</a>
     </nav>
   </div>
 </footer>
+<!-- Translations of this page. English (above) is the original; the menu in the
+     top bar switches language. Links can pick one with ?lang=es (en, de, es,
+     fil, fr, hi, it, ja, pt); otherwise the browser's language is used. -->
+<script type="application/json" id="i18n">
+{
+ "en": {
+  "title": "QUICKREACH Privacy Policy",
+  "nav_home": "Home",
+  "nav_support": "Support",
+  "lang_label": "Language",
+  "eyebrow": "Privacy Policy",
+  "h1": "Privacy Policy for QUICKREACH and QUICKREACH KIDS",
+  "effective": "Effective November 8, 2026",
+  "toc_short": "The short version",
+  "toc_stored": "On your phone",
+  "toc_location": "Location",
+  "toc_health": "Apple Health &amp; photos",
+  "toc_leaves": "When information leaves the phone",
+  "toc_kids": "Children",
+  "toc_consent": "Consent &amp; deleting",
+  "toc_contact": "Contact",
+  "short_h2": "The short version",
+  "k1": "<strong>No account.</strong> You never sign up or log in.",
+  "k2": "<strong>We don't collect your information.</strong> What you enter stays on your phone. We have no server that receives it.",
+  "k3": "<strong>You decide what gets shared.</strong> Information leaves the phone when you place a call or send a text, plus the few lookups listed below.",
+  "k4": "<strong>No ads, no analytics, no tracking.</strong> We don't sell or rent information, and the apps contain no advertising or analytics tools.",
+  "covers": "This policy covers the QUICKREACH and QUICKREACH KIDS apps for iPhone and Apple Watch (together, \"the apps\"), and this website.",
+  "stored_h2": "What the apps keep on your phone",
+  "stored_intro": "The apps save the following only on your device, so the Call Button and Health ID work without an internet connection:",
+  "s1": "<strong>Contacts you add:</strong> names and phone numbers of the people the Call Button calls and texts.",
+  "s2": "<strong>Health ID:</strong> name, date of birth or age, sex, blood type, wheelchair use, medications, allergies, medical conditions, notes, emergency contacts and an optional photo.",
+  "s3": "<strong>Safe Zones</strong> (QUICKREACH KIDS): the names and addresses of places you save, such as Home and School.",
+  "s4": "<strong>Your PIN and settings:</strong> the PIN is kept in the phone's secure storage. Settings include the language and which contacts are on.",
+  "stored_after": "The apps don't put this information in iCloud Drive or any other cloud service. The Apple Watch app and the widgets get the Call Button contact directly from the iPhone.",
+  "loc_h2": "Location",
+  "loc_intro": "With your permission, the apps read the phone's location <strong>only while the app is open on the screen</strong>. Location isn't tracked in the background. It's used to:",
+  "l1": "show your current address under the Call Button;",
+  "l2": "add your address, GPS position and map links to a help text you choose to send;",
+  "l3": "in QUICKREACH KIDS, show when your child is in a Safe Zone.",
+  "loc_after": "To turn a GPS position into a street address, the phone uses its built-in map service (Apple on iPhone, Google on Android devices). Your location is never sent to us.",
+  "health_h2": "Apple Health and photos",
+  "h_health": "<strong>Apple Health:</strong> if you allow it, the apps read your date of birth, sex, blood type, wheelchair use and medications from Apple Health to fill in the Health ID. The apps never write to Apple Health. Health information is never used for advertising or marketing and is never shared with anyone except in a help text that you send.",
+  "h_photos": "<strong>Photos:</strong> if you allow it, you can choose a photo for the Health ID, and the apps can save a picture of your recovery code to your Photos. The apps don't read any other photos.",
+  "leaves_h2": "When information leaves your phone",
+  "leaves_intro": "Information leaves your phone only in these cases:",
+  "v1": "<strong>Calls and texts you make.</strong> The Call Button calls the contact you set. A help text, with your address, map links and, if you choose, Health ID details, goes through your phone's Messages app only after you tap Send. Calls and texts are handled by your phone carrier, Apple and the recipients.",
+  "v2": "<strong>Your recovery code.</strong> During setup you choose a phone number or email for your PIN recovery code. The app opens Messages or Mail with the code, and you send it.",
+  "v3": "<strong>Internet time check.</strong> When a PIN reset is waiting, the app asks apple.com or google.com for the current time. This is a basic web request with no personal information.",
+  "v4": "<strong>Place search</strong> (QUICKREACH KIDS). When a grown-up adds a Safe Zone, the area on the map goes to Apple Maps, the phone's built-in map service, to list nearby places such as schools and parks. When the grown-up types a place or an address, the search words and the area on the map go to Photon (photon.komoot.io), a free OpenStreetMap search service, or, if it can't be reached, to Nominatim (nominatim.openstreetmap.org). No name, contact or account information is sent to any of them.",
+  "v5": "<strong>App updates.</strong> The apps check Expo's update service for fixes. This sends the app's version and the phone's platform, not personal information.",
+  "kids_h2": "Children's privacy (QUICKREACH KIDS)",
+  "kids_intro": "QUICKREACH KIDS is meant to be set up by a parent or legal guardian on a child's phone. We take children's privacy seriously and follow the U.S. Children's Online Privacy Protection Act (COPPA) and similar laws.",
+  "c1": "We don't collect personal information from children. A child's name, Health ID, places and location stay on the phone.",
+  "c2": "A child's location is shared only in a text that is sent from the phone to the family members and helpers the parent set up. When a grown-up adds a Safe Zone, the place search described above is used.",
+  "c3": "There are no ads, no analytics, no in-app purchases, no chat with strangers and no account.",
+  "c4": "The parent's PIN protects contacts, the Health ID, Safe Zones and the language, and is needed to open this policy on the web from the app.",
+  "c5": "A parent can review, change or delete the child's information at any time in the app, or by deleting the app.",
+  "consent_h2": "Consent, keeping and deleting",
+  "cn1": "QUICKREACH should only be used with the agreement of the person using the phone, set up by them or by their legal guardian.",
+  "cn2": "You can review this information or <strong>withdraw consent</strong> at any time with the <strong>ⓘ</strong> button at the top of the screen (the PIN is needed).",
+  "cn3": "Information stays on the phone until you change it, withdraw consent or delete the app. Deleting the app removes everything it stored on the phone. Texts you already sent stay on the recipients' phones. Because we don't receive or store your information, we have nothing to delete on our side. If you have a question about your data, contact us.",
+  "site_h2": "This website",
+  "site_p": "QUICKREACH.COM has no sign-up forms, no advertising and no analytics. Our web host may keep standard server logs, such as IP address and browser type, for security.",
+  "changes_h2": "Changes to this policy",
+  "changes_p": "If we change how the apps handle information, we'll update this page and the effective date above before the change reaches the apps.",
+  "contact_h2": "Contact",
+  "contact_p": "Questions about privacy, or a parent's request about a child's information:",
+  "dt_email": "Email",
+  "dt_phone": "Phone",
+  "dt_web": "Web",
+  "foot_home": "Home",
+  "foot_support": "Support",
+  "foot_terms": "Terms of Use (EULA)",
+  "english_note": ""
+ },
+ "es": {
+  "title": "Política de privacidad de QUICKREACH",
+  "nav_home": "Inicio",
+  "nav_support": "Ayuda",
+  "lang_label": "Idioma",
+  "eyebrow": "Política de privacidad",
+  "h1": "Política de privacidad de QUICKREACH y QUICKREACH KIDS",
+  "effective": "Vigente desde el 8 de noviembre de 2026",
+  "toc_short": "En resumen",
+  "toc_stored": "En su teléfono",
+  "toc_location": "Ubicación",
+  "toc_health": "Apple Salud y fotos",
+  "toc_leaves": "Cuándo sale información del teléfono",
+  "toc_kids": "Niños",
+  "toc_consent": "Consentimiento y eliminación",
+  "toc_contact": "Contacto",
+  "short_h2": "En resumen",
+  "k1": "<strong>Sin cuenta.</strong> Nunca tiene que registrarse ni iniciar sesión.",
+  "k2": "<strong>No recopilamos su información.</strong> Lo que usted escribe se queda en su teléfono. No tenemos ningún servidor que la reciba.",
+  "k3": "<strong>Usted decide qué se comparte.</strong> La información sale del teléfono cuando usted hace una llamada o envía un mensaje, además de las pocas consultas que se indican abajo.",
+  "k4": "<strong>Sin anuncios, sin análisis, sin rastreo.</strong> No vendemos ni alquilamos información, y las apps no contienen herramientas de publicidad ni de análisis.",
+  "covers": "Esta política cubre las apps QUICKREACH y QUICKREACH KIDS para iPhone y Apple Watch (juntas, \"las apps\") y este sitio web.",
+  "stored_h2": "Lo que las apps guardan en su teléfono",
+  "stored_intro": "Las apps guardan lo siguiente solo en su dispositivo, para que el Botón de llamada y el ID de Salud funcionen sin conexión a internet:",
+  "s1": "<strong>Los contactos que agrega:</strong> nombres y números de teléfono de las personas a las que el Botón de llamada llama y envía mensajes.",
+  "s2": "<strong>ID de Salud:</strong> nombre, fecha de nacimiento o edad, sexo, tipo de sangre, uso de silla de ruedas, medicamentos, alergias, condiciones médicas, notas, contactos de emergencia y una foto opcional.",
+  "s3": "<strong>Zonas Seguras</strong> (QUICKREACH KIDS): los nombres y direcciones de los lugares que guarda, como Casa y Escuela.",
+  "s4": "<strong>Su PIN y su configuración:</strong> el PIN se guarda en el almacenamiento seguro del teléfono. La configuración incluye el idioma y qué contactos están activados.",
+  "stored_after": "Las apps no guardan esta información en iCloud Drive ni en ningún otro servicio en la nube. La app de Apple Watch y los widgets reciben el contacto del Botón de llamada directamente del iPhone.",
+  "loc_h2": "Ubicación",
+  "loc_intro": "Con su permiso, las apps leen la ubicación del teléfono <strong>solo mientras la app está abierta en la pantalla</strong>. La ubicación no se rastrea en segundo plano. Se usa para:",
+  "l1": "mostrar su dirección actual debajo del Botón de llamada;",
+  "l2": "agregar su dirección, su posición GPS y enlaces de mapas a un mensaje de ayuda que usted decide enviar;",
+  "l3": "en QUICKREACH KIDS, mostrar cuándo su hijo está en una Zona Segura.",
+  "loc_after": "Para convertir una posición GPS en una dirección, el teléfono usa su servicio de mapas integrado (Apple en el iPhone, Google en los dispositivos Android). Su ubicación nunca se nos envía.",
+  "health_h2": "Apple Salud y fotos",
+  "h_health": "<strong>Apple Salud:</strong> si usted lo permite, las apps leen de Apple Salud su fecha de nacimiento, sexo, tipo de sangre, uso de silla de ruedas y medicamentos para completar el ID de Salud. Las apps nunca escriben en Apple Salud. La información de salud nunca se usa para publicidad ni marketing y nunca se comparte con nadie, salvo en un mensaje de ayuda que usted envía.",
+  "h_photos": "<strong>Fotos:</strong> si usted lo permite, puede elegir una foto para el ID de Salud, y las apps pueden guardar una imagen de su código de recuperación en Fotos. Las apps no leen ninguna otra foto.",
+  "leaves_h2": "Cuándo sale información de su teléfono",
+  "leaves_intro": "La información sale de su teléfono solo en estos casos:",
+  "v1": "<strong>Las llamadas y mensajes que usted hace.</strong> El Botón de llamada llama al contacto que usted configuró. Un mensaje de ayuda, con su dirección, enlaces de mapas y, si usted lo elige, datos del ID de Salud, sale por la app Mensajes del teléfono solo después de que usted toca Enviar. Las llamadas y los mensajes los gestionan su operador telefónico, Apple y los destinatarios.",
+  "v2": "<strong>Su código de recuperación.</strong> Durante la configuración, usted elige un número de teléfono o un correo para el código de recuperación del PIN. La app abre Mensajes o Mail con el código, y usted lo envía.",
+  "v3": "<strong>Consulta de la hora en internet.</strong> Cuando hay un restablecimiento del PIN en espera, la app pregunta la hora actual a apple.com o google.com. Es una consulta web básica, sin información personal.",
+  "v4": "<strong>Búsqueda de lugares</strong> (QUICKREACH KIDS). Cuando un adulto agrega una Zona Segura, la zona del mapa se envía a Apple Mapas, el servicio de mapas integrado del teléfono, para mostrar lugares cercanos como escuelas y parques. Cuando el adulto escribe un lugar o una dirección, las palabras buscadas y la zona del mapa se envían a Photon (photon.komoot.io), un servicio gratuito de búsqueda de OpenStreetMap, o, si no está disponible, a Nominatim (nominatim.openstreetmap.org). No se envía a ninguno de ellos ningún nombre, contacto ni dato de cuenta.",
+  "v5": "<strong>Actualizaciones de la app.</strong> Las apps consultan el servicio de actualizaciones de Expo para recibir correcciones. Esto envía la versión de la app y el sistema del teléfono, no información personal.",
+  "kids_h2": "Privacidad de los niños (QUICKREACH KIDS)",
+  "kids_intro": "QUICKREACH KIDS está pensada para que la configure un padre, una madre o un tutor legal en el teléfono de un niño. Tomamos en serio la privacidad de los niños y cumplimos con la Ley de Protección de la Privacidad Infantil en Línea de EE. UU. (COPPA) y leyes similares.",
+  "c1": "No recopilamos información personal de los niños. El nombre, el ID de Salud, los lugares y la ubicación de un niño se quedan en el teléfono.",
+  "c2": "La ubicación de un niño solo se comparte en un mensaje que se envía desde el teléfono a los familiares y cuidadores que configuró el padre o la madre. Cuando un adulto agrega una Zona Segura, se usa la búsqueda de lugares descrita arriba.",
+  "c3": "No hay anuncios, ni análisis, ni compras dentro de la app, ni chat con desconocidos, ni cuenta.",
+  "c4": "El PIN del padre o la madre protege los contactos, el ID de Salud, las Zonas Seguras y el idioma, y es necesario para abrir esta política en la web desde la app.",
+  "c5": "El padre o la madre puede revisar, cambiar o eliminar la información del niño en cualquier momento en la app, o eliminando la app.",
+  "consent_h2": "Consentimiento, conservación y eliminación",
+  "cn1": "QUICKREACH solo debe usarse con el acuerdo de la persona que usa el teléfono, configurada por ella misma o por su tutor legal.",
+  "cn2": "Puede revisar esta información o <strong>retirar el consentimiento</strong> en cualquier momento con el botón <strong>ⓘ</strong> en la parte superior de la pantalla (se necesita el PIN).",
+  "cn3": "La información se queda en el teléfono hasta que usted la cambie, retire el consentimiento o elimine la app. Al eliminar la app se borra todo lo que guardó en el teléfono. Los mensajes que ya envió se quedan en los teléfonos de los destinatarios. Como no recibimos ni guardamos su información, no tenemos nada que eliminar de nuestro lado. Si tiene alguna pregunta sobre sus datos, contáctenos.",
+  "site_h2": "Este sitio web",
+  "site_p": "QUICKREACH.COM no tiene formularios de registro, publicidad ni análisis. Nuestro proveedor de alojamiento puede guardar registros estándar del servidor, como la dirección IP y el tipo de navegador, por seguridad.",
+  "changes_h2": "Cambios en esta política",
+  "changes_p": "Si cambiamos la forma en que las apps manejan la información, actualizaremos esta página y la fecha de vigencia de arriba antes de que el cambio llegue a las apps.",
+  "contact_h2": "Contacto",
+  "contact_p": "Preguntas sobre privacidad, o solicitudes de un padre o una madre sobre la información de un niño:",
+  "dt_email": "Correo",
+  "dt_phone": "Teléfono",
+  "dt_web": "Web",
+  "foot_home": "Inicio",
+  "foot_support": "Ayuda",
+  "foot_terms": "Condiciones de uso (EULA)",
+  "english_note": "Esta es una traducción. Si hay alguna diferencia, prevalece la versión en inglés."
+ },
+ "fr": {
+  "title": "Politique de confidentialité de QUICKREACH",
+  "nav_home": "Accueil",
+  "nav_support": "Assistance",
+  "lang_label": "Langue",
+  "eyebrow": "Politique de confidentialité",
+  "h1": "Politique de confidentialité de QUICKREACH et QUICKREACH KIDS",
+  "effective": "En vigueur depuis le 8 novembre 2026",
+  "toc_short": "En bref",
+  "toc_stored": "Sur votre téléphone",
+  "toc_location": "Position",
+  "toc_health": "Apple Santé et photos",
+  "toc_leaves": "Quand des informations quittent le téléphone",
+  "toc_kids": "Enfants",
+  "toc_consent": "Consentement et suppression",
+  "toc_contact": "Contact",
+  "short_h2": "En bref",
+  "k1": "<strong>Aucun compte.</strong> Vous n'avez jamais besoin de vous inscrire ni de vous connecter.",
+  "k2": "<strong>Nous ne collectons pas vos informations.</strong> Ce que vous saisissez reste sur votre téléphone. Nous n'avons aucun serveur qui les reçoit.",
+  "k3": "<strong>Vous décidez de ce qui est partagé.</strong> Des informations quittent le téléphone quand vous passez un appel ou envoyez un message, ainsi que lors des quelques recherches indiquées ci-dessous.",
+  "k4": "<strong>Ni publicité, ni statistiques, ni suivi.</strong> Nous ne vendons ni ne louons aucune information, et les apps ne contiennent aucun outil de publicité ou de statistiques.",
+  "covers": "Cette politique s'applique aux apps QUICKREACH et QUICKREACH KIDS pour iPhone et Apple Watch (ensemble, « les apps ») et à ce site web.",
+  "stored_h2": "Ce que les apps conservent sur votre téléphone",
+  "stored_intro": "Les apps enregistrent les éléments suivants uniquement sur votre appareil, pour que le Bouton d'appel et l'ID Santé fonctionnent sans connexion internet :",
+  "s1": "<strong>Les contacts que vous ajoutez :</strong> noms et numéros de téléphone des personnes que le Bouton d'appel appelle et à qui il envoie des messages.",
+  "s2": "<strong>ID Santé :</strong> nom, date de naissance ou âge, sexe, groupe sanguin, utilisation d'un fauteuil roulant, médicaments, allergies, problèmes de santé, notes, contacts d'urgence et une photo facultative.",
+  "s3": "<strong>Zones sûres</strong> (QUICKREACH KIDS) : les noms et adresses des lieux que vous enregistrez, comme Maison et École.",
+  "s4": "<strong>Votre code PIN et vos réglages :</strong> le code PIN est conservé dans le stockage sécurisé du téléphone. Les réglages comprennent la langue et les contacts activés.",
+  "stored_after": "Les apps ne placent pas ces informations dans iCloud Drive ni dans aucun autre service cloud. L'app Apple Watch et les widgets reçoivent le contact du Bouton d'appel directement depuis l'iPhone.",
+  "loc_h2": "Position",
+  "loc_intro": "Avec votre autorisation, les apps lisent la position du téléphone <strong>uniquement quand l'app est ouverte à l'écran</strong>. La position n'est pas suivie en arrière-plan. Elle sert à :",
+  "l1": "afficher votre adresse actuelle sous le Bouton d'appel ;",
+  "l2": "ajouter votre adresse, votre position GPS et des liens de cartes à un message d'aide que vous choisissez d'envoyer ;",
+  "l3": "dans QUICKREACH KIDS, indiquer quand votre enfant est dans une Zone sûre.",
+  "loc_after": "Pour transformer une position GPS en adresse, le téléphone utilise son service de cartes intégré (Apple sur iPhone, Google sur les appareils Android). Votre position ne nous est jamais envoyée.",
+  "health_h2": "Apple Santé et photos",
+  "h_health": "<strong>Apple Santé :</strong> si vous l'autorisez, les apps lisent dans Apple Santé votre date de naissance, votre sexe, votre groupe sanguin, l'utilisation d'un fauteuil roulant et vos médicaments pour remplir l'ID Santé. Les apps n'écrivent jamais dans Apple Santé. Les données de santé ne sont jamais utilisées pour la publicité ou le marketing et ne sont jamais partagées, sauf dans un message d'aide que vous envoyez.",
+  "h_photos": "<strong>Photos :</strong> si vous l'autorisez, vous pouvez choisir une photo pour l'ID Santé, et les apps peuvent enregistrer une image de votre code de récupération dans Photos. Les apps ne lisent aucune autre photo.",
+  "leaves_h2": "Quand des informations quittent votre téléphone",
+  "leaves_intro": "Des informations quittent votre téléphone uniquement dans ces cas :",
+  "v1": "<strong>Les appels et messages que vous faites.</strong> Le Bouton d'appel appelle le contact que vous avez choisi. Un message d'aide, avec votre adresse, des liens de cartes et, si vous le souhaitez, des informations de l'ID Santé, passe par l'app Messages du téléphone seulement après que vous avez touché Envoyer. Les appels et messages sont gérés par votre opérateur, Apple et les destinataires.",
+  "v2": "<strong>Votre code de récupération.</strong> Pendant la configuration, vous choisissez un numéro de téléphone ou une adresse e-mail pour le code de récupération de votre code PIN. L'app ouvre Messages ou Mail avec le code, et c'est vous qui l'envoyez.",
+  "v3": "<strong>Vérification de l'heure sur internet.</strong> Quand une réinitialisation du code PIN est en attente, l'app demande l'heure actuelle à apple.com ou google.com. C'est une simple requête web, sans information personnelle.",
+  "v4": "<strong>Recherche de lieux</strong> (QUICKREACH KIDS). Quand un adulte ajoute une Zone sûre, la zone de la carte est envoyée à Plans d'Apple, le service de cartes intégré du téléphone, pour afficher les lieux proches comme les écoles et les parcs. Quand l'adulte tape un lieu ou une adresse, les mots recherchés et la zone de la carte sont envoyés à Photon (photon.komoot.io), un service de recherche gratuit d'OpenStreetMap, ou, s'il est indisponible, à Nominatim (nominatim.openstreetmap.org). Aucun nom, contact ou information de compte ne leur est envoyé.",
+  "v5": "<strong>Mises à jour de l'app.</strong> Les apps consultent le service de mises à jour d'Expo pour recevoir des correctifs. Cela envoie la version de l'app et le système du téléphone, pas d'informations personnelles.",
+  "kids_h2": "Confidentialité des enfants (QUICKREACH KIDS)",
+  "kids_intro": "QUICKREACH KIDS est conçue pour être configurée par un parent ou un tuteur légal sur le téléphone d'un enfant. Nous prenons la confidentialité des enfants au sérieux et respectons la loi américaine sur la protection de la vie privée des enfants en ligne (COPPA) et les lois similaires.",
+  "c1": "Nous ne collectons aucune information personnelle auprès des enfants. Le nom, l'ID Santé, les lieux et la position d'un enfant restent sur le téléphone.",
+  "c2": "La position d'un enfant n'est partagée que dans un message envoyé depuis le téléphone aux membres de la famille et aux personnes de confiance choisis par le parent. Quand un adulte ajoute une Zone sûre, la recherche de lieux décrite ci-dessus est utilisée.",
+  "c3": "Il n'y a ni publicité, ni statistiques, ni achats intégrés, ni discussion avec des inconnus, ni compte.",
+  "c4": "Le code PIN du parent protège les contacts, l'ID Santé, les Zones sûres et la langue, et il est nécessaire pour ouvrir cette politique sur le web depuis l'app.",
+  "c5": "Un parent peut consulter, modifier ou supprimer les informations de l'enfant à tout moment dans l'app, ou en supprimant l'app.",
+  "consent_h2": "Consentement, conservation et suppression",
+  "cn1": "QUICKREACH ne doit être utilisée qu'avec l'accord de la personne qui utilise le téléphone, configurée par elle-même ou par son tuteur légal.",
+  "cn2": "Vous pouvez consulter ces informations ou <strong>retirer votre consentement</strong> à tout moment avec le bouton <strong>ⓘ</strong> en haut de l'écran (le code PIN est nécessaire).",
+  "cn3": "Les informations restent sur le téléphone jusqu'à ce que vous les modifiiez, retiriez votre consentement ou supprimiez l'app. Supprimer l'app efface tout ce qu'elle a enregistré sur le téléphone. Les messages déjà envoyés restent sur les téléphones des destinataires. Comme nous ne recevons ni ne conservons vos informations, nous n'avons rien à supprimer de notre côté. Pour toute question sur vos données, contactez-nous.",
+  "site_h2": "Ce site web",
+  "site_p": "QUICKREACH.COM n'a ni formulaire d'inscription, ni publicité, ni statistiques. Notre hébergeur peut conserver des journaux de serveur standard, comme l'adresse IP et le type de navigateur, pour la sécurité.",
+  "changes_h2": "Modifications de cette politique",
+  "changes_p": "Si nous modifions la façon dont les apps traitent les informations, nous mettrons à jour cette page et la date d'entrée en vigueur ci-dessus avant que la modification n'arrive dans les apps.",
+  "contact_h2": "Contact",
+  "contact_p": "Questions sur la confidentialité, ou demande d'un parent concernant les informations d'un enfant :",
+  "dt_email": "E-mail",
+  "dt_phone": "Téléphone",
+  "dt_web": "Web",
+  "foot_home": "Accueil",
+  "foot_support": "Assistance",
+  "foot_terms": "Conditions d'utilisation (EULA)",
+  "english_note": "Ceci est une traduction. En cas de différence, la version anglaise fait foi."
+ },
+ "de": {
+  "title": "QUICKREACH Datenschutzerklärung",
+  "nav_home": "Start",
+  "nav_support": "Hilfe",
+  "lang_label": "Sprache",
+  "eyebrow": "Datenschutzerklärung",
+  "h1": "Datenschutzerklärung für QUICKREACH und QUICKREACH KIDS",
+  "effective": "Gültig ab 8. November 2026",
+  "toc_short": "Kurz gesagt",
+  "toc_stored": "Auf Ihrem Telefon",
+  "toc_location": "Standort",
+  "toc_health": "Apple Health und Fotos",
+  "toc_leaves": "Wann Daten das Telefon verlassen",
+  "toc_kids": "Kinder",
+  "toc_consent": "Einwilligung und Löschen",
+  "toc_contact": "Kontakt",
+  "short_h2": "Kurz gesagt",
+  "k1": "<strong>Kein Konto.</strong> Sie müssen sich nie registrieren oder anmelden.",
+  "k2": "<strong>Wir erheben Ihre Daten nicht.</strong> Was Sie eingeben, bleibt auf Ihrem Telefon. Wir haben keinen Server, der es empfängt.",
+  "k3": "<strong>Sie entscheiden, was geteilt wird.</strong> Daten verlassen das Telefon, wenn Sie anrufen oder eine Nachricht senden, sowie bei den wenigen unten genannten Abfragen.",
+  "k4": "<strong>Keine Werbung, keine Analyse, kein Tracking.</strong> Wir verkaufen oder vermieten keine Daten, und die Apps enthalten keine Werbe- oder Analysewerkzeuge.",
+  "covers": "Diese Erklärung gilt für die Apps QUICKREACH und QUICKREACH KIDS für iPhone und Apple Watch (zusammen „die Apps“) und für diese Website.",
+  "stored_h2": "Was die Apps auf Ihrem Telefon speichern",
+  "stored_intro": "Die Apps speichern Folgendes nur auf Ihrem Gerät, damit die Anruftaste und die Health-ID ohne Internetverbindung funktionieren:",
+  "s1": "<strong>Kontakte, die Sie hinzufügen:</strong> Namen und Telefonnummern der Personen, die die Anruftaste anruft und denen sie schreibt.",
+  "s2": "<strong>Health-ID:</strong> Name, Geburtsdatum oder Alter, Geschlecht, Blutgruppe, Rollstuhlnutzung, Medikamente, Allergien, Erkrankungen, Notizen, Notfallkontakte und ein optionales Foto.",
+  "s3": "<strong>Sichere Zonen</strong> (QUICKREACH KIDS): die Namen und Adressen der Orte, die Sie speichern, zum Beispiel Zuhause und Schule.",
+  "s4": "<strong>Ihre PIN und Einstellungen:</strong> Die PIN wird im sicheren Speicher des Telefons aufbewahrt. Zu den Einstellungen gehören die Sprache und welche Kontakte aktiv sind.",
+  "stored_after": "Die Apps legen diese Daten nicht in iCloud Drive oder einem anderen Cloud-Dienst ab. Die Apple-Watch-App und die Widgets erhalten den Kontakt der Anruftaste direkt vom iPhone.",
+  "loc_h2": "Standort",
+  "loc_intro": "Mit Ihrer Erlaubnis lesen die Apps den Standort des Telefons <strong>nur, solange die App auf dem Bildschirm geöffnet ist</strong>. Der Standort wird nicht im Hintergrund verfolgt. Er wird verwendet, um:",
+  "l1": "Ihre aktuelle Adresse unter der Anruftaste anzuzeigen;",
+  "l2": "Ihre Adresse, Ihre GPS-Position und Kartenlinks zu einer Hilfenachricht hinzuzufügen, die Sie senden möchten;",
+  "l3": "in QUICKREACH KIDS anzuzeigen, wann Ihr Kind in einer Sicheren Zone ist.",
+  "loc_after": "Um eine GPS-Position in eine Adresse umzuwandeln, nutzt das Telefon seinen eingebauten Kartendienst (Apple auf dem iPhone, Google auf Android-Geräten). Ihr Standort wird nie an uns gesendet.",
+  "health_h2": "Apple Health und Fotos",
+  "h_health": "<strong>Apple Health:</strong> Wenn Sie es erlauben, lesen die Apps Ihr Geburtsdatum, Geschlecht, Ihre Blutgruppe, Rollstuhlnutzung und Medikamente aus Apple Health, um die Health-ID auszufüllen. Die Apps schreiben nie in Apple Health. Gesundheitsdaten werden nie für Werbung oder Marketing verwendet und nie weitergegeben, außer in einer Hilfenachricht, die Sie senden.",
+  "h_photos": "<strong>Fotos:</strong> Wenn Sie es erlauben, können Sie ein Foto für die Health-ID auswählen, und die Apps können ein Bild Ihres Wiederherstellungscodes in Fotos speichern. Die Apps lesen keine anderen Fotos.",
+  "leaves_h2": "Wann Daten Ihr Telefon verlassen",
+  "leaves_intro": "Daten verlassen Ihr Telefon nur in diesen Fällen:",
+  "v1": "<strong>Anrufe und Nachrichten, die Sie tätigen.</strong> Die Anruftaste ruft den Kontakt an, den Sie festgelegt haben. Eine Hilfenachricht mit Ihrer Adresse, Kartenlinks und, wenn Sie möchten, Angaben aus der Health-ID wird erst über die Nachrichten-App des Telefons gesendet, nachdem Sie auf Senden getippt haben. Anrufe und Nachrichten werden von Ihrem Mobilfunkanbieter, Apple und den Empfängern abgewickelt.",
+  "v2": "<strong>Ihr Wiederherstellungscode.</strong> Bei der Einrichtung wählen Sie eine Telefonnummer oder E-Mail-Adresse für den Wiederherstellungscode Ihrer PIN. Die App öffnet Nachrichten oder Mail mit dem Code, und Sie senden ihn.",
+  "v3": "<strong>Zeitabfrage im Internet.</strong> Wenn eine PIN-Zurücksetzung wartet, fragt die App bei apple.com oder google.com die aktuelle Uhrzeit ab. Das ist eine einfache Webanfrage ohne persönliche Daten.",
+  "v4": "<strong>Ortssuche</strong> (QUICKREACH KIDS). Wenn ein Erwachsener eine Sichere Zone hinzufügt, wird der Kartenausschnitt an Apple Karten, den eingebauten Kartendienst des Telefons, gesendet, um Orte in der Nähe wie Schulen und Parks anzuzeigen. Wenn der Erwachsene einen Ort oder eine Adresse eintippt, werden die Suchbegriffe und der Kartenausschnitt an Photon (photon.komoot.io), einen kostenlosen OpenStreetMap-Suchdienst, gesendet oder, falls dieser nicht erreichbar ist, an Nominatim (nominatim.openstreetmap.org). Es werden keine Namen, Kontakte oder Kontodaten an sie gesendet.",
+  "v5": "<strong>App-Updates.</strong> Die Apps prüfen beim Update-Dienst von Expo auf Korrekturen. Dabei werden die App-Version und die Plattform des Telefons gesendet, keine persönlichen Daten.",
+  "kids_h2": "Datenschutz für Kinder (QUICKREACH KIDS)",
+  "kids_intro": "QUICKREACH KIDS ist dafür gedacht, von einem Elternteil oder Erziehungsberechtigten auf dem Telefon eines Kindes eingerichtet zu werden. Wir nehmen den Datenschutz von Kindern ernst und halten uns an das US-Gesetz zum Schutz der Privatsphäre von Kindern im Internet (COPPA) und vergleichbare Gesetze.",
+  "c1": "Wir erheben keine personenbezogenen Daten von Kindern. Name, Health-ID, Orte und Standort eines Kindes bleiben auf dem Telefon.",
+  "c2": "Der Standort eines Kindes wird nur in einer Nachricht geteilt, die vom Telefon an die Familienmitglieder und Helfer gesendet wird, die die Eltern eingerichtet haben. Wenn ein Erwachsener eine Sichere Zone hinzufügt, wird die oben beschriebene Ortssuche verwendet.",
+  "c3": "Es gibt keine Werbung, keine Analyse, keine In-App-Käufe, keinen Chat mit Fremden und kein Konto.",
+  "c4": "Die PIN der Eltern schützt Kontakte, die Health-ID, die Sicheren Zonen und die Sprache und wird benötigt, um diese Erklärung aus der App im Web zu öffnen.",
+  "c5": "Eltern können die Daten des Kindes jederzeit in der App ansehen, ändern oder löschen, oder indem sie die App löschen.",
+  "consent_h2": "Einwilligung, Aufbewahrung und Löschen",
+  "cn1": "QUICKREACH sollte nur mit dem Einverständnis der Person verwendet werden, die das Telefon nutzt, und von ihr selbst oder ihrem gesetzlichen Vertreter eingerichtet werden.",
+  "cn2": "Sie können diese Informationen jederzeit ansehen oder Ihre <strong>Einwilligung widerrufen</strong>, mit der Taste <strong>ⓘ</strong> oben auf dem Bildschirm (die PIN wird benötigt).",
+  "cn3": "Die Daten bleiben auf dem Telefon, bis Sie sie ändern, Ihre Einwilligung widerrufen oder die App löschen. Wenn Sie die App löschen, wird alles entfernt, was sie auf dem Telefon gespeichert hat. Bereits gesendete Nachrichten bleiben auf den Telefonen der Empfänger. Da wir Ihre Daten weder empfangen noch speichern, gibt es bei uns nichts zu löschen. Bei Fragen zu Ihren Daten kontaktieren Sie uns.",
+  "site_h2": "Diese Website",
+  "site_p": "QUICKREACH.COM hat keine Anmeldeformulare, keine Werbung und keine Analyse. Unser Webhoster kann aus Sicherheitsgründen übliche Serverprotokolle speichern, etwa IP-Adresse und Browsertyp.",
+  "changes_h2": "Änderungen dieser Erklärung",
+  "changes_p": "Wenn wir ändern, wie die Apps mit Daten umgehen, aktualisieren wir diese Seite und das Gültigkeitsdatum oben, bevor die Änderung in die Apps kommt.",
+  "contact_h2": "Kontakt",
+  "contact_p": "Fragen zum Datenschutz oder Anfragen von Eltern zu den Daten eines Kindes:",
+  "dt_email": "E-Mail",
+  "dt_phone": "Telefon",
+  "dt_web": "Web",
+  "foot_home": "Start",
+  "foot_support": "Hilfe",
+  "foot_terms": "Nutzungsbedingungen (EULA)",
+  "english_note": "Dies ist eine Übersetzung. Bei Abweichungen gilt die englische Fassung."
+ },
+ "it": {
+  "title": "Informativa sulla privacy di QUICKREACH",
+  "nav_home": "Home",
+  "nav_support": "Assistenza",
+  "lang_label": "Lingua",
+  "eyebrow": "Informativa sulla privacy",
+  "h1": "Informativa sulla privacy di QUICKREACH e QUICKREACH KIDS",
+  "effective": "In vigore dall'8 novembre 2026",
+  "toc_short": "In breve",
+  "toc_stored": "Sul tuo telefono",
+  "toc_location": "Posizione",
+  "toc_health": "Apple Salute e foto",
+  "toc_leaves": "Quando le informazioni lasciano il telefono",
+  "toc_kids": "Bambini",
+  "toc_consent": "Consenso ed eliminazione",
+  "toc_contact": "Contatti",
+  "short_h2": "In breve",
+  "k1": "<strong>Nessun account.</strong> Non devi mai registrarti né accedere.",
+  "k2": "<strong>Non raccogliamo le tue informazioni.</strong> Ciò che inserisci resta sul tuo telefono. Non abbiamo alcun server che le riceve.",
+  "k3": "<strong>Decidi tu cosa condividere.</strong> Le informazioni lasciano il telefono quando fai una chiamata o invii un messaggio, oltre alle poche ricerche elencate sotto.",
+  "k4": "<strong>Niente pubblicità, statistiche o tracciamento.</strong> Non vendiamo né affittiamo informazioni, e le app non contengono strumenti di pubblicità o di analisi.",
+  "covers": "Questa informativa riguarda le app QUICKREACH e QUICKREACH KIDS per iPhone e Apple Watch (insieme, \"le app\") e questo sito web.",
+  "stored_h2": "Cosa conservano le app sul tuo telefono",
+  "stored_intro": "Le app salvano quanto segue solo sul tuo dispositivo, così il Tasto chiamata e l'ID Salute funzionano anche senza connessione internet:",
+  "s1": "<strong>I contatti che aggiungi:</strong> nomi e numeri di telefono delle persone che il Tasto chiamata chiama e a cui invia messaggi.",
+  "s2": "<strong>ID Salute:</strong> nome, data di nascita o età, sesso, gruppo sanguigno, uso della sedia a rotelle, farmaci, allergie, condizioni mediche, note, contatti di emergenza e una foto facoltativa.",
+  "s3": "<strong>Zone sicure</strong> (QUICKREACH KIDS): i nomi e gli indirizzi dei luoghi che salvi, come Casa e Scuola.",
+  "s4": "<strong>Il tuo PIN e le impostazioni:</strong> il PIN è conservato nella memoria sicura del telefono. Le impostazioni includono la lingua e quali contatti sono attivi.",
+  "stored_after": "Le app non mettono queste informazioni in iCloud Drive né in altri servizi cloud. L'app per Apple Watch e i widget ricevono il contatto del Tasto chiamata direttamente dall'iPhone.",
+  "loc_h2": "Posizione",
+  "loc_intro": "Con il tuo permesso, le app leggono la posizione del telefono <strong>solo mentre l'app è aperta sullo schermo</strong>. La posizione non viene tracciata in background. Viene usata per:",
+  "l1": "mostrare il tuo indirizzo attuale sotto il Tasto chiamata;",
+  "l2": "aggiungere il tuo indirizzo, la posizione GPS e i link alle mappe a un messaggio di aiuto che scegli di inviare;",
+  "l3": "in QUICKREACH KIDS, mostrare quando tuo figlio è in una Zona sicura.",
+  "loc_after": "Per trasformare una posizione GPS in un indirizzo, il telefono usa il suo servizio di mappe integrato (Apple su iPhone, Google sui dispositivi Android). La tua posizione non ci viene mai inviata.",
+  "health_h2": "Apple Salute e foto",
+  "h_health": "<strong>Apple Salute:</strong> se lo consenti, le app leggono da Apple Salute la tua data di nascita, il sesso, il gruppo sanguigno, l'uso della sedia a rotelle e i farmaci per compilare l'ID Salute. Le app non scrivono mai in Apple Salute. Le informazioni sulla salute non vengono mai usate per pubblicità o marketing e non vengono mai condivise, tranne in un messaggio di aiuto che invii tu.",
+  "h_photos": "<strong>Foto:</strong> se lo consenti, puoi scegliere una foto per l'ID Salute, e le app possono salvare un'immagine del tuo codice di recupero in Foto. Le app non leggono nessun'altra foto.",
+  "leaves_h2": "Quando le informazioni lasciano il tuo telefono",
+  "leaves_intro": "Le informazioni lasciano il tuo telefono solo in questi casi:",
+  "v1": "<strong>Le chiamate e i messaggi che fai.</strong> Il Tasto chiamata chiama il contatto che hai impostato. Un messaggio di aiuto, con il tuo indirizzo, i link alle mappe e, se lo scegli, i dati dell'ID Salute, passa dall'app Messaggi del telefono solo dopo che hai toccato Invia. Chiamate e messaggi sono gestiti dal tuo operatore, da Apple e dai destinatari.",
+  "v2": "<strong>Il tuo codice di recupero.</strong> Durante la configurazione scegli un numero di telefono o un indirizzo email per il codice di recupero del PIN. L'app apre Messaggi o Mail con il codice, e sei tu a inviarlo.",
+  "v3": "<strong>Controllo dell'ora su internet.</strong> Quando è in attesa un ripristino del PIN, l'app chiede l'ora attuale ad apple.com o google.com. È una semplice richiesta web, senza informazioni personali.",
+  "v4": "<strong>Ricerca di luoghi</strong> (QUICKREACH KIDS). Quando un adulto aggiunge una Zona sicura, l'area della mappa viene inviata ad Apple Mappe, il servizio di mappe integrato del telefono, per mostrare luoghi vicini come scuole e parchi. Quando l'adulto digita un luogo o un indirizzo, le parole cercate e l'area della mappa vengono inviate a Photon (photon.komoot.io), un servizio di ricerca gratuito di OpenStreetMap, oppure, se non è raggiungibile, a Nominatim (nominatim.openstreetmap.org). Non viene inviato a nessuno di loro alcun nome, contatto o dato dell'account.",
+  "v5": "<strong>Aggiornamenti dell'app.</strong> Le app controllano il servizio di aggiornamenti di Expo per ricevere correzioni. Questo invia la versione dell'app e la piattaforma del telefono, non informazioni personali.",
+  "kids_h2": "Privacy dei bambini (QUICKREACH KIDS)",
+  "kids_intro": "QUICKREACH KIDS è pensata per essere configurata da un genitore o tutore legale sul telefono di un bambino. Prendiamo sul serio la privacy dei bambini e rispettiamo la legge statunitense sulla protezione della privacy dei minori online (COPPA) e leggi simili.",
+  "c1": "Non raccogliamo informazioni personali dai bambini. Il nome, l'ID Salute, i luoghi e la posizione di un bambino restano sul telefono.",
+  "c2": "La posizione di un bambino viene condivisa solo in un messaggio inviato dal telefono ai familiari e alle persone di fiducia scelti dal genitore. Quando un adulto aggiunge una Zona sicura, viene usata la ricerca di luoghi descritta sopra.",
+  "c3": "Non ci sono pubblicità, statistiche, acquisti in-app, chat con sconosciuti né account.",
+  "c4": "Il PIN del genitore protegge i contatti, l'ID Salute, le Zone sicure e la lingua, ed è necessario per aprire questa informativa sul web dall'app.",
+  "c5": "Un genitore può vedere, modificare o eliminare le informazioni del bambino in qualsiasi momento nell'app, oppure eliminando l'app.",
+  "consent_h2": "Consenso, conservazione ed eliminazione",
+  "cn1": "QUICKREACH deve essere usata solo con l'accordo della persona che usa il telefono, configurata da lei stessa o dal suo tutore legale.",
+  "cn2": "Puoi rivedere queste informazioni o <strong>revocare il consenso</strong> in qualsiasi momento con il pulsante <strong>ⓘ</strong> in alto sullo schermo (serve il PIN).",
+  "cn3": "Le informazioni restano sul telefono finché non le modifichi, revochi il consenso o elimini l'app. Eliminando l'app si cancella tutto ciò che ha salvato sul telefono. I messaggi già inviati restano sui telefoni dei destinatari. Poiché non riceviamo né conserviamo le tue informazioni, da parte nostra non c'è nulla da eliminare. Per domande sui tuoi dati, contattaci.",
+  "site_h2": "Questo sito web",
+  "site_p": "QUICKREACH.COM non ha moduli di registrazione, pubblicità né statistiche. Il nostro provider di hosting può conservare i normali log del server, come l'indirizzo IP e il tipo di browser, per motivi di sicurezza.",
+  "changes_h2": "Modifiche a questa informativa",
+  "changes_p": "Se cambiamo il modo in cui le app gestiscono le informazioni, aggiorneremo questa pagina e la data di entrata in vigore indicata sopra prima che la modifica arrivi nelle app.",
+  "contact_h2": "Contatti",
+  "contact_p": "Domande sulla privacy, o richieste di un genitore sulle informazioni di un bambino:",
+  "dt_email": "Email",
+  "dt_phone": "Telefono",
+  "dt_web": "Web",
+  "foot_home": "Home",
+  "foot_support": "Assistenza",
+  "foot_terms": "Condizioni d'uso (EULA)",
+  "english_note": "Questa è una traduzione. In caso di differenze, prevale la versione inglese."
+ },
+ "pt": {
+  "title": "Política de Privacidade do QUICKREACH",
+  "nav_home": "Início",
+  "nav_support": "Suporte",
+  "lang_label": "Idioma",
+  "eyebrow": "Política de Privacidade",
+  "h1": "Política de Privacidade do QUICKREACH e do QUICKREACH KIDS",
+  "effective": "Em vigor desde 8 de novembro de 2026",
+  "toc_short": "Resumo",
+  "toc_stored": "No seu telefone",
+  "toc_location": "Localização",
+  "toc_health": "Saúde da Apple e fotos",
+  "toc_leaves": "Quando informações saem do telefone",
+  "toc_kids": "Crianças",
+  "toc_consent": "Consentimento e exclusão",
+  "toc_contact": "Contato",
+  "short_h2": "Resumo",
+  "k1": "<strong>Sem conta.</strong> Você nunca precisa se cadastrar nem fazer login.",
+  "k2": "<strong>Não coletamos suas informações.</strong> O que você digita fica no seu telefone. Não temos nenhum servidor que as receba.",
+  "k3": "<strong>Você decide o que é compartilhado.</strong> As informações saem do telefone quando você faz uma ligação ou envia uma mensagem, além das poucas consultas listadas abaixo.",
+  "k4": "<strong>Sem anúncios, sem análises, sem rastreamento.</strong> Não vendemos nem alugamos informações, e os apps não têm ferramentas de publicidade nem de análise.",
+  "covers": "Esta política abrange os apps QUICKREACH e QUICKREACH KIDS para iPhone e Apple Watch (juntos, \"os apps\") e este site.",
+  "stored_h2": "O que os apps guardam no seu telefone",
+  "stored_intro": "Os apps salvam o seguinte apenas no seu aparelho, para que o Botão de chamada e o ID de Saúde funcionem sem conexão com a internet:",
+  "s1": "<strong>Os contatos que você adiciona:</strong> nomes e números de telefone das pessoas para quem o Botão de chamada liga e envia mensagens.",
+  "s2": "<strong>ID de Saúde:</strong> nome, data de nascimento ou idade, sexo, tipo sanguíneo, uso de cadeira de rodas, medicamentos, alergias, condições médicas, observações, contatos de emergência e uma foto opcional.",
+  "s3": "<strong>Zonas Seguras</strong> (QUICKREACH KIDS): os nomes e endereços dos lugares que você salva, como Casa e Escola.",
+  "s4": "<strong>Seu PIN e suas configurações:</strong> o PIN fica guardado no armazenamento seguro do telefone. As configurações incluem o idioma e quais contatos estão ativados.",
+  "stored_after": "Os apps não colocam essas informações no iCloud Drive nem em nenhum outro serviço na nuvem. O app do Apple Watch e os widgets recebem o contato do Botão de chamada diretamente do iPhone.",
+  "loc_h2": "Localização",
+  "loc_intro": "Com a sua permissão, os apps leem a localização do telefone <strong>somente enquanto o app está aberto na tela</strong>. A localização não é rastreada em segundo plano. Ela é usada para:",
+  "l1": "mostrar seu endereço atual abaixo do Botão de chamada;",
+  "l2": "adicionar seu endereço, sua posição GPS e links de mapas a uma mensagem de ajuda que você escolhe enviar;",
+  "l3": "no QUICKREACH KIDS, mostrar quando seu filho está em uma Zona Segura.",
+  "loc_after": "Para transformar uma posição GPS em um endereço, o telefone usa seu serviço de mapas integrado (Apple no iPhone, Google nos aparelhos Android). Sua localização nunca é enviada para nós.",
+  "health_h2": "Saúde da Apple e fotos",
+  "h_health": "<strong>Saúde da Apple:</strong> se você permitir, os apps leem do app Saúde sua data de nascimento, sexo, tipo sanguíneo, uso de cadeira de rodas e medicamentos para preencher o ID de Saúde. Os apps nunca gravam nada no app Saúde. As informações de saúde nunca são usadas para publicidade ou marketing e nunca são compartilhadas com ninguém, exceto em uma mensagem de ajuda que você envia.",
+  "h_photos": "<strong>Fotos:</strong> se você permitir, pode escolher uma foto para o ID de Saúde, e os apps podem salvar uma imagem do seu código de recuperação no app Fotos. Os apps não leem nenhuma outra foto.",
+  "leaves_h2": "Quando informações saem do seu telefone",
+  "leaves_intro": "As informações saem do seu telefone somente nestes casos:",
+  "v1": "<strong>Ligações e mensagens que você faz.</strong> O Botão de chamada liga para o contato que você definiu. Uma mensagem de ajuda, com seu endereço, links de mapas e, se você quiser, dados do ID de Saúde, sai pelo app Mensagens do telefone somente depois que você toca em Enviar. As ligações e mensagens são tratadas pela sua operadora, pela Apple e pelos destinatários.",
+  "v2": "<strong>Seu código de recuperação.</strong> Durante a configuração, você escolhe um número de telefone ou e-mail para o código de recuperação do PIN. O app abre o Mensagens ou o Mail com o código, e você o envia.",
+  "v3": "<strong>Consulta de horário na internet.</strong> Quando há uma redefinição de PIN aguardando, o app pergunta o horário atual a apple.com ou google.com. É uma consulta simples na web, sem informações pessoais.",
+  "v4": "<strong>Busca de lugares</strong> (QUICKREACH KIDS). Quando um adulto adiciona uma Zona Segura, a área do mapa é enviada ao Mapas da Apple, o serviço de mapas integrado do telefone, para mostrar lugares próximos, como escolas e parques. Quando o adulto digita um lugar ou um endereço, as palavras buscadas e a área do mapa são enviadas ao Photon (photon.komoot.io), um serviço gratuito de busca do OpenStreetMap, ou, se ele não estiver disponível, ao Nominatim (nominatim.openstreetmap.org). Nenhum nome, contato ou dado de conta é enviado a nenhum deles.",
+  "v5": "<strong>Atualizações do app.</strong> Os apps consultam o serviço de atualizações da Expo para receber correções. Isso envia a versão do app e o sistema do telefone, não informações pessoais.",
+  "kids_h2": "Privacidade das crianças (QUICKREACH KIDS)",
+  "kids_intro": "O QUICKREACH KIDS foi feito para ser configurado por um pai, uma mãe ou um responsável legal no telefone de uma criança. Levamos a privacidade das crianças a sério e seguimos a Lei de Proteção da Privacidade Online das Crianças dos EUA (COPPA) e leis semelhantes.",
+  "c1": "Não coletamos informações pessoais de crianças. O nome, o ID de Saúde, os lugares e a localização de uma criança ficam no telefone.",
+  "c2": "A localização de uma criança só é compartilhada em uma mensagem enviada do telefone para os familiares e cuidadores que o responsável configurou. Quando um adulto adiciona uma Zona Segura, é usada a busca de lugares descrita acima.",
+  "c3": "Não há anúncios, análises, compras no app, chat com desconhecidos nem conta.",
+  "c4": "O PIN do responsável protege os contatos, o ID de Saúde, as Zonas Seguras e o idioma, e é necessário para abrir esta política na web a partir do app.",
+  "c5": "O responsável pode ver, alterar ou apagar as informações da criança a qualquer momento no app, ou apagando o app.",
+  "consent_h2": "Consentimento, guarda e exclusão",
+  "cn1": "O QUICKREACH só deve ser usado com a concordância da pessoa que usa o telefone, configurado por ela mesma ou pelo seu responsável legal.",
+  "cn2": "Você pode rever estas informações ou <strong>retirar o consentimento</strong> a qualquer momento pelo botão <strong>ⓘ</strong> no topo da tela (é preciso o PIN).",
+  "cn3": "As informações ficam no telefone até você alterá-las, retirar o consentimento ou apagar o app. Apagar o app remove tudo o que ele salvou no telefone. As mensagens já enviadas ficam nos telefones dos destinatários. Como não recebemos nem guardamos suas informações, não temos nada para apagar do nosso lado. Se tiver alguma dúvida sobre seus dados, fale conosco.",
+  "site_h2": "Este site",
+  "site_p": "O QUICKREACH.COM não tem formulários de cadastro, publicidade nem análises. Nosso provedor de hospedagem pode manter registros padrão do servidor, como endereço IP e tipo de navegador, por segurança.",
+  "changes_h2": "Mudanças nesta política",
+  "changes_p": "Se mudarmos a forma como os apps tratam as informações, atualizaremos esta página e a data de vigência acima antes que a mudança chegue aos apps.",
+  "contact_h2": "Contato",
+  "contact_p": "Dúvidas sobre privacidade, ou pedidos de um responsável sobre as informações de uma criança:",
+  "dt_email": "E-mail",
+  "dt_phone": "Telefone",
+  "dt_web": "Site",
+  "foot_home": "Início",
+  "foot_support": "Suporte",
+  "foot_terms": "Termos de Uso (EULA)",
+  "english_note": "Esta é uma tradução. Em caso de diferença, prevalece a versão em inglês."
+ },
+ "hi": {
+  "title": "QUICKREACH गोपनीयता नीति",
+  "nav_home": "होम",
+  "nav_support": "सहायता",
+  "lang_label": "भाषा",
+  "eyebrow": "गोपनीयता नीति",
+  "h1": "QUICKREACH और QUICKREACH KIDS की गोपनीयता नीति",
+  "effective": "8 नवंबर 2026 से लागू",
+  "toc_short": "संक्षेप में",
+  "toc_stored": "आपके फ़ोन पर",
+  "toc_location": "लोकेशन",
+  "toc_health": "Apple Health और फ़ोटो",
+  "toc_leaves": "जानकारी फ़ोन से कब बाहर जाती है",
+  "toc_kids": "बच्चे",
+  "toc_consent": "सहमति और हटाना",
+  "toc_contact": "संपर्क",
+  "short_h2": "संक्षेप में",
+  "k1": "<strong>कोई अकाउंट नहीं।</strong> आपको कभी साइन अप या लॉग इन नहीं करना पड़ता।",
+  "k2": "<strong>हम आपकी जानकारी इकट्ठा नहीं करते।</strong> आप जो भी दर्ज करते हैं, वह आपके फ़ोन पर ही रहता है। हमारे पास कोई सर्वर नहीं है जो उसे प्राप्त करे।",
+  "k3": "<strong>क्या साझा होगा, यह आप तय करते हैं।</strong> जानकारी फ़ोन से तभी बाहर जाती है जब आप कॉल करते हैं या मैसेज भेजते हैं, और नीचे बताई गई कुछ खोजों में।",
+  "k4": "<strong>कोई विज्ञापन, कोई एनालिटिक्स, कोई ट्रैकिंग नहीं।</strong> हम कोई जानकारी बेचते या किराए पर नहीं देते, और ऐप्स में कोई विज्ञापन या एनालिटिक्स टूल नहीं है।",
+  "covers": "यह नीति iPhone और Apple Watch के लिए QUICKREACH और QUICKREACH KIDS ऐप्स (मिलकर, \"ऐप्स\") और इस वेबसाइट पर लागू होती है।",
+  "stored_h2": "ऐप्स आपके फ़ोन पर क्या रखते हैं",
+  "stored_intro": "ऐप्स नीचे दी गई जानकारी केवल आपके डिवाइस पर सेव करते हैं, ताकि कॉल बटन और हेल्थ ID इंटरनेट के बिना भी काम करें:",
+  "s1": "<strong>आपके जोड़े गए संपर्क:</strong> उन लोगों के नाम और फ़ोन नंबर जिन्हें कॉल बटन कॉल और मैसेज करता है।",
+  "s2": "<strong>हेल्थ ID:</strong> नाम, जन्मतिथि या उम्र, लिंग, ब्लड ग्रुप, व्हीलचेयर का उपयोग, दवाइयाँ, एलर्जी, बीमारियाँ, नोट्स, आपातकालीन संपर्क और एक वैकल्पिक फ़ोटो।",
+  "s3": "<strong>सुरक्षित ज़ोन</strong> (QUICKREACH KIDS): आपके सेव किए गए स्थानों के नाम और पते, जैसे घर और स्कूल।",
+  "s4": "<strong>आपका PIN और सेटिंग्स:</strong> PIN फ़ोन के सुरक्षित स्टोरेज में रखा जाता है। सेटिंग्स में भाषा और कौन से संपर्क चालू हैं, यह शामिल है।",
+  "stored_after": "ऐप्स यह जानकारी iCloud Drive या किसी अन्य क्लाउड सेवा में नहीं रखते। Apple Watch ऐप और विजेट्स को कॉल बटन का संपर्क सीधे iPhone से मिलता है।",
+  "loc_h2": "लोकेशन",
+  "loc_intro": "आपकी अनुमति से, ऐप्स फ़ोन की लोकेशन <strong>केवल तभी पढ़ते हैं जब ऐप स्क्रीन पर खुला हो</strong>। बैकग्राउंड में लोकेशन ट्रैक नहीं की जाती। इसका उपयोग इनके लिए होता है:",
+  "l1": "कॉल बटन के नीचे आपका मौजूदा पता दिखाना;",
+  "l2": "आपके द्वारा भेजे जाने वाले मदद के मैसेज में आपका पता, GPS लोकेशन और मैप लिंक जोड़ना;",
+  "l3": "QUICKREACH KIDS में, यह दिखाना कि आपका बच्चा सुरक्षित ज़ोन में कब है।",
+  "loc_after": "GPS लोकेशन को पते में बदलने के लिए फ़ोन अपनी बिल्ट-इन मैप सेवा का उपयोग करता है (iPhone पर Apple, Android डिवाइस पर Google)। आपकी लोकेशन कभी हमें नहीं भेजी जाती।",
+  "health_h2": "Apple Health और फ़ोटो",
+  "h_health": "<strong>Apple Health:</strong> आपकी अनुमति हो तो, ऐप्स हेल्थ ID भरने के लिए Apple Health से आपकी जन्मतिथि, लिंग, ब्लड ग्रुप, व्हीलचेयर का उपयोग और दवाइयाँ पढ़ते हैं। ऐप्स कभी Apple Health में कुछ नहीं लिखते। स्वास्थ्य जानकारी कभी विज्ञापन या मार्केटिंग के लिए उपयोग नहीं की जाती और किसी के साथ साझा नहीं की जाती, सिवाय उस मदद के मैसेज के जो आप खुद भेजते हैं।",
+  "h_photos": "<strong>फ़ोटो:</strong> आपकी अनुमति हो तो, आप हेल्थ ID के लिए एक फ़ोटो चुन सकते हैं, और ऐप्स आपके रिकवरी कोड की तस्वीर Photos में सेव कर सकते हैं। ऐप्स कोई अन्य फ़ोटो नहीं पढ़ते।",
+  "leaves_h2": "जानकारी आपके फ़ोन से कब बाहर जाती है",
+  "leaves_intro": "जानकारी आपके फ़ोन से केवल इन स्थितियों में बाहर जाती है:",
+  "v1": "<strong>आपके किए गए कॉल और मैसेज।</strong> कॉल बटन आपके चुने हुए संपर्क को कॉल करता है। मदद का मैसेज, जिसमें आपका पता, मैप लिंक और, अगर आप चाहें, हेल्थ ID की जानकारी होती है, फ़ोन के Messages ऐप से तभी जाता है जब आप भेजें पर टैप करते हैं। कॉल और मैसेज आपकी फ़ोन कंपनी, Apple और प्राप्तकर्ता संभालते हैं।",
+  "v2": "<strong>आपका रिकवरी कोड।</strong> सेटअप के दौरान आप अपने PIN रिकवरी कोड के लिए एक फ़ोन नंबर या ईमेल चुनते हैं। ऐप कोड के साथ Messages या Mail खोलता है, और उसे आप भेजते हैं।",
+  "v3": "<strong>इंटरनेट से समय की जाँच।</strong> जब PIN रीसेट प्रतीक्षा में हो, तो ऐप apple.com या google.com से मौजूदा समय पूछता है। यह एक साधारण वेब अनुरोध है जिसमें कोई निजी जानकारी नहीं होती।",
+  "v4": "<strong>स्थान खोज</strong> (QUICKREACH KIDS)। जब कोई बड़ा व्यक्ति सुरक्षित ज़ोन जोड़ता है, तो आस-पास के स्कूल और पार्क जैसे स्थान दिखाने के लिए मैप का क्षेत्र फ़ोन की बिल्ट-इन मैप सेवा Apple Maps को भेजा जाता है। जब वह कोई स्थान या पता टाइप करता है, तो खोज के शब्द और मैप का क्षेत्र Photon (photon.komoot.io), जो OpenStreetMap की एक मुफ़्त खोज सेवा है, को भेजे जाते हैं, या उसके उपलब्ध न होने पर Nominatim (nominatim.openstreetmap.org) को। इनमें से किसी को भी कोई नाम, संपर्क या अकाउंट जानकारी नहीं भेजी जाती।",
+  "v5": "<strong>ऐप अपडेट।</strong> ऐप्स सुधारों के लिए Expo की अपडेट सेवा जाँचते हैं। इसमें ऐप का वर्शन और फ़ोन का प्लेटफ़ॉर्म भेजा जाता है, निजी जानकारी नहीं।",
+  "kids_h2": "बच्चों की गोपनीयता (QUICKREACH KIDS)",
+  "kids_intro": "QUICKREACH KIDS को माता-पिता या कानूनी अभिभावक द्वारा बच्चे के फ़ोन पर सेट करने के लिए बनाया गया है। हम बच्चों की गोपनीयता को गंभीरता से लेते हैं और अमेरिका के चिल्ड्रन्स ऑनलाइन प्राइवेसी प्रोटेक्शन एक्ट (COPPA) और ऐसे ही अन्य कानूनों का पालन करते हैं।",
+  "c1": "हम बच्चों से कोई निजी जानकारी इकट्ठा नहीं करते। बच्चे का नाम, हेल्थ ID, स्थान और लोकेशन फ़ोन पर ही रहते हैं।",
+  "c2": "बच्चे की लोकेशन केवल उस मैसेज में साझा होती है जो फ़ोन से उन परिवारजनों और मददगारों को भेजा जाता है जिन्हें माता-पिता ने सेट किया है। जब कोई बड़ा व्यक्ति सुरक्षित ज़ोन जोड़ता है, तो ऊपर बताई गई स्थान खोज का उपयोग होता है।",
+  "c3": "कोई विज्ञापन, एनालिटिक्स, इन-ऐप खरीदारी, अजनबियों से चैट या अकाउंट नहीं है।",
+  "c4": "माता-पिता का PIN संपर्कों, हेल्थ ID, सुरक्षित ज़ोन और भाषा की सुरक्षा करता है, और ऐप से इस नीति को वेब पर खोलने के लिए भी ज़रूरी है।",
+  "c5": "माता-पिता किसी भी समय ऐप में बच्चे की जानकारी देख, बदल या हटा सकते हैं, या ऐप को हटा सकते हैं।",
+  "consent_h2": "सहमति, रखना और हटाना",
+  "cn1": "QUICKREACH का उपयोग केवल फ़ोन इस्तेमाल करने वाले व्यक्ति की सहमति से होना चाहिए, और इसे वे स्वयं या उनके कानूनी अभिभावक सेट करें।",
+  "cn2": "आप स्क्रीन के ऊपर <strong>ⓘ</strong> बटन से किसी भी समय यह जानकारी देख सकते हैं या <strong>सहमति वापस ले सकते हैं</strong> (PIN ज़रूरी है)।",
+  "cn3": "जानकारी तब तक फ़ोन पर रहती है जब तक आप उसे बदलते नहीं, सहमति वापस नहीं लेते या ऐप नहीं हटाते। ऐप हटाने से उसकी फ़ोन पर सेव की गई हर चीज़ हट जाती है। आपके भेजे हुए मैसेज प्राप्तकर्ताओं के फ़ोन पर रहते हैं। क्योंकि हम आपकी जानकारी न प्राप्त करते हैं, न रखते हैं, इसलिए हमारी ओर से हटाने को कुछ नहीं है। अपने डेटा के बारे में कोई सवाल हो, तो हमसे संपर्क करें।",
+  "site_h2": "यह वेबसाइट",
+  "site_p": "QUICKREACH.COM पर कोई साइन-अप फ़ॉर्म, विज्ञापन या एनालिटिक्स नहीं है। हमारा वेब होस्ट सुरक्षा के लिए सामान्य सर्वर लॉग, जैसे IP पता और ब्राउज़र का प्रकार, रख सकता है।",
+  "changes_h2": "इस नीति में बदलाव",
+  "changes_p": "अगर हम ऐप्स के जानकारी संभालने के तरीके में बदलाव करते हैं, तो बदलाव ऐप्स तक पहुँचने से पहले हम यह पेज और ऊपर दी गई लागू होने की तारीख अपडेट करेंगे।",
+  "contact_h2": "संपर्क",
+  "contact_p": "गोपनीयता से जुड़े सवाल, या बच्चे की जानकारी के बारे में माता-पिता का अनुरोध:",
+  "dt_email": "ईमेल",
+  "dt_phone": "फ़ोन",
+  "dt_web": "वेब",
+  "foot_home": "होम",
+  "foot_support": "सहायता",
+  "foot_terms": "उपयोग की शर्तें (EULA)",
+  "english_note": "यह एक अनुवाद है। किसी अंतर की स्थिति में अंग्रेज़ी संस्करण मान्य होगा।"
+ },
+ "ja": {
+  "title": "QUICKREACH プライバシーポリシー",
+  "nav_home": "ホーム",
+  "nav_support": "サポート",
+  "lang_label": "言語",
+  "eyebrow": "プライバシーポリシー",
+  "h1": "QUICKREACH と QUICKREACH KIDS のプライバシーポリシー",
+  "effective": "2026年11月8日発効",
+  "toc_short": "要点",
+  "toc_stored": "端末に保存される情報",
+  "toc_location": "位置情報",
+  "toc_health": "Appleヘルスケアと写真",
+  "toc_leaves": "情報が端末の外に出るとき",
+  "toc_kids": "お子さま",
+  "toc_consent": "同意と削除",
+  "toc_contact": "お問い合わせ",
+  "short_h2": "要点",
+  "k1": "<strong>アカウントは不要です。</strong>登録やログインは一切ありません。",
+  "k2": "<strong>お客さまの情報は収集しません。</strong>入力した内容は端末内に保存されます。それを受け取るサーバーはありません。",
+  "k3": "<strong>何を共有するかはお客さまが決めます。</strong>情報が端末の外に出るのは、電話をかけたりメッセージを送ったりするとき、および下記のいくつかの検索のときだけです。",
+  "k4": "<strong>広告・分析・トラッキングはありません。</strong>情報を販売・貸与することはなく、アプリに広告や分析のツールは含まれていません。",
+  "covers": "本ポリシーは、iPhone および Apple Watch 用の QUICKREACH と QUICKREACH KIDS アプリ(以下まとめて「本アプリ」)と、本ウェブサイトに適用されます。",
+  "stored_h2": "本アプリが端末に保存する情報",
+  "stored_intro": "通話ボタンとヘルスIDがインターネットなしでも動くように、本アプリは次の情報をお使いの端末内にのみ保存します。",
+  "s1": "<strong>追加した連絡先:</strong>通話ボタンが電話やメッセージを送る相手の名前と電話番号。",
+  "s2": "<strong>ヘルスID:</strong>名前、生年月日または年齢、性別、血液型、車いすの使用、服用中の薬、アレルギー、持病、メモ、緊急連絡先、任意の写真。",
+  "s3": "<strong>セーフゾーン</strong>(QUICKREACH KIDS):自宅や学校など、保存した場所の名前と住所。",
+  "s4": "<strong>PINと設定:</strong>PINは端末の安全な保存領域に保管されます。設定には言語や、どの連絡先がオンかが含まれます。",
+  "stored_after": "本アプリはこれらの情報を iCloud Drive やその他のクラウドサービスに保存しません。Apple Watch アプリとウィジェットは、通話ボタンの連絡先を iPhone から直接受け取ります。",
+  "loc_h2": "位置情報",
+  "loc_intro": "お客さまの許可がある場合、本アプリは<strong>アプリが画面に表示されている間だけ</strong>端末の位置情報を読み取ります。バックグラウンドで追跡することはありません。位置情報は次の目的に使われます。",
+  "l1": "通話ボタンの下に現在の住所を表示する。",
+  "l2": "お客さまが送ることを選んだ助けを求めるメッセージに、住所、GPS位置、地図リンクを加える。",
+  "l3": "QUICKREACH KIDS で、お子さまがセーフゾーンにいるときに表示する。",
+  "loc_after": "GPS位置を住所に変換するため、端末に内蔵された地図サービス(iPhone では Apple、Android 端末では Google)が使われます。位置情報が当社に送られることはありません。",
+  "health_h2": "Appleヘルスケアと写真",
+  "h_health": "<strong>Appleヘルスケア:</strong>許可された場合、本アプリはヘルスIDを入力するために、ヘルスケアから生年月日、性別、血液型、車いすの使用、服用中の薬を読み取ります。本アプリがヘルスケアに書き込むことはありません。健康に関する情報が広告やマーケティングに使われることはなく、お客さまが送る助けを求めるメッセージ以外で誰かと共有されることもありません。",
+  "h_photos": "<strong>写真:</strong>許可された場合、ヘルスIDの写真を選べます。また、本アプリはリカバリーコードの画像を「写真」に保存できます。それ以外の写真を読み取ることはありません。",
+  "leaves_h2": "情報が端末の外に出るとき",
+  "leaves_intro": "情報が端末の外に出るのは、次の場合に限られます。",
+  "v1": "<strong>お客さまが行う電話とメッセージ。</strong>通話ボタンは設定した連絡先に電話をかけます。住所、地図リンク、選んだ場合はヘルスIDの情報を含む助けを求めるメッセージは、お客さまが「送信」をタップして初めて端末の「メッセージ」アプリから送られます。電話とメッセージは、携帯電話会社、Apple、受信者によって扱われます。",
+  "v2": "<strong>リカバリーコード。</strong>設定の際に、PINのリカバリーコードを送る電話番号またはメールアドレスを選びます。アプリがコード入りの「メッセージ」または「メール」を開き、お客さまが送信します。",
+  "v3": "<strong>インターネットでの時刻確認。</strong>PINのリセットを待っている間、アプリは apple.com または google.com に現在の時刻を問い合わせます。個人情報を含まない基本的なウェブ通信です。",
+  "v4": "<strong>場所の検索</strong>(QUICKREACH KIDS)。大人がセーフゾーンを追加するとき、近くの学校や公園などを表示するため、地図の範囲が端末内蔵の地図サービスである Apple マップに送られます。大人が場所や住所を入力すると、検索語と地図の範囲が OpenStreetMap の無料検索サービス Photon(photon.komoot.io)に、つながらない場合は Nominatim(nominatim.openstreetmap.org)に送られます。名前、連絡先、アカウント情報がこれらに送られることはありません。",
+  "v5": "<strong>アプリのアップデート。</strong>本アプリは修正のために Expo のアップデートサービスを確認します。送られるのはアプリのバージョンと端末のプラットフォームで、個人情報ではありません。",
+  "kids_h2": "お子さまのプライバシー(QUICKREACH KIDS)",
+  "kids_intro": "QUICKREACH KIDS は、保護者または法定後見人がお子さまの端末に設定することを前提としています。当社はお子さまのプライバシーを重視し、米国の児童オンラインプライバシー保護法(COPPA)および同様の法律に従います。",
+  "c1": "お子さまから個人情報を収集することはありません。お子さまの名前、ヘルスID、場所、位置情報は端末内にとどまります。",
+  "c2": "お子さまの位置情報が共有されるのは、保護者が設定した家族や見守る人に端末から送られるメッセージの中だけです。大人がセーフゾーンを追加するときは、上記の場所の検索が使われます。",
+  "c3": "広告、分析、アプリ内課金、知らない人とのチャット、アカウントはありません。",
+  "c4": "保護者のPINは連絡先、ヘルスID、セーフゾーン、言語を守り、アプリから本ポリシーをウェブで開くときにも必要です。",
+  "c5": "保護者はいつでもアプリ内でお子さまの情報を確認・変更・削除でき、アプリを削除することでも消去できます。",
+  "consent_h2": "同意・保存・削除",
+  "cn1": "QUICKREACH は、端末を使う本人の同意のもとで、本人または法定後見人が設定して使うものとします。",
+  "cn2": "画面上部の <strong>ⓘ</strong> ボタンから、いつでもこの情報を確認したり、<strong>同意を取り消したり</strong>できます(PINが必要です)。",
+  "cn3": "情報は、お客さまが変更する、同意を取り消す、またはアプリを削除するまで端末に残ります。アプリを削除すると、端末に保存されたものはすべて消去されます。送信済みのメッセージは受信者の端末に残ります。当社はお客さまの情報を受け取ることも保存することもないため、当社側で削除するものはありません。データについてご質問があれば、お問い合わせください。",
+  "site_h2": "本ウェブサイト",
+  "site_p": "QUICKREACH.COM には登録フォーム、広告、分析ツールはありません。ウェブホスティング業者は、セキュリティのために IP アドレスやブラウザの種類などの標準的なサーバーログを保存することがあります。",
+  "changes_h2": "本ポリシーの変更",
+  "changes_p": "本アプリによる情報の取り扱いを変更する場合は、その変更がアプリに反映される前に、このページと上記の発効日を更新します。",
+  "contact_h2": "お問い合わせ",
+  "contact_p": "プライバシーに関するご質問、またはお子さまの情報についての保護者からのご依頼:",
+  "dt_email": "メール",
+  "dt_phone": "電話",
+  "dt_web": "ウェブ",
+  "foot_home": "ホーム",
+  "foot_support": "サポート",
+  "foot_terms": "利用規約(EULA)",
+  "english_note": "これは翻訳です。内容に違いがある場合は英語版が優先されます。"
+ },
+ "fil": {
+  "title": "Patakaran sa Privacy ng QUICKREACH",
+  "nav_home": "Home",
+  "nav_support": "Suporta",
+  "lang_label": "Wika",
+  "eyebrow": "Patakaran sa Privacy",
+  "h1": "Patakaran sa Privacy ng QUICKREACH at QUICKREACH KIDS",
+  "effective": "Epektibo mula Nobyembre 8, 2026",
+  "toc_short": "Sa madaling salita",
+  "toc_stored": "Sa iyong telepono",
+  "toc_location": "Lokasyon",
+  "toc_health": "Apple Health at mga larawan",
+  "toc_leaves": "Kailan lumalabas ang impormasyon sa telepono",
+  "toc_kids": "Mga bata",
+  "toc_consent": "Pahintulot at pagbura",
+  "toc_contact": "Makipag-ugnayan",
+  "short_h2": "Sa madaling salita",
+  "k1": "<strong>Walang account.</strong> Hindi mo kailangang mag-sign up o mag-log in kahit kailan.",
+  "k2": "<strong>Hindi namin kinokolekta ang iyong impormasyon.</strong> Ang inilalagay mo ay nananatili sa iyong telepono. Wala kaming server na tumatanggap nito.",
+  "k3": "<strong>Ikaw ang nagpapasya kung ano ang ibabahagi.</strong> Lumalabas ang impormasyon sa telepono kapag tumawag ka o nagpadala ng text, at sa ilang paghahanap na nakalista sa ibaba.",
+  "k4": "<strong>Walang ads, walang analytics, walang tracking.</strong> Hindi kami nagbebenta o nagpapaupa ng impormasyon, at walang kasangkapan sa advertising o analytics ang mga app.",
+  "covers": "Saklaw ng patakarang ito ang mga app na QUICKREACH at QUICKREACH KIDS para sa iPhone at Apple Watch (magkasama, \"ang mga app\"), at ang website na ito.",
+  "stored_h2": "Ano ang itinatago ng mga app sa iyong telepono",
+  "stored_intro": "Sine-save ng mga app ang mga sumusunod sa iyong device lamang, para gumana ang Call Button at Health ID kahit walang internet:",
+  "s1": "<strong>Mga contact na idinagdag mo:</strong> mga pangalan at numero ng telepono ng mga taong tinatawagan at tine-text ng Call Button.",
+  "s2": "<strong>Health ID:</strong> pangalan, petsa ng kapanganakan o edad, kasarian, blood type, paggamit ng wheelchair, mga gamot, allergy, mga kondisyong medikal, mga tala, mga emergency contact at isang opsyonal na larawan.",
+  "s3": "<strong>Mga Safe Zone</strong> (QUICKREACH KIDS): ang mga pangalan at address ng mga lugar na sine-save mo, gaya ng Bahay at Paaralan.",
+  "s4": "<strong>Ang iyong PIN at mga setting:</strong> ang PIN ay itinatago sa secure na storage ng telepono. Kasama sa mga setting ang wika at kung aling mga contact ang naka-on.",
+  "stored_after": "Hindi inilalagay ng mga app ang impormasyong ito sa iCloud Drive o sa anumang ibang cloud service. Direktang nakukuha ng Apple Watch app at ng mga widget ang contact ng Call Button mula sa iPhone.",
+  "loc_h2": "Lokasyon",
+  "loc_intro": "Kapag pinahintulutan mo, binabasa ng mga app ang lokasyon ng telepono <strong>habang nakabukas lang ang app sa screen</strong>. Hindi sinusubaybayan ang lokasyon sa background. Ginagamit ito para:",
+  "l1": "ipakita ang kasalukuyan mong address sa ilalim ng Call Button;",
+  "l2": "idagdag ang iyong address, GPS na posisyon at mga link ng mapa sa isang text ng paghingi ng tulong na pinili mong ipadala;",
+  "l3": "sa QUICKREACH KIDS, ipakita kapag nasa Safe Zone ang iyong anak.",
+  "loc_after": "Para gawing address ang isang GPS na posisyon, ginagamit ng telepono ang built-in nitong serbisyo ng mapa (Apple sa iPhone, Google sa mga Android device). Hindi kailanman ipinapadala sa amin ang iyong lokasyon.",
+  "health_h2": "Apple Health at mga larawan",
+  "h_health": "<strong>Apple Health:</strong> kapag pinahintulutan mo, binabasa ng mga app ang iyong petsa ng kapanganakan, kasarian, blood type, paggamit ng wheelchair at mga gamot mula sa Apple Health para punan ang Health ID. Hindi kailanman nagsusulat ang mga app sa Apple Health. Hindi kailanman ginagamit ang impormasyong pangkalusugan para sa advertising o marketing, at hindi ito ibinabahagi kaninuman maliban sa text ng paghingi ng tulong na ikaw ang nagpadala.",
+  "h_photos": "<strong>Mga larawan:</strong> kapag pinahintulutan mo, maaari kang pumili ng larawan para sa Health ID, at maaaring mag-save ang mga app ng larawan ng iyong recovery code sa Photos. Hindi nagbabasa ang mga app ng anumang ibang larawan.",
+  "leaves_h2": "Kailan lumalabas ang impormasyon sa iyong telepono",
+  "leaves_intro": "Lumalabas lang ang impormasyon sa iyong telepono sa mga sitwasyong ito:",
+  "v1": "<strong>Mga tawag at text na ginagawa mo.</strong> Tinatawagan ng Call Button ang contact na itinakda mo. Ang text ng paghingi ng tulong, na may iyong address, mga link ng mapa at, kung pipiliin mo, mga detalye ng Health ID, ay dumadaan sa Messages app ng telepono pagkatapos mo lang i-tap ang Send. Ang mga tawag at text ay hinahawakan ng iyong phone carrier, ng Apple at ng mga tatanggap.",
+  "v2": "<strong>Ang iyong recovery code.</strong> Sa pag-set up, pipili ka ng numero ng telepono o email para sa recovery code ng iyong PIN. Bubuksan ng app ang Messages o Mail na may code, at ikaw ang magpapadala nito.",
+  "v3": "<strong>Pag-check ng oras sa internet.</strong> Kapag may naghihintay na pag-reset ng PIN, tinatanong ng app sa apple.com o google.com ang kasalukuyang oras. Ito ay simpleng web request na walang personal na impormasyon.",
+  "v4": "<strong>Paghahanap ng lugar</strong> (QUICKREACH KIDS). Kapag nagdagdag ng Safe Zone ang isang nakatatanda, ipinapadala ang bahagi ng mapa sa Apple Maps, ang built-in na serbisyo ng mapa ng telepono, para ilista ang mga kalapit na lugar gaya ng mga paaralan at parke. Kapag nag-type ang nakatatanda ng lugar o address, ipinapadala ang mga salitang hinahanap at ang bahagi ng mapa sa Photon (photon.komoot.io), isang libreng serbisyo ng paghahanap ng OpenStreetMap, o, kung hindi ito maabot, sa Nominatim (nominatim.openstreetmap.org). Walang pangalan, contact o impormasyon ng account na ipinapadala sa alinman sa kanila.",
+  "v5": "<strong>Mga update ng app.</strong> Tumitingin ang mga app sa update service ng Expo para sa mga ayos. Ipinapadala nito ang bersyon ng app at ang platform ng telepono, hindi personal na impormasyon.",
+  "kids_h2": "Privacy ng mga bata (QUICKREACH KIDS)",
+  "kids_intro": "Ang QUICKREACH KIDS ay para i-set up ng magulang o legal na guardian sa telepono ng isang bata. Seryoso namin ang privacy ng mga bata at sinusunod namin ang Children's Online Privacy Protection Act (COPPA) ng U.S. at mga katulad na batas.",
+  "c1": "Hindi kami kumukolekta ng personal na impormasyon mula sa mga bata. Ang pangalan, Health ID, mga lugar at lokasyon ng bata ay nananatili sa telepono.",
+  "c2": "Ibinabahagi lang ang lokasyon ng bata sa isang text na ipinapadala mula sa telepono sa mga kapamilya at tagapag-alaga na itinakda ng magulang. Kapag nagdagdag ng Safe Zone ang isang nakatatanda, ginagamit ang paghahanap ng lugar na inilarawan sa itaas.",
+  "c3": "Walang ads, walang analytics, walang in-app purchase, walang chat sa mga estranghero at walang account.",
+  "c4": "Pinoprotektahan ng PIN ng magulang ang mga contact, ang Health ID, ang mga Safe Zone at ang wika, at kailangan ito para buksan ang patakarang ito sa web mula sa app.",
+  "c5": "Maaaring tingnan, baguhin o burahin ng magulang ang impormasyon ng bata anumang oras sa app, o sa pagbura ng app.",
+  "consent_h2": "Pahintulot, pagtatago at pagbura",
+  "cn1": "Ang QUICKREACH ay dapat gamitin lamang nang may pagsang-ayon ng taong gumagamit ng telepono, at i-set up niya mismo o ng kanyang legal na guardian.",
+  "cn2": "Maaari mong tingnan ang impormasyong ito o <strong>bawiin ang pahintulot</strong> anumang oras gamit ang <strong>ⓘ</strong> na button sa itaas ng screen (kailangan ang PIN).",
+  "cn3": "Nananatili ang impormasyon sa telepono hanggang baguhin mo ito, bawiin ang pahintulot o burahin ang app. Ang pagbura ng app ay nag-aalis ng lahat ng na-save nito sa telepono. Ang mga text na naipadala mo na ay nananatili sa telepono ng mga tumanggap. Dahil hindi namin tinatanggap o itinatago ang iyong impormasyon, wala kaming buburahin sa aming panig. Kung may tanong ka tungkol sa iyong data, makipag-ugnayan sa amin.",
+  "site_h2": "Ang website na ito",
+  "site_p": "Walang sign-up form, advertising o analytics ang QUICKREACH.COM. Maaaring magtago ang aming web host ng karaniwang server log, gaya ng IP address at uri ng browser, para sa seguridad.",
+  "changes_h2": "Mga pagbabago sa patakarang ito",
+  "changes_p": "Kung babaguhin namin kung paano hinahawakan ng mga app ang impormasyon, ia-update namin ang pahinang ito at ang petsa ng pagkaepektibo sa itaas bago umabot ang pagbabago sa mga app.",
+  "contact_h2": "Makipag-ugnayan",
+  "contact_p": "Mga tanong tungkol sa privacy, o kahilingan ng magulang tungkol sa impormasyon ng isang bata:",
+  "dt_email": "Email",
+  "dt_phone": "Telepono",
+  "dt_web": "Web",
+  "foot_home": "Home",
+  "foot_support": "Suporta",
+  "foot_terms": "Mga Tuntunin ng Paggamit (EULA)",
+  "english_note": "Ito ay isang pagsasalin. Kung may pagkakaiba, ang bersyong Ingles ang masusunod."
+ }
+}
+</script>
+<script>
+(function () {
+  var T = {};
+  try { T = JSON.parse(document.getElementById('i18n').textContent); } catch (e) { return; }
+  var codes = Object.keys(T);
+  function pick() {
+    var q = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+    if (T[q]) return q;
+    try { var saved = localStorage.getItem('qr-lang'); if (T[saved]) return saved; } catch (e) {}
+    var list = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < list.length; i++) {
+      var l = String(list[i]).toLowerCase();
+      if (l.indexOf('tl') === 0) l = 'fil';
+      var base = l.split('-')[0];
+      if (T[l]) return l;
+      if (T[base]) return base;
+    }
+    return 'en';
+  }
+  function apply(code) {
+    var d = T[code] || T.en;
+    document.documentElement.lang = code;
+    document.title = d.title;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) {
+      var v = d[el.getAttribute('data-i18n')];
+      if (el.getAttribute('data-i18n') === 'english_note') { el.hidden = !v; }
+      el.innerHTML = v || '';
+    });
+    var sel = document.getElementById('lang');
+    sel.value = code;
+    sel.setAttribute('aria-label', d.lang_label);
+  }
+  var sel = document.getElementById('lang');
+  var current = pick();
+  apply(current);
+  sel.addEventListener('change', function () {
+    current = sel.value;
+    apply(current);
+    try { localStorage.setItem('qr-lang', current); } catch (e) {}
+    try {
+      var url = new URL(location.href);
+      if (current === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', current);
+      history.replaceState(null, '', url);
+    } catch (e) {}
+  });
+})();
+</script>
 </body>
 </html>
