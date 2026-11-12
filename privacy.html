@@ -129,6 +129,11 @@
   header.page p.note { font-size: 15px; margin-top: 8px; }
   .brand { flex-shrink: 0; }
   @media (max-width: 520px) { .brand img { height: min(49px, calc(26.7vw - 55px)); } .nav a { padding: 8px 6px; font-size: 14px; } .nav a[data-i18n="nav_home"] { display: none; } .lang { padding: 0 6px; margin-left: 2px; } .lang select { font-size: 14px; } .lang svg { display: none; } }
+
+  /* Top bar is frozen: fixed to the top, the page starts just below it (--bar-h is set by the script below). */
+  .topbar { position: fixed !important; top: 0 !important; left: 0; right: 0; }
+  body { padding-top: var(--bar-h, 65px); }
+  html { scroll-padding-top: calc(var(--bar-h, 65px) + 12px); }
 </style>
 </head>
 <body>
@@ -963,6 +968,14 @@
       history.replaceState(null, '', url);
     } catch (e) {}
   });
+})();
+</script>
+<script>
+(function () {
+  var bar = document.querySelector('.topbar'), root = document.documentElement;
+  function fit() { root.style.setProperty('--bar-h', bar.offsetHeight + 'px'); }
+  fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(bar);
 })();
 </script>
 </body>

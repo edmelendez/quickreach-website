@@ -104,7 +104,7 @@
 
   /* ---------- Top bar ---------- */
   .topbar {
-    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; padding-top: env(safe-area-inset-top, 0px);
     background: color-mix(in srgb, var(--bg) 90%, transparent);
     backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px);
     border-bottom: 1px solid var(--border);
@@ -314,6 +314,11 @@
     .btn, .hold, .hold .prog { transition: none; }
     .overlay .pulse { animation: none; }
   }
+
+  /* Top bar is frozen: fixed to the top, the page starts just below it (--bar-h is set by the script below). */
+  .topbar { position: fixed !important; top: 0 !important; left: 0; right: 0; }
+  body { padding-top: var(--bar-h, 65px); }
+  html { scroll-padding-top: calc(var(--bar-h, 65px) + 12px); }
 </style>
 </head>
 <body>
@@ -765,6 +770,14 @@
   });
 
   render('adult');
+})();
+</script>
+<script>
+(function () {
+  var bar = document.querySelector('.topbar'), root = document.documentElement;
+  function fit() { root.style.setProperty('--bar-h', bar.offsetHeight + 'px'); }
+  fit(); window.addEventListener('resize', fit); window.addEventListener('load', fit);
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(bar);
 })();
 </script>
 </body>
