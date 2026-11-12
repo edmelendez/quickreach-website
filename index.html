@@ -418,6 +418,7 @@
             <li><span><strong>Help text</strong> with your street address and Apple Maps and Google Maps links</span></li>
             <li><span><strong>Health ID</strong> with medications, allergies, conditions and emergency contacts</span></li>
             <li><span><strong>Apple Watch</strong>, widgets and a Control Center button</span></li>
+            <li><span><strong>Group Calling</strong> (Premium): up to 5 backup contacts</span></li>
           </ul>
           <p class="avail">Coming soon to the App Store for iPhone and Apple Watch.</p>
         </article>
@@ -433,8 +434,8 @@
           <div class="build-line" data-build="kids"></div>
           <p>A first phone's most important button. Kids reach Mom &amp; Dad or a trusted helper, check in when they arrive, and can't change the settings by accident.</p>
           <ul class="checks">
-            <li><span><strong>Mom &amp; Dad always on</strong>; turning them off or changing them needs the PIN</span></li>
-            <li><span><strong>Caregiver or Nanny/Sitter</strong>: when one is on, the Call Button calls them</span></li>
+            <li><span><strong>Mom &amp; Dad</strong>: tap a circle to turn one off; one always stays on. Changing their numbers needs the PIN</span></li>
+            <li><span><strong>Caregiver or Other</strong> helper (you can rename both): when one is on, the Call Button calls them</span></li>
             <li><span><strong>Safe Zones</strong> with an <strong>I'M SAFE</strong> check-in, plus a loud <strong>Siren</strong></span></li>
             <li><span><strong>Apple Watch</strong> Call Button on the wrist</span></li>
           </ul>
@@ -473,8 +474,8 @@
         <div class="feat"><h3><span class="dot c-pin" aria-hidden="true"></span>Apple Watch</h3><p>The Call Button on the wrist, plus a watch-face complication.</p><span class="tag">Both apps</span></div>
         <div class="feat"><h3><span class="dot c-health" aria-hidden="true"></span>Widgets</h3><p>Home Screen and Lock Screen widgets. QUICKREACH adds a Control Center button.</p><span class="tag">Both apps</span></div>
         <div class="feat"><h3><span class="dot c-pin" aria-hidden="true"></span>PIN-protected settings</h3><p>Contacts, the Health ID and the language need the 4-digit PIN. A recovery code gets you back in.</p><span class="tag">Both apps</span></div>
-        <div class="feat"><h3><span class="dot c-kids" aria-hidden="true"></span>Siren</h3><p>Hold the logo for 3 seconds for a loud siren that plays even on silent. Tap to stop.</p><span class="tag">QUICKREACH KIDS</span></div>
-        <div class="feat"><h3><span class="dot c-safe" aria-hidden="true"></span>Safe Zones</h3><p>Home, School and Nanny/Sitter. The banner turns green when your child arrives.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3><span class="dot c-kids" aria-hidden="true"></span>Siren</h3><p>Hold the logo for 2 seconds for a loud siren that plays even on silent. Tap to stop.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3><span class="dot c-safe" aria-hidden="true"></span>Safe Zones</h3><p>Home, School and Other. The banner turns green when your child arrives. Removing one needs the PIN.</p><span class="tag">QUICKREACH KIDS</span></div>
         <div class="feat"><h3><span class="dot c-safe" aria-hidden="true"></span>I'M SAFE</h3><p>One tap texts the family that your child arrived.</p><span class="tag">QUICKREACH KIDS</span></div>
       </div>
       <div class="langs" aria-label="Supported languages">
@@ -546,7 +547,7 @@
           <dl class="contact">
             <dt>Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Support" id="email">edwin.vgwhiz@<wbr>gmail.com</a> <button type="button" class="copy" id="copy-email">Copy</button></dd>
             <dt>Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
-            <dt>Web</dt><dd>QUICKREACH.COM</dd>
+            <dt>Web</dt><dd><a href="https://www.quickreachapp.com">QUICKREACHAPP.COM</a></dd>
           </dl>
           <p class="small-note">Please don't send a PIN, a recovery code or anyone's health details.</p>
         </div>
@@ -557,7 +558,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 QUICKREACH · QUICKREACH.COM</span>
+    <span>© 2026 QUICKREACH · QUICKREACHAPP.COM</span>
     <nav aria-label="Legal">
       <a href="privacy.html">Privacy Policy</a>
       <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
@@ -573,28 +574,28 @@
     "name": "QUICKREACH",
     "icon": "img/icon-quickreach.png",
     "version": "1.0.0",
-    "build": "43",
-    "updated": "2026-11-09",
+    "build": "46",
+    "updated": "2026-11-11",
     "changes": [
+      [
+        "2026-11-11",
+        "Rounder, pill-shaped buttons in windows and messages."
+      ],
+      [
+        "2026-11-11",
+        "The recovery code window fits on screen while you type, with Send and Not now always visible."
+      ],
+      [
+        "2026-11-10",
+        "A short launch animation: the QUICKREACH icon draws itself, the hand taps and the red sparks pop, then the Call Button screen appears."
+      ],
+      [
+        "2026-11-10",
+        "Group Calling (Premium) is back: up to 5 backup contacts in the Emergency Dialer."
+      ],
       [
         "2026-11-09",
         "The Privacy Policy link in About & Privacy opens the policy in the app's language."
-      ],
-      [
-        "2026-11-08",
-        "Home Screen widgets show the Call Button and the logo correctly again."
-      ],
-      [
-        "2026-11-08",
-        "About & Privacy has a link to the full Privacy Policy. Clearer Apple Health and Photos permission messages."
-      ],
-      [
-        "2026-11-07",
-        "Faint blue dots and soft-red plus signs behind the main screen, about half the size of the QUICKREACH KIDS stars and circles."
-      ],
-      [
-        "2026-11-06",
-        "New app icon: the white hand with orange sparks on red. New branding logo with red sparks."
       ]
     ]
   },
@@ -602,28 +603,28 @@
     "name": "QUICKREACH KIDS",
     "icon": "img/icon-quickreach-kids.png",
     "version": "1.0.0",
-    "build": "26",
-    "updated": "2026-11-10",
+    "build": "35",
+    "updated": "2026-11-12",
     "changes": [
       [
-        "2026-11-10",
-        "The Caregiver and Nanny/Sitter tiles are the same size."
+        "2026-11-12",
+        "The Health ID is red, like QUICKREACH."
+      ],
+      [
+        "2026-11-11",
+        "Removing a Safe Zone needs the PIN. The Nanny/Sitter place is now Other."
+      ],
+      [
+        "2026-11-11",
+        "The siren starts after holding the logo for 2 seconds, and is off during setup."
+      ],
+      [
+        "2026-11-11",
+        "The Mom & Dad tile shows only the parents with a number, with a larger picture for a single parent."
       ],
       [
         "2026-11-10",
-        "Mom and Dad each have their own circle: tap to turn one off. One of them always stays on."
-      ],
-      [
-        "2026-11-09",
-        "Privacy Policy link in About & Privacy, after the parent's PIN, in the app's language."
-      ],
-      [
-        "2026-11-07",
-        "Safe Zone place search uses Apple Maps only."
-      ],
-      [
-        "2026-11-06",
-        "New Apple Watch app: the Call Button on the wrist, then Dad and Text My Location, plus a watch-face complication."
+        "A short launch animation plays every time the app opens, then the Call Button screen appears."
       ]
     ]
   }
@@ -662,7 +663,7 @@
     },
     kids: {
       img: 'img/kids-call-b26.jpg',
-      alt: 'QUICKREACH KIDS Call Family screen: Mom & Dad, Caregiver and Nanny/Sitter tiles above the orange Call Button',
+      alt: 'QUICKREACH KIDS Call Family screen: Mom & Dad, Caregiver and Other tiles above the orange Call Button',
       calling: 'Calling Millie',
       msg: 'QUICKREACH KIDS: Here\'s where I am. This is Emma. I\'m near 154 Pehle Ave, Saddle Brook, NJ 07663.<br><br><u>Apple Maps</u><br><u>Google Maps</u>'
     }
