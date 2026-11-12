@@ -155,12 +155,12 @@
 
   /* ---------- Phone with the real screenshot ---------- */
   .phone {
-    --cx: 0.5; --cy: 0.5185; --d: 0.8176; --ring: #DE1F4C;
+    --cx: 0.4992; --cy: 0.5180; --d: 0.8192; --ring: #DE1F4C;
     width: min(300px, 100%); max-width: 100%; position: relative;
     border-radius: 46px; border: 10px solid #1E2B33; background: #1E2B33;
     box-shadow: 0 30px 60px rgba(15, 76, 107, 0.28);
   }
-  .phone[data-app="kids"] { --cx: 0.4992; --cy: 0.5904; --d: 0.7273; --ring: #DE1F4C; }
+  .phone[data-app="kids"] { --cx: 0.5; --cy: 0.5890; --d: 0.7338; --ring: #DE1F4C; }
   .phone .shot { position: relative; border-radius: 36px; overflow: hidden; aspect-ratio: 1206 / 2622; background: #F4F7F9; }
   .phone .shot img { width: 100%; height: 100%; object-fit: cover; }
   .hold {
@@ -170,7 +170,8 @@
     touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
     transition: transform .12s ease;
   }
-  .hold.holding { transform: translateY(-50%) scale(0.96); }
+  /* No press-in shrink: the blue ring is part of the picture, so the red ring stays on top of it. */
+  .hold.holding { transform: translateY(-50%); }
   .hold:focus-visible { outline-offset: 4px; border-radius: 50%; }
   .hold svg { position: absolute; inset: -4%; width: 108%; height: 108%; transform: rotate(-90deg); pointer-events: none; overflow: visible; }
   .hold .prog { stroke: var(--ring); transition: stroke-dashoffset .06s linear; }
@@ -364,7 +365,7 @@
             <img id="phone-img" src="img/qr-call-b41.jpg" alt="QUICKREACH home screen: the red Call Button, the emergency contact Millie Melendez, and the current address" width="600" height="1304">
             <button type="button" class="hold" id="hold" aria-label="Call Button demo: press and hold" aria-describedby="call-hint">
               <svg viewBox="0 0 100 100" aria-hidden="true">
-                <circle class="prog" id="ring" cx="50" cy="50" r="47" fill="none" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="295.31" stroke-dashoffset="295.31"/>
+                <circle class="prog" id="ring" cx="50" cy="50" r="47" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="295.31" stroke-dashoffset="295.31"/>
               </svg>
             </button>
             <div class="overlay" id="ov-calling" hidden>
