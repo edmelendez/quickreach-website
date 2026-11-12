@@ -716,7 +716,15 @@
     document.getElementById('ov-title').textContent = APPS[current].calling;
     document.getElementById('ov-msg').innerHTML = APPS[current].msg;
     ovCall.hidden = false;
-    timers.push(setTimeout(function () { ovCall.hidden = true; ovText.hidden = false; document.getElementById('ov-close').focus(); }, 2200));
+    timers.push(setTimeout(function () {
+      ovCall.hidden = true; ovText.hidden = false; document.getElementById('ov-close').focus();
+      // After 7 seconds on the text, go back to the Call Button on its own.
+      timers.push(setTimeout(function () {
+        var hadFocus = ovText.contains(document.activeElement);
+        reset();
+        if (hadFocus) btn.focus({ preventScroll: true });
+      }, 7000));
+    }, 2200));
   }
   function reset() {
     timers.forEach(clearTimeout); timers = [];
