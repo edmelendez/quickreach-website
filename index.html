@@ -319,20 +319,39 @@
   .topbar { position: fixed !important; top: 0 !important; left: 0; right: 0; }
   body { padding-top: var(--bar-h, 65px); }
   html { scroll-padding-top: calc(var(--bar-h, 65px) + 12px); }
+  /* Language menu (top right), same as the Privacy Policy page. */
+  .nav { align-items: center; }
+  .lang { position: relative; display: inline-flex; align-items: center; gap: 6px; margin-left: 6px; padding: 0 10px; border: 2px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text-soft); }
+  .lang:focus-within { border-color: var(--sky); }
+  .lang select { font: inherit; font-size: 15px; font-weight: 800; color: var(--text); background: transparent; border: 0; padding: 7px 2px; cursor: pointer; appearance: auto; }
+  .lang select:focus { outline: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .brand { flex-shrink: 0; }
+  @media (max-width: 520px) { .nav a { padding: 8px 6px; font-size: 14px; } .lang { padding: 0 6px; margin-left: 2px; } .lang select { font-size: 14px; } .lang svg { display: none; } }
+  @media (max-width: 520px) { .brand img { height: min(49px, calc(26.7vw - 55px)); } .nav a[data-i18n="nav_apps"] { display: none; } }
+  @media (max-width: 380px) { .contact { grid-template-columns: minmax(0, 1fr); gap: 2px 0; } .contact dd { margin-bottom: 10px; } }
 </style>
 </head>
 <body>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="QUICKREACH home">
+    <a class="brand" href="#top" aria-label="QUICKREACH home" data-i18n-attr="aria-label:a_home">
       <img class="on-light" src="img/quickreach-logo.png" alt="QUICKREACH" width="596" height="163">
       <img class="on-dark" src="img/quickreach-logo-white.png" alt="QUICKREACH" width="596" height="163">
     </a>
-    <nav class="nav" aria-label="Page sections">
-      <a href="#apps">Apps</a>
-      <a href="#features" class="hide-sm">Features</a>
-      <a href="#latest" class="hide-sm">What's new</a>
-      <a href="#support">Support</a>
+    <nav class="nav" aria-label="Page sections" data-i18n-attr="aria-label:a_nav">
+      <a data-i18n="nav_apps" href="#apps">Apps</a>
+      <a data-i18n="nav_features" href="#features" class="hide-sm">Features</a>
+      <a data-i18n="nav_new" href="#latest" class="hide-sm">What's new</a>
+      <a data-i18n="nav_support" href="#support">Support</a>
+      <label class="lang">
+        <span class="sr-only" data-i18n="lang_label">Language</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <select id="lang" aria-label="Language">
+          <option value="en" lang="en">English</option>
+          <option value="es" lang="es">Español</option>
+        </select>
+      </label>
     </nav>
   </div>
 </header>
@@ -342,25 +361,25 @@
     <div class="wrap">
       <div>
         <span class="eyebrow">QUICKREACH · QUICKREACH KIDS</span>
-        <h1 id="hero-title">One button to reach the people who <span class="hl">care for you.</span></h1>
-        <p class="sub">Press and hold the big Call Button. QUICKREACH says who it's calling, starts the call, and gets your location ready to text.</p>
+        <h1 data-i18n="hero_h1" id="hero-title">One button to reach the people who <span class="hl">care for you.</span></h1>
+        <p data-i18n="hero_sub" class="sub">Press and hold the big Call Button. QUICKREACH says who it's calling, starts the call, and gets your location ready to text.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#apps">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg>
-            Meet the apps
+            <span data-i18n="hero_cta">Meet the apps</span>
           </a>
-          <a class="btn btn-ghost" href="#how">See how it works</a>
+          <a data-i18n="hero_how" class="btn btn-ghost" href="#how">See how it works</a>
         </div>
-        <ul class="spec" aria-label="Key numbers">
-          <li><b>1.5<small>sec</small></b><span>hold to call</span></li>
-          <li><b>9</b><span>languages</span></li>
-          <li><b>4<small>digit</small></b><span>PIN guards settings</span></li>
-          <li><b>0</b><span>accounts, ads or tracking</span></li>
+        <ul class="spec" aria-label="Key numbers" data-i18n-attr="aria-label:a_spec">
+          <li><b>1.5<small data-i18n="spec_sec">sec</small></b><span data-i18n="spec_hold">hold to call</span></li>
+          <li><b>9</b><span data-i18n="spec_langs">languages</span></li>
+          <li><b>4<small data-i18n="spec_digit">digit</small></b><span data-i18n="spec_pin">PIN guards settings</span></li>
+          <li><b>0</b><span data-i18n="spec_zero">accounts, ads or tracking</span></li>
         </ul>
       </div>
 
       <div class="stage">
-        <div class="switch" role="tablist" aria-label="Choose an app to preview">
+        <div class="switch" role="tablist" aria-label="Choose an app to preview" data-i18n-attr="aria-label:a_tabs">
           <button type="button" role="tab" id="tab-adult" aria-selected="true" aria-controls="phone" data-app="adult">QUICKREACH</button>
           <button type="button" role="tab" id="tab-kids" aria-selected="false" aria-controls="phone" data-app="kids">QUICKREACH KIDS</button>
         </div>
@@ -368,7 +387,7 @@
         <div class="phone" id="phone" data-app="adult" role="tabpanel" aria-labelledby="tab-adult">
           <div class="shot">
             <img id="phone-img" src="img/qr-call.jpg" alt="QUICKREACH home screen: the red Call Button, the emergency contact Sarah, and the current address" width="600" height="1304">
-            <button type="button" class="hold" id="hold" aria-label="Call Button demo: press and hold" aria-describedby="call-hint">
+            <button type="button" class="hold" id="hold" aria-label="Call Button demo: press and hold" data-i18n-attr="aria-label:a_hold" aria-describedby="call-hint">
               <svg viewBox="0 0 100 100" aria-hidden="true">
                 <circle class="prog" id="ring" cx="50" cy="50" r="47" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="295.31" stroke-dashoffset="295.31"/>
               </svg>
@@ -376,17 +395,17 @@
             <div class="overlay" id="ov-calling" hidden>
               <div class="pulse"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div>
               <h4 id="ov-title">Calling Sarah</h4>
-              <p>The name is said out loud</p>
+              <p data-i18n="ov_said">The name is said out loud</p>
             </div>
             <div class="overlay" id="ov-text" hidden>
-              <h4>Text ready to send</h4>
+              <h4 data-i18n="ov_ready">Text ready to send</h4>
               <div class="msg" id="ov-msg"></div>
-              <p>A person always taps Send in Messages.</p>
-              <button type="button" class="close" id="ov-close">Back to the Call Button</button>
+              <p data-i18n="ov_send">A person always taps Send in Messages.</p>
+              <button data-i18n="ov_back" type="button" class="close" id="ov-close">Back to the Call Button</button>
             </div>
           </div>
         </div>
-        <p class="stage-note" id="call-hint">Try it: press and hold the Call Button. This is a demo; nothing is called.</p>
+        <p data-i18n="demo_hint" class="stage-note" id="call-hint">Try it: press and hold the Call Button. This is a demo; nothing is called.</p>
       </div>
     </div>
   </section>
@@ -395,8 +414,8 @@
     <div class="notice" role="note">
       <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div>
       <div>
-        <strong>QUICKREACH does not call 911.</strong>
-        <p>QUICKREACH and QUICKREACH KIDS contact your family and friends, not the police or an ambulance.</p> <p>In an emergency, call 911 yourself from your phone.</p>
+        <strong data-i18n="n911">QUICKREACH does not call 911.</strong>
+        <p data-i18n="n911_p1">QUICKREACH and QUICKREACH KIDS contact your family and friends, not the police or an ambulance.</p> <p data-i18n="n911_p2">In an emergency, call 911 yourself from your phone.</p>
       </div>
     </div>
   </div>
@@ -404,49 +423,49 @@
   <section id="apps" aria-labelledby="apps-title">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">The apps</span>
-        <h2 id="apps-title">Same big button, built for two kinds of people</h2>
-        <p class="lead">Set it up for yourself or for someone you're helping. After setup, everything is on one screen.</p>
+        <span data-i18n="apps_eb" class="eyebrow">The apps</span>
+        <h2 data-i18n="apps_h2" id="apps-title">Same big button, built for two kinds of people</h2>
+        <p data-i18n="apps_lead" class="lead">Set it up for yourself or for someone you're helping. After setup, everything is on one screen.</p>
       </div>
       <div class="apps">
         <article class="app" aria-labelledby="app-adult">
           <div class="app-top">
             <img class="app-icon" src="img/icon-quickreach.png" alt="" width="240" height="240">
             <div>
-              <span class="for">For adults &amp; older relatives</span>
+              <span data-i18n="qr_for" class="for">For adults &amp; older relatives</span>
               <h3 id="app-adult">QUICKREACH</h3>
             </div>
           </div>
           <div class="build-line" data-build="quickreach"></div>
-          <p>Help one press away, for a parent living alone, a grandparent, or anyone who wants their people close without hunting through a contact list.</p>
+          <p data-i18n="qr_p">Help one press away, for a parent living alone, a grandparent, or anyone who wants their people close without hunting through a contact list.</p>
           <ul class="checks">
-            <li><span><strong>One red Call Button</strong> for your main contact</span></li>
-            <li><span><strong>Help text</strong> with your street address and Apple Maps and Google Maps links</span></li>
-            <li><span><strong>Health ID</strong> with medications, allergies, conditions and emergency contacts</span></li>
-            <li><span><strong>Apple Watch</strong>, widgets and a Control Center button</span></li>
-            <li><span><strong>Group Calling</strong> (Premium): up to 5 backup contacts</span></li>
+            <li><span data-i18n="qr_c1"><strong>One red Call Button</strong> for your main contact</span></li>
+            <li><span data-i18n="qr_c2"><strong>Help text</strong> with your street address and Apple Maps and Google Maps links</span></li>
+            <li><span data-i18n="qr_c3"><strong>Health ID</strong> with medications, allergies, conditions and emergency contacts</span></li>
+            <li><span data-i18n="qr_c4"><strong>Apple Watch</strong>, widgets and a Control Center button</span></li>
+            <li><span data-i18n="qr_c5"><strong>Group Calling</strong> (Premium): up to 5 backup contacts</span></li>
           </ul>
-          <p class="avail">Coming soon to the App Store for iPhone and Apple Watch.</p>
+          <p data-i18n="avail" class="avail">Coming soon to the App Store for iPhone and Apple Watch.</p>
         </article>
 
         <article class="app" aria-labelledby="app-kids">
           <div class="app-top">
             <img class="app-icon" src="img/icon-quickreach-kids.png" alt="" width="240" height="240">
             <div>
-              <span class="for">For kids &amp; their grown-ups</span>
+              <span data-i18n="kids_for" class="for">For kids &amp; their grown-ups</span>
               <h3 id="app-kids">QUICKREACH KIDS</h3>
             </div>
           </div>
           <div class="build-line" data-build="kids"></div>
-          <p>A first phone's most important button. Kids reach Mom &amp; Dad or a trusted helper, check in when they arrive, and can't change the settings by accident.</p>
+          <p data-i18n="kids_p">A first phone's most important button. Kids reach Mom &amp; Dad or a trusted helper, check in when they arrive, and can't change the settings by accident.</p>
           <ul class="checks">
-            <li><span><strong>Mom &amp; Dad</strong>: tap a circle to turn one off; one always stays on. Changing their numbers needs the PIN</span></li>
-            <li><span><strong>Other 1 or Other 2</strong> helper (you can rename both): when one is on, the Call Button calls them</span></li>
-            <li><span><strong>Safe Zones</strong> with an <strong>I'M SAFE</strong> check-in, plus a loud <strong>Siren</strong></span></li>
-            <li><span><strong>Learn My Info</strong>: practice Mom &amp; Dad's numbers, the home address and the Call Button, and earn stars</span></li>
-            <li><span><strong>Apple Watch</strong> Call Button on the wrist</span></li>
+            <li><span data-i18n="kids_c1"><strong>Mom &amp; Dad</strong>: tap a circle to turn one off; one always stays on. Changing their numbers needs the PIN</span></li>
+            <li><span data-i18n="kids_c2"><strong>Other 1 or Other 2</strong> helper (you can rename both): when one is on, the Call Button calls them</span></li>
+            <li><span data-i18n="kids_c3"><strong>Safe Zones</strong> with an <strong>I'M SAFE</strong> check-in, plus a loud <strong>Siren</strong></span></li>
+            <li><span data-i18n="kids_c4"><strong>Learn My Info</strong>: practice Mom &amp; Dad's numbers, the home address and the Call Button, and earn stars</span></li>
+            <li><span data-i18n="kids_c5"><strong>Apple Watch</strong> Call Button on the wrist</span></li>
           </ul>
-          <p class="avail">Coming soon to the App Store for iPhone and Apple Watch.</p>
+          <p data-i18n="avail" class="avail">Coming soon to the App Store for iPhone and Apple Watch.</p>
         </article>
       </div>
     </div>
@@ -455,15 +474,15 @@
   <section id="how" aria-labelledby="how-title">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">How it works</span>
-        <h2 id="how-title">From press to call in four steps</h2>
-        <p class="lead">Holding the button, instead of tapping it, keeps a phone in a pocket from calling anyone by mistake.</p>
+        <span data-i18n="how_eb" class="eyebrow">How it works</span>
+        <h2 data-i18n="how_h2" id="how-title">From press to call in four steps</h2>
+        <p data-i18n="how_lead" class="lead">Holding the button, instead of tapping it, keeps a phone in a pocket from calling anyone by mistake.</p>
       </div>
       <ol class="flow">
-        <li><span class="n" aria-hidden="true">1</span><h3>Press and hold</h3><p>Hold the Call Button for 1.5 seconds. A ring fills around it to show how long.</p></li>
-        <li><span class="n" aria-hidden="true">2</span><h3>Hear who's being called</h3><p>The app raises the volume and says the person's name out loud.</p></li>
-        <li><span class="n" aria-hidden="true">3</span><h3>The call starts</h3><p>It goes to the contact that's on, and the app says their name out loud.</p></li>
-        <li><span class="n" aria-hidden="true">4</span><h3>Text your location</h3><p>A help text with the street address and Apple Maps and Google Maps links is ready. Tap Send.</p></li>
+        <li><span class="n" aria-hidden="true">1</span><h3 data-i18n="how1">Press and hold</h3><p data-i18n="how1p">Hold the Call Button for 1.5 seconds. A ring fills around it to show how long.</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h3 data-i18n="how2">Hear who's being called</h3><p data-i18n="how2p">The app raises the volume and says the person's name out loud.</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h3 data-i18n="how3">The call starts</h3><p data-i18n="how3p">It goes to the contact that's on, and the app says their name out loud.</p></li>
+        <li><span class="n" aria-hidden="true">4</span><h3 data-i18n="how4">Text your location</h3><p data-i18n="how4p">A help text with the street address and Apple Maps and Google Maps links is ready. Tap Send.</p></li>
       </ol>
     </div>
   </section>
@@ -471,25 +490,25 @@
   <section id="features" class="alt" aria-labelledby="feat-title">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Features</span>
-        <h2 id="feat-title">Everything on one screen</h2>
+        <span data-i18n="nav_features" class="eyebrow">Features</span>
+        <h2 data-i18n="feat_h2" id="feat-title">Everything on one screen</h2>
       </div>
       <div class="feats">
-        <div class="feat"><h3><span class="dot c-call" aria-hidden="true"></span>Call Button</h3><p>One big button. Hold 1.5 seconds and the call starts.</p><span class="tag">Both apps</span></div>
-        <div class="feat"><h3><span class="dot c-loc" aria-hidden="true"></span>Text my location</h3><p>The street address, plus Apple Maps and Google Maps links that open on the exact spot.</p><span class="tag">Both apps</span></div>
-        <div class="feat"><h3><span class="dot c-health" aria-hidden="true"></span>Health ID</h3><p>Name, age, blood type, medications, allergies, conditions and emergency contacts.</p><span class="tag">Both apps</span></div>
-        <div class="feat"><h3><span class="dot c-pin" aria-hidden="true"></span>Apple Watch</h3><p>The Call Button on the wrist, plus a watch-face complication.</p><span class="tag">Both apps</span></div>
-        <div class="feat"><h3><span class="dot c-health" aria-hidden="true"></span>Widgets</h3><p>Home Screen and Lock Screen widgets. QUICKREACH adds a Control Center button.</p><span class="tag">Both apps</span></div>
-        <div class="feat"><h3><span class="dot c-pin" aria-hidden="true"></span>PIN-protected settings</h3><p>Contacts, the Health ID and the language need the 4-digit PIN. A recovery code gets you back in.</p><span class="tag">Both apps</span></div>
-        <div class="feat"><h3><span class="dot c-kids" aria-hidden="true"></span>Siren</h3><p>Hold the logo for 2 seconds for a loud siren that plays even on silent. Tap to stop.</p><span class="tag">QUICKREACH KIDS</span></div>
-        <div class="feat"><h3><span class="dot c-safe" aria-hidden="true"></span>Safe Zones</h3><p>Home, School and Other. The banner turns green when your child arrives. Removing one needs the PIN.</p><span class="tag">QUICKREACH KIDS</span></div>
-        <div class="feat"><h3><span class="dot c-safe" aria-hidden="true"></span>I'M SAFE</h3><p>One tap texts the family that your child arrived.</p><span class="tag">QUICKREACH KIDS</span></div>
-        <div class="feat"><h3><span class="dot c-kids" aria-hidden="true"></span>Learn My Info</h3><p>Kids practice Mom's and Dad's phone numbers and their home address. Hear it, then type it or pick it, and earn a star.</p><span class="tag">QUICKREACH KIDS</span></div>
-        <div class="feat"><h3><span class="dot c-call" aria-hidden="true"></span>Practice the Call Button</h3><p>A pretend Call Button to learn the press and hold. Nobody is called.</p><span class="tag">QUICKREACH KIDS</span></div>
-        <div class="feat"><h3><span class="dot c-loc" aria-hidden="true"></span>Battery in texts</h3><p>Help, location and I'M SAFE texts include the battery level, so you know if the phone is about to run out.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3 data-i18n="f1"><span class="dot c-call" aria-hidden="true"></span>Call Button</h3><p data-i18n="f1p">One big button. Hold 1.5 seconds and the call starts.</p><span data-i18n="both" class="tag">Both apps</span></div>
+        <div class="feat"><h3 data-i18n="f2"><span class="dot c-loc" aria-hidden="true"></span>Text my location</h3><p data-i18n="f2p">The street address, plus Apple Maps and Google Maps links that open on the exact spot.</p><span data-i18n="both" class="tag">Both apps</span></div>
+        <div class="feat"><h3 data-i18n="f3"><span class="dot c-health" aria-hidden="true"></span>Health ID</h3><p data-i18n="f3p">Name, age, blood type, medications, allergies, conditions and emergency contacts.</p><span data-i18n="both" class="tag">Both apps</span></div>
+        <div class="feat"><h3><span class="dot c-pin" aria-hidden="true"></span>Apple Watch</h3><p data-i18n="f4p">The Call Button on the wrist, plus a watch-face complication.</p><span data-i18n="both" class="tag">Both apps</span></div>
+        <div class="feat"><h3><span class="dot c-health" aria-hidden="true"></span>Widgets</h3><p data-i18n="f5p">Home Screen and Lock Screen widgets. QUICKREACH adds a Control Center button.</p><span data-i18n="both" class="tag">Both apps</span></div>
+        <div class="feat"><h3 data-i18n="f6"><span class="dot c-pin" aria-hidden="true"></span>PIN-protected settings</h3><p data-i18n="f6p">Contacts, the Health ID and the language need the 4-digit PIN. A recovery code gets you back in.</p><span data-i18n="both" class="tag">Both apps</span></div>
+        <div class="feat"><h3 data-i18n="f7"><span class="dot c-kids" aria-hidden="true"></span>Siren</h3><p data-i18n="f7p">Hold the logo for 2 seconds for a loud siren that plays even on silent. Tap to stop.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3 data-i18n="f8"><span class="dot c-safe" aria-hidden="true"></span>Safe Zones</h3><p data-i18n="f8p">Home, School and Other. The banner turns green when your child arrives. Removing one needs the PIN.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3 data-i18n="f9"><span class="dot c-safe" aria-hidden="true"></span>I'M SAFE</h3><p data-i18n="f9p">One tap texts the family that your child arrived.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3 data-i18n="f10"><span class="dot c-kids" aria-hidden="true"></span>Learn My Info</h3><p data-i18n="f10p">Kids practice Mom's and Dad's phone numbers and their home address. Hear it, then type it or pick it, and earn a star.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3 data-i18n="f11"><span class="dot c-call" aria-hidden="true"></span>Practice the Call Button</h3><p data-i18n="f11p">A pretend Call Button to learn the press and hold. Nobody is called.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat"><h3 data-i18n="f12"><span class="dot c-loc" aria-hidden="true"></span>Battery in texts</h3><p data-i18n="f12p">Help, location and I'M SAFE texts include the battery level, so you know if the phone is about to run out.</p><span class="tag">QUICKREACH KIDS</span></div>
       </div>
-      <div class="langs" aria-label="Supported languages">
-        <span class="lbl">Both apps speak</span>
+      <div class="langs" aria-label="Supported languages" data-i18n-attr="aria-label:a_langs">
+        <span data-i18n="speak" class="lbl">Both apps speak</span>
         <span lang="en">English</span><span lang="es">Español</span><span lang="fr">Français</span>
         <span lang="de">Deutsch</span><span lang="it">Italiano</span><span lang="pt">Português</span>
         <span lang="hi">हिन्दी</span><span lang="ja">日本語</span><span lang="fil">Filipino</span>
@@ -502,9 +521,9 @@
   <section id="latest" class="alt" aria-labelledby="latest-title">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Latest builds</span>
-        <h2 id="latest-title">What's new</h2>
-        <p class="lead">Recent improvements in each app.</p>
+        <span data-i18n="new_eb" class="eyebrow">Latest builds</span>
+        <h2 data-i18n="nav_new" id="latest-title">What's new</h2>
+        <p data-i18n="new_lead" class="lead">Recent improvements in each app.</p>
       </div>
       <div class="builds" id="builds-out"></div>
     </div>
@@ -513,27 +532,27 @@
   <section class="band" id="privacy" aria-labelledby="priv-title">
     <div class="wrap">
       <div>
-        <span class="eyebrow">Privacy</span>
-        <h2 id="priv-title">Your information stays on this phone</h2>
-        <p class="lead">Contacts, places and the Health ID are saved on the device. Your location is sent only when you call for help. Both apps are free, with no in-app purchases.</p>
-        <p class="lead"><a href="privacy.html" class="band-link">Read the Privacy Policy</a></p>
+        <span data-i18n="priv_eb" class="eyebrow">Privacy</span>
+        <h2 data-i18n="priv_h2" id="priv-title">Your information stays on this phone</h2>
+        <p data-i18n="priv_lead" class="lead">Contacts, places and the Health ID are saved on the device. Your location is sent only when you call for help. Both apps are free, with no in-app purchases.</p>
+        <p class="lead"><a data-i18n="priv_read" href="privacy.html" class="band-link">Read the Privacy Policy</a></p>
       </div>
       <div class="facts">
         <div class="fact">
           <div class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/></svg></div>
-          <div><h3>No account, no ads, no tracking</h3><p>QUICKREACH doesn't track you in the background. Location is read only while the app is on screen.</p></div>
+          <div><h3 data-i18n="fact1">No account, no ads, no tracking</h3><p data-i18n="fact1p">QUICKREACH doesn't track you in the background. Location is read only while the app is on screen.</p></div>
         </div>
         <div class="fact">
           <div class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-12.2 7.5L3 21l2-5.8A8.4 8.4 0 1 1 21 11.5z"/></svg></div>
-          <div><h3>A person always taps Send</h3><p>The app writes the help text and opens Messages. Nothing is sent on its own.</p></div>
+          <div><h3 data-i18n="fact2">A person always taps Send</h3><p data-i18n="fact2p">The app writes the help text and opens Messages. Nothing is sent on its own.</p></div>
         </div>
         <div class="fact">
           <div class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
-          <div><h3>Locked by a PIN</h3><p>Curious fingers can't change numbers, places or health details.</p></div>
+          <div><h3 data-i18n="fact3">Locked by a PIN</h3><p data-i18n="fact3p">Curious fingers can't change numbers, places or health details.</p></div>
         </div>
         <div class="fact">
           <div class="fi" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></div>
-          <div><h3>Set up with permission</h3><p>When you set up QUICKREACH for someone else, they need to agree to it. A parent or guardian sets up QUICKREACH KIDS.</p></div>
+          <div><h3 data-i18n="fact4">Set up with permission</h3><p data-i18n="fact4p">When you set up QUICKREACH for someone else, they need to agree to it. A parent or guardian sets up QUICKREACH KIDS.</p></div>
         </div>
       </div>
     </div>
@@ -542,24 +561,24 @@
   <section id="support" aria-labelledby="sup-title">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Support</span>
-        <h2 id="sup-title">Questions? We're here.</h2>
+        <span data-i18n="nav_support" class="eyebrow">Support</span>
+        <h2 data-i18n="sup_h2" id="sup-title">Questions? We're here.</h2>
       </div>
       <div class="support">
         <div class="card">
-          <h3>Help &amp; FAQ</h3>
-          <p>Setup, the Call Button, sharing your location, Safe Zones, the Health ID and the PIN, with step-by-step answers for both apps.</p>
-          <div><a class="btn btn-ghost" href="support.html">Open Support</a></div>
+          <h3 data-i18n="sup_faq">Help &amp; FAQ</h3>
+          <p data-i18n="sup_faq_p">Setup, the Call Button, sharing your location, Safe Zones, the Health ID and the PIN, with step-by-step answers for both apps.</p>
+          <div><a data-i18n="sup_open" class="btn btn-ghost" href="support.html">Open Support</a></div>
         </div>
         <div class="card">
-          <h3>Contact us</h3>
-          <p>A real person answers. Tell us which app, your phone model and what happened.</p>
+          <h3 data-i18n="sup_contact">Contact us</h3>
+          <p data-i18n="sup_contact_p">A real person answers. Tell us which app, your phone model and what happened.</p>
           <dl class="contact">
-            <dt>Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Support" id="email">edwin.vgwhiz@<wbr>gmail.com</a> <button type="button" class="copy" id="copy-email">Copy</button></dd>
-            <dt>Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
-            <dt>Web</dt><dd><a href="https://www.quickreachapp.com">QUICKREACHAPP.COM</a></dd>
+            <dt data-i18n="dt_email">Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Support" id="email">edwin.vgwhiz@<wbr>gmail.com</a> <button data-i18n="copy" type="button" class="copy" id="copy-email">Copy</button></dd>
+            <dt data-i18n="dt_phone">Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
+            <dt data-i18n="dt_web">Web</dt><dd><a href="https://www.quickreachapp.com">QUICKREACHAPP.COM</a></dd>
           </dl>
-          <p class="small-note">Please don't send a PIN, a recovery code or anyone's health details.</p>
+          <p data-i18n="nosend" class="small-note">Please don't send a PIN, a recovery code or anyone's health details.</p>
         </div>
       </div>
     </div>
@@ -570,14 +589,203 @@
   <div class="wrap">
     <span>© 2026 QUICKREACH · QUICKREACHAPP.COM</span>
     <nav aria-label="Legal">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
-      <a href="support.html">Support</a>
+      <a data-i18n="ft_privacy" href="privacy.html">Privacy Policy</a>
+      <a data-i18n="ft_eula" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+      <a data-i18n="nav_support" href="support.html">Support</a>
     </nav>
   </div>
 </footer>
 
-<!-- Build details. Update this block when a new build ships; the page renders from it. -->
+<script type="application/json" id="i18n">
+{
+ "es": {
+  "lang_label": "Idioma",
+  "title": "Apps de QUICKREACH",
+  "description": "QUICKREACH crea apps de un solo botón que contactan a quienes le cuidan: QUICKREACH y QUICKREACH KIDS.",
+  "nav_apps": "Apps",
+  "nav_features": "Funciones",
+  "nav_new": "Novedades",
+  "nav_support": "Ayuda",
+  "hero_h1": "Un botón para contactar a quienes <span class=\"hl\">le cuidan.</span>",
+  "hero_sub": "Mantenga presionado el gran Botón de Llamada. QUICKREACH dice a quién llama, inicia la llamada y deja su ubicación lista para enviar por mensaje.",
+  "hero_cta": "Conozca las apps",
+  "hero_how": "Vea cómo funciona",
+  "spec_sec": "s",
+  "spec_hold": "para llamar",
+  "spec_langs": "idiomas",
+  "spec_digit": "dígitos",
+  "spec_pin": "PIN protege los ajustes",
+  "spec_zero": "cuentas, anuncios ni rastreo",
+  "ov_said": "El nombre se dice en voz alta",
+  "ov_ready": "Mensaje listo para enviar",
+  "ov_send": "Una persona siempre toca Enviar en Mensajes.",
+  "ov_back": "Volver al Botón de Llamada",
+  "demo_hint": "Pruébelo: mantenga presionado el Botón de Llamada. Es una demostración; no se llama a nadie.",
+  "n911": "QUICKREACH no llama al 911.",
+  "n911_p1": "QUICKREACH y QUICKREACH KIDS contactan a su familia y amigos, no a la policía ni a una ambulancia.",
+  "n911_p2": "En una emergencia, llame usted mismo al 911 desde su teléfono.",
+  "apps_eb": "Las apps",
+  "apps_h2": "El mismo gran botón, hecho para dos tipos de personas",
+  "apps_lead": "Configúrela para usted o para alguien a quien ayuda. Después de la configuración, todo está en una sola pantalla.",
+  "qr_for": "Para adultos y familiares mayores",
+  "qr_p": "Ayuda a un solo botón de distancia: para un padre o una madre que vive solo, un abuelo o cualquiera que quiera tener cerca a los suyos sin buscar en una lista de contactos.",
+  "qr_c1": "<strong>Un Botón de Llamada rojo</strong> para su contacto principal",
+  "qr_c2": "<strong>Mensaje de ayuda</strong> con su dirección y enlaces de Apple Maps y Google Maps",
+  "qr_c3": "<strong>ID de Salud</strong> con medicamentos, alergias, condiciones y contactos de emergencia",
+  "qr_c4": "<strong>Apple Watch</strong>, widgets y un botón en el Centro de control",
+  "qr_c5": "<strong>Llamada grupal</strong> (Premium): hasta 5 contactos de respaldo",
+  "avail": "Muy pronto en el App Store para iPhone y Apple Watch.",
+  "kids_for": "Para niños y sus adultos",
+  "kids_p": "El botón más importante del primer teléfono. Los niños contactan a Mamá y Papá o a un ayudante de confianza, avisan cuando llegan y no pueden cambiar los ajustes por accidente.",
+  "kids_c1": "<strong>Mamá y Papá</strong>: toque un círculo para desactivar a uno; uno siempre queda activo. Cambiar sus números requiere el PIN",
+  "kids_c2": "Ayudante <strong>Otro 1 u Otro 2</strong> (puede cambiar el nombre de ambos): cuando uno está activo, el Botón de Llamada lo llama",
+  "kids_c3": "<strong>Zonas Seguras</strong> con el aviso <strong>ESTOY BIEN</strong>, y una <strong>Sirena</strong> potente",
+  "kids_c4": "<strong>Aprende mis datos</strong>: practican los números de Mamá y Papá, la dirección de casa y el Botón de Llamada, y ganan estrellas",
+  "kids_c5": "Botón de Llamada en la muñeca con <strong>Apple Watch</strong>",
+  "how_eb": "Cómo funciona",
+  "how_h2": "De presionar a llamar en cuatro pasos",
+  "how_lead": "Mantener presionado el botón, en lugar de solo tocarlo, evita que un teléfono en el bolsillo llame a alguien por error.",
+  "how1": "Mantenga presionado",
+  "how1p": "Mantenga presionado el Botón de Llamada 1.5 segundos. Un anillo se llena alrededor para mostrar el tiempo.",
+  "how2": "Escuche a quién se llama",
+  "how2p": "La app sube el volumen y dice el nombre de la persona en voz alta.",
+  "how3": "Empieza la llamada",
+  "how3p": "Va al contacto que está activo, y la app dice su nombre en voz alta.",
+  "how4": "Envíe su ubicación",
+  "how4p": "Un mensaje de ayuda con la dirección y enlaces de Apple Maps y Google Maps está listo. Toque Enviar.",
+  "feat_h2": "Todo en una sola pantalla",
+  "f1": "<span class=\"dot c-call\" aria-hidden=\"true\"></span>Botón de Llamada",
+  "f1p": "Un gran botón. Manténgalo presionado 1.5 segundos y empieza la llamada.",
+  "f2": "<span class=\"dot c-loc\" aria-hidden=\"true\"></span>Enviar mi ubicación",
+  "f2p": "La dirección, más enlaces de Apple Maps y Google Maps que abren en el lugar exacto.",
+  "f3": "<span class=\"dot c-health\" aria-hidden=\"true\"></span>ID de Salud",
+  "f3p": "Nombre, edad, tipo de sangre, medicamentos, alergias, condiciones y contactos de emergencia.",
+  "f4p": "El Botón de Llamada en la muñeca, más una complicación para la esfera del reloj.",
+  "f5p": "Widgets para la pantalla de inicio y la pantalla bloqueada. QUICKREACH añade un botón en el Centro de control.",
+  "f6": "<span class=\"dot c-pin\" aria-hidden=\"true\"></span>Ajustes protegidos con PIN",
+  "f6p": "Los contactos, el ID de Salud y el idioma requieren el PIN de 4 dígitos. Un código de recuperación le permite volver a entrar.",
+  "f7": "<span class=\"dot c-kids\" aria-hidden=\"true\"></span>Sirena",
+  "f7p": "Mantenga presionado el logo 2 segundos para una sirena fuerte que suena incluso en silencio. Toque para pararla.",
+  "f8": "<span class=\"dot c-safe\" aria-hidden=\"true\"></span>Zonas Seguras",
+  "f8p": "Casa, Escuela y Otro. El aviso se pone verde cuando su hijo llega. Quitar una requiere el PIN.",
+  "f9": "<span class=\"dot c-safe\" aria-hidden=\"true\"></span>ESTOY BIEN",
+  "f9p": "Con un toque, la familia recibe un mensaje de que su hijo llegó.",
+  "f10": "<span class=\"dot c-kids\" aria-hidden=\"true\"></span>Aprende mis datos",
+  "f10p": "Los niños practican los teléfonos de Mamá y Papá y su dirección de casa. La escuchan, luego la escriben o la eligen, y ganan una estrella.",
+  "f11": "<span class=\"dot c-call\" aria-hidden=\"true\"></span>Practica el Botón de Llamada",
+  "f11p": "Un Botón de Llamada de práctica para aprender a mantenerlo presionado. No se llama a nadie.",
+  "f12": "<span class=\"dot c-loc\" aria-hidden=\"true\"></span>Batería en los mensajes",
+  "f12p": "Los mensajes de ayuda, de ubicación y de ESTOY BIEN incluyen el nivel de batería, para saber si el teléfono está por apagarse.",
+  "both": "Ambas apps",
+  "speak": "Ambas apps hablan",
+  "new_eb": "Últimas versiones",
+  "new_lead": "Mejoras recientes en cada app.",
+  "priv_eb": "Privacidad",
+  "priv_h2": "Su información se queda en este teléfono",
+  "priv_lead": "Los contactos, los lugares y el ID de Salud se guardan en el dispositivo. Su ubicación se envía solo cuando pide ayuda. Ambas apps son gratis, sin compras dentro de la app.",
+  "priv_read": "Lea la Política de Privacidad",
+  "fact1": "Sin cuenta, sin anuncios, sin rastreo",
+  "fact1p": "QUICKREACH no le rastrea en segundo plano. La ubicación solo se lee mientras la app está en pantalla.",
+  "fact2": "Una persona siempre toca Enviar",
+  "fact2p": "La app escribe el mensaje de ayuda y abre Mensajes. Nada se envía por sí solo.",
+  "fact3": "Protegido con PIN",
+  "fact3p": "Los dedos curiosos no pueden cambiar números, lugares ni datos de salud.",
+  "fact4": "Configurado con permiso",
+  "fact4p": "Si configura QUICKREACH para otra persona, esa persona debe aceptarlo. Un padre, una madre o un tutor configura QUICKREACH KIDS.",
+  "sup_h2": "¿Preguntas? Estamos aquí.",
+  "sup_faq": "Ayuda y preguntas frecuentes",
+  "sup_faq_p": "La configuración, el Botón de Llamada, compartir su ubicación, las Zonas Seguras, el ID de Salud y el PIN, con respuestas paso a paso para ambas apps.",
+  "sup_open": "Abrir Ayuda",
+  "sup_contact": "Contáctenos",
+  "sup_contact_p": "Le responde una persona real. Díganos qué app usa, el modelo de su teléfono y qué pasó.",
+  "dt_email": "Correo",
+  "dt_phone": "Teléfono",
+  "dt_web": "Web",
+  "copy": "Copiar",
+  "nosend": "Por favor, no envíe un PIN, un código de recuperación ni datos de salud de nadie.",
+  "ft_privacy": "Política de Privacidad",
+  "ft_eula": "Términos de uso (EULA)",
+  "a_nav": "Secciones de la página",
+  "a_spec": "Cifras clave",
+  "a_tabs": "Elija una app para ver",
+  "a_hold": "Demostración del Botón de Llamada: mantenga presionado",
+  "a_langs": "Idiomas disponibles",
+  "a_home": "Inicio de QUICKREACH",
+  "js_version": "Versión",
+  "js_build": "Compilación",
+  "js_updated": "Actualizado",
+  "js_copied": "Copiado",
+  "js_selected": "Seleccionado",
+  "js_calling": "Llamando a Sarah",
+  "js_alt_adult": "Pantalla de inicio de QUICKREACH: el Botón de Llamada rojo, el contacto de emergencia Sarah y la dirección actual",
+  "js_alt_kids": "Pantalla Llamar a Familia de QUICKREACH KIDS: las tarjetas Mamá y Papá, Otro 1 y Otro 2 sobre el Botón de Llamada naranja",
+  "js_msg_adult": "Esta es una ALERTA de QUICKREACH:<br>Soy Maria. Por favor, llámeme lo antes posible. Estoy cerca de 154 Pehle Ave, Saddle Brook, NJ 07663.<br><br><u>Apple Maps</u><br><u>Google Maps</u>",
+  "js_msg_kids": "QUICKREACH KIDS: Aquí estoy. Soy Emma. Estoy cerca de 154 Pehle Ave, Saddle Brook, NJ 07663.<br><br><u>Apple Maps</u><br><u>Google Maps</u>"
+ }
+}
+</script>
+<script>
+// English / Spanish. The menu in the top bar switches language; links can pick
+// one with ?lang=es. The choice is shared with the other pages (qr-lang).
+(function () {
+  var T = {};
+  try { T = JSON.parse(document.getElementById('i18n').textContent); } catch (e) { return; }
+  var EN = {};
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) { EN[el.getAttribute('data-i18n')] = el.innerHTML; });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-attr]'), function (el) {
+    el.getAttribute('data-i18n-attr').split(';').forEach(function (p) { var a = p.split(':'); EN[a[1]] = el.getAttribute(a[0]); });
+  });
+  EN.title = document.title;
+  var meta = document.querySelector('meta[name="description"]');
+  if (meta) EN.description = meta.getAttribute('content');
+  T.en = EN;
+  function pick() {
+    var q = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+    if (T[q]) return q;
+    try { var saved = localStorage.getItem('qr-lang'); if (T[saved]) return saved; } catch (e) {}
+    var list = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < list.length; i++) { var base = String(list[i]).toLowerCase().split('-')[0]; if (T[base]) return base; }
+    return 'en';
+  }
+  function links(code) {
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'), function (a) {
+      var h = a.getAttribute('href'), m = h.match(/^(index|support|privacy)\.html(\?[^#]*)?(#.*)?$/);
+      if (!m) return;
+      a.setAttribute('href', m[1] + '.html' + (code === 'en' ? '' : '?lang=' + code) + (m[3] || ''));
+    });
+  }
+  function apply(code) {
+    var d = T[code], en = T.en;
+    function t(k) { return d[k] != null ? d[k] : en[k]; }
+    document.documentElement.lang = code;
+    document.title = t('title');
+    if (meta) meta.setAttribute('content', t('description'));
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) { el.innerHTML = t(el.getAttribute('data-i18n')); });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-attr]'), function (el) {
+      el.getAttribute('data-i18n-attr').split(';').forEach(function (p) { var a = p.split(':'); el.setAttribute(a[0], t(a[1])); });
+    });
+    var sel = document.getElementById('lang');
+    sel.value = code; sel.setAttribute('aria-label', t('lang_label'));
+    links(code);
+    window.QR_LANG = code;
+    document.dispatchEvent(new CustomEvent('qrlang', { detail: code }));
+  }
+  var sel = document.getElementById('lang');
+  apply(pick());
+  sel.addEventListener('change', function () {
+    var code = sel.value;
+    apply(code);
+    try { localStorage.setItem('qr-lang', code); } catch (e) {}
+    try {
+      var url = new URL(location.href);
+      if (code === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', code);
+      history.replaceState(null, '', url);
+    } catch (e) {}
+  });
+})();
+</script>
+<!-- Build details. Update this block when a new build ships; the page renders from it.
+     Each change is [date, English, Spanish]; if the Spanish is missing, English is shown. -->
 <script type="application/json" id="builds">
 {
   "quickreach": {
@@ -589,23 +797,28 @@
     "changes": [
       [
         "2026-11-11",
-        "Rounder, pill-shaped buttons in windows and messages."
+        "Rounder, pill-shaped buttons in windows and messages.",
+        "Botones más redondeados, en forma de píldora, en ventanas y mensajes."
       ],
       [
         "2026-11-11",
-        "The recovery code window fits on screen while you type, with Send and Not now always visible."
+        "The recovery code window fits on screen while you type, with Send and Not now always visible.",
+        "La ventana del código de recuperación cabe en la pantalla mientras escribe, con Enviar y Ahora no siempre visibles."
       ],
       [
         "2026-11-10",
-        "A short launch animation: the QUICKREACH icon draws itself, the hand taps and the red sparks pop, then the Call Button screen appears."
+        "A short launch animation: the QUICKREACH icon draws itself, the hand taps and the red sparks pop, then the Call Button screen appears.",
+        "Una breve animación al abrir: el ícono de QUICKREACH se dibuja, la mano toca y saltan las chispas rojas; luego aparece la pantalla del Botón de Llamada."
       ],
       [
         "2026-11-10",
-        "Group Calling (Premium) is back: up to 5 backup contacts in the Emergency Dialer."
+        "Group Calling (Premium) is back: up to 5 backup contacts in the Emergency Dialer.",
+        "Vuelve la Llamada grupal (Premium): hasta 5 contactos de respaldo en el marcador de Emergencia."
       ],
       [
         "2026-11-09",
-        "The Privacy Policy link in About & Privacy opens the policy in the app's language."
+        "The Privacy Policy link in About & Privacy opens the policy in the app's language.",
+        "El enlace a la Política de Privacidad en Acerca de y Privacidad abre la política en el idioma de la app."
       ]
     ]
   },
@@ -618,39 +831,48 @@
     "changes": [
       [
         "2026-11-13",
-        "Practice the Call Button: a pretend Call Button in the Learn tab teaches the press and hold. Nobody is called."
+        "Practice the Call Button: a pretend Call Button in the Learn tab teaches the press and hold. Nobody is called.",
+        "Practica el Botón de Llamada: un Botón de Llamada de práctica en la pestaña Aprender enseña a mantenerlo presionado. No se llama a nadie."
       ],
       [
         "2026-11-13",
-        "Learn My Info: a new Learn tab where kids practice Mom's and Dad's phone numbers and their home address, and earn stars."
+        "Learn My Info: a new Learn tab where kids practice Mom's and Dad's phone numbers and their home address, and earn stars.",
+        "Aprende mis datos: una nueva pestaña Aprender donde los niños practican los teléfonos de Mamá y Papá y su dirección de casa, y ganan estrellas."
       ],
       [
         "2026-11-13",
-        "Help, location and I'M SAFE texts include the phone's battery level."
+        "Help, location and I'M SAFE texts include the phone's battery level.",
+        "Los mensajes de ayuda, de ubicación y de ESTOY BIEN incluyen el nivel de batería del teléfono."
       ],
       [
         "2026-11-12",
-        "The Safe Zone tab is green and the Health ID tab is red. The helper tiles are now Other 1 and Other 2."
+        "The Safe Zone tab is green and the Health ID tab is red. The helper tiles are now Other 1 and Other 2.",
+        "La pestaña Zona Segura es verde y la pestaña ID de Salud es roja. Las tarjetas de ayudante ahora son Otro 1 y Otro 2."
       ],
       [
         "2026-11-12",
-        "The Health ID is red, like QUICKREACH."
+        "The Health ID is red, like QUICKREACH.",
+        "El ID de Salud es rojo, como en QUICKREACH."
       ],
       [
         "2026-11-11",
-        "Removing a Safe Zone needs the PIN. The Nanny/Sitter place is now Other."
+        "Removing a Safe Zone needs the PIN. The Nanny/Sitter place is now Other.",
+        "Quitar una Zona Segura requiere el PIN. El lugar Niñera/Cuidador ahora es Otro."
       ],
       [
         "2026-11-11",
-        "The siren starts after holding the logo for 2 seconds, and is off during setup."
+        "The siren starts after holding the logo for 2 seconds, and is off during setup.",
+        "La sirena empieza después de mantener presionado el logo 2 segundos, y está desactivada durante la configuración."
       ],
       [
         "2026-11-11",
-        "The Mom & Dad tile shows only the parents with a number, with a larger picture for a single parent."
+        "The Mom & Dad tile shows only the parents with a number, with a larger picture for a single parent.",
+        "La tarjeta Mamá y Papá muestra solo a los padres con número, con una foto más grande si hay un solo padre."
       ],
       [
         "2026-11-10",
-        "A short launch animation plays every time the app opens, then the Call Button screen appears."
+        "A short launch animation plays every time the app opens, then the Call Button screen appears.",
+        "Una breve animación se reproduce cada vez que se abre la app; luego aparece la pantalla del Botón de Llamada."
       ]
     ]
   }
@@ -659,25 +881,37 @@
 
 <script>
 (function () {
-  var MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  function fmt(d, withYear) { var p = d.split('-'); return MON[+p[1] - 1] + ' ' + (+p[2]) + (withYear ? ', ' + p[0] : ''); }
+  var LANG = window.QR_LANG || 'en';
+  var I = {}; try { I = JSON.parse(document.getElementById('i18n').textContent).es || {}; } catch (e) {}
+  function L(key, en) { return LANG === 'es' && I[key] ? I[key] : en; }
+  var MON = { en: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+              es: ['ene','feb','mar','abr','may','jun','jul','ago','sept','oct','nov','dic'] };
+  function fmt(d, withYear) {
+    var p = d.split('-'), m = MON[LANG === 'es' ? 'es' : 'en'][+p[1] - 1];
+    if (LANG === 'es') return (+p[2]) + ' ' + m + (withYear ? ' ' + p[0] : '');
+    return m + ' ' + (+p[2]) + (withYear ? ', ' + p[0] : '');
+  }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
 
   // ----- Build details -----
   var B = {};
   try { B = JSON.parse(document.getElementById('builds').textContent); } catch (e) {}
-  Array.prototype.forEach.call(document.querySelectorAll('[data-build]'), function (el) {
-    var b = B[el.getAttribute('data-build')]; if (!b) return;
-    el.innerHTML = '<span class="pill">Version ' + esc(b.version) + '</span><span class="pill">Build ' + esc(b.build) + '</span><span class="pill">Updated ' + fmt(b.updated, true) + '</span>';
-  });
   var out = document.getElementById('builds-out');
-  out.innerHTML = ['quickreach', 'kids'].filter(function (k) { return B[k]; }).map(function (k) {
-    var b = B[k];
-    return '<article class="bcard"><header><img src="' + esc(b.icon) + '" alt="" width="240" height="240"><div><h3>' + esc(b.name) +
-      '</h3><div class="meta">Version ' + esc(b.version) + ' · Build ' + esc(b.build) + ' · ' + fmt(b.updated, true) + '</div></div></header><ul class="log">' +
-      b.changes.map(function (c) { return '<li><time datetime="' + c[0] + '">' + fmt(c[0]) + '</time><span>' + esc(c[1]) + '</span></li>'; }).join('') +
-      '</ul></article>';
-  }).join('');
+  function renderBuilds() {
+    var V = L('js_version', 'Version'), BU = L('js_build', 'Build'), UP = L('js_updated', 'Updated');
+    Array.prototype.forEach.call(document.querySelectorAll('[data-build]'), function (el) {
+      var b = B[el.getAttribute('data-build')]; if (!b) return;
+      el.innerHTML = '<span class="pill">' + V + ' ' + esc(b.version) + '</span><span class="pill">' + BU + ' ' + esc(b.build) + '</span><span class="pill">' + UP + ' ' + fmt(b.updated, true) + '</span>';
+    });
+    out.innerHTML = ['quickreach', 'kids'].filter(function (k) { return B[k]; }).map(function (k) {
+      var b = B[k];
+      return '<article class="bcard"><header><img src="' + esc(b.icon) + '" alt="" width="240" height="240"><div><h3>' + esc(b.name) +
+        '</h3><div class="meta">' + V + ' ' + esc(b.version) + ' · ' + BU + ' ' + esc(b.build) + ' · ' + fmt(b.updated, true) + '</div></div></header><ul class="log">' +
+        b.changes.map(function (c) { return '<li><time datetime="' + c[0] + '">' + fmt(c[0]) + '</time><span>' + esc(LANG === 'es' && c[2] ? c[2] : c[1]) + '</span></li>'; }).join('') +
+        '</ul></article>';
+    }).join('');
+  }
+  renderBuilds();
 
   // ----- Hero phone: real screens + hold-to-call demo -----
   var APPS = {
@@ -708,7 +942,7 @@
     var a = APPS[key]; current = key;
     phone.setAttribute('data-app', key);
     phone.setAttribute('aria-labelledby', 'tab-' + key);
-    img.src = a.img; img.alt = a.alt;
+    img.src = a.img; img.alt = L('js_alt_' + key, a.alt);
     tabs.forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-app') === key ? 'true' : 'false'); });
     reset();
   }
@@ -738,8 +972,8 @@
   function fire() {
     busy = true;
     btn.classList.remove('holding');
-    document.getElementById('ov-title').textContent = APPS[current].calling;
-    document.getElementById('ov-msg').innerHTML = APPS[current].msg;
+    document.getElementById('ov-title').textContent = L('js_calling', APPS[current].calling);
+    document.getElementById('ov-msg').innerHTML = L('js_msg_' + current, APPS[current].msg);
     ovCall.hidden = false;
     timers.push(setTimeout(function () {
       ovCall.hidden = true; ovText.hidden = false; document.getElementById('ov-close').focus();
@@ -780,16 +1014,19 @@
   var copyBtn = document.getElementById('copy-email');
   copyBtn.addEventListener('click', function () {
     var text = document.getElementById('email').textContent.trim();
-    function done() { copyBtn.textContent = 'Copied'; setTimeout(function () { copyBtn.textContent = 'Copy'; }, 1600); }
+    function done() { copyBtn.textContent = L('js_copied', 'Copied'); setTimeout(function () { copyBtn.textContent = L('copy', 'Copy'); }, 1600); }
     function fallback() {
       var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
       var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
-      copyBtn.textContent = 'Selected';
+      copyBtn.textContent = L('js_selected', 'Selected');
     }
     try { navigator.clipboard.writeText(text).then(done, fallback); } catch (_) { fallback(); }
   });
 
   render('adult');
+
+  // Language menu changed: redraw the parts made by this script.
+  document.addEventListener('qrlang', function (e) { LANG = e.detail; renderBuilds(); render(current); });
 })();
 </script>
 <script>

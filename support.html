@@ -101,139 +101,159 @@
   .topbar { position: fixed !important; top: 0 !important; left: 0; right: 0; }
   body { padding-top: var(--bar-h, 65px); }
   html { scroll-padding-top: calc(var(--bar-h, 65px) + 12px); }
+  /* Language menu (top right), same as the Privacy Policy page. */
+  .nav { align-items: center; }
+  .lang { position: relative; display: inline-flex; align-items: center; gap: 6px; margin-left: 6px; padding: 0 10px; border: 2px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text-soft); }
+  .lang:focus-within { border-color: var(--sky); }
+  .lang select { font: inherit; font-size: 15px; font-weight: 800; color: var(--text); background: transparent; border: 0; padding: 7px 2px; cursor: pointer; appearance: auto; }
+  .lang select:focus { outline: none; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .brand { flex-shrink: 0; }
+  @media (max-width: 520px) { .nav a { padding: 8px 6px; font-size: 14px; } .lang { padding: 0 6px; margin-left: 2px; } .lang select { font-size: 14px; } .lang svg { display: none; } }
+  @media (max-width: 680px) { .nav a[data-i18n="nav_faq"], .nav a[data-i18n="nav_privacy"] { display: none; } }
+  @media (max-width: 520px) { .brand img { height: min(49px, calc(26.7vw - 55px)); } }
+  @media (max-width: 380px) { .contact dl { grid-template-columns: minmax(0, 1fr); gap: 2px 0; } .contact dd { margin-bottom: 10px; } }
 </style>
 </head>
 <body>
 <div class="topbar">
   <div class="wrap">
-    <a class="brand" href="index.html" aria-label="QUICKREACH home">
+    <a class="brand" href="index.html" aria-label="QUICKREACH home" data-i18n-attr="aria-label:a_home">
       <img class="on-light" src="img/quickreach-logo.png" alt="QUICKREACH" width="596" height="163">
       <img class="on-dark" src="img/quickreach-logo-white.png" alt="QUICKREACH" width="596" height="163">
     </a>
-    <nav class="nav" aria-label="Site">
-      <a href="index.html">Home</a>
-      <a href="#faq">FAQ</a>
-      <a href="privacy.html">Privacy</a>
+    <nav class="nav" aria-label="Site" data-i18n-attr="aria-label:a_nav">
+      <a data-i18n="nav_home" href="index.html">Home</a>
+      <a data-i18n="nav_faq" href="#faq">FAQ</a>
+      <a data-i18n="nav_privacy" href="privacy.html">Privacy</a>
+      <label class="lang">
+        <span class="sr-only" data-i18n="lang_label">Language</span>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <select id="lang" aria-label="Language">
+          <option value="en" lang="en">English</option>
+          <option value="es" lang="es">Español</option>
+        </select>
+      </label>
     </nav>
   </div>
 </div>
 
 <main class="wrap">
   <header class="page">
-    <span class="eyebrow">Support</span>
-    <h1>How can we help?</h1>
-    <p>Help for QUICKREACH and QUICKREACH KIDS. Find an answer below, or contact us directly.</p>
+    <span data-i18n="eb" class="eyebrow">Support</span>
+    <h1 data-i18n="h1">How can we help?</h1>
+    <p data-i18n="intro">Help for QUICKREACH and QUICKREACH KIDS. Find an answer below, or contact us directly.</p>
   </header>
 
   <div class="notice" role="note">
     <div>
-      <strong>QUICKREACH and QUICKREACH KIDS do not call 911.</strong>
-      <p>They contact your family and friends, not the police or an ambulance. In an emergency, call 911 yourself from your phone.</p>
+      <strong data-i18n="n911">QUICKREACH and QUICKREACH KIDS do not call 911.</strong>
+      <p data-i18n="n911p">They contact your family and friends, not the police or an ambulance. In an emergency, call 911 yourself from your phone.</p>
     </div>
   </div>
 
   <section class="contact" aria-labelledby="contact-title" id="contact">
     <div>
-      <h2 id="contact-title">Contact us</h2>
-      <p>A real person reads every message. Tell us which app you use, your iPhone model and what happened.</p>
+      <h2 data-i18n="contact" id="contact-title">Contact us</h2>
+      <p data-i18n="contact_p">A real person reads every message. Tell us which app you use, your iPhone model and what happened.</p>
     </div>
     <dl>
-      <dt>Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Support">edwin.vgwhiz@<wbr>gmail.com</a></dd>
-      <dt>Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
-      <dt>Web</dt><dd><a href="https://www.quickreachapp.com">QUICKREACHAPP.COM</a></dd>
+      <dt data-i18n="dt_email">Email</dt><dd><a href="mailto:edwin.vgwhiz@gmail.com?subject=QUICKREACH%20Support">edwin.vgwhiz@<wbr>gmail.com</a></dd>
+      <dt data-i18n="dt_phone">Phone</dt><dd><a href="tel:+16462464368">(646) 246-4368</a></dd>
+      <dt data-i18n="dt_web">Web</dt><dd><a href="https://www.quickreachapp.com">QUICKREACHAPP.COM</a></dd>
     </dl>
-    <p class="tip">Please don't send a PIN, a recovery code or anyone's health details.</p>
+    <p data-i18n="tip" class="tip">Please don't send a PIN, a recovery code or anyone's health details.</p>
   </section>
 
   <section id="faq" aria-labelledby="faq-title">
     <div class="tools">
-      <h2 id="faq-title">Frequently asked questions</h2>
-      <button class="chip" type="button" data-app="all" aria-pressed="true">Both apps</button>
+      <h2 data-i18n="faq_h2" id="faq-title">Frequently asked questions</h2>
+      <button data-i18n="both" class="chip" type="button" data-app="all" aria-pressed="true">Both apps</button>
       <button class="chip" type="button" data-app="qr" aria-pressed="false">QUICKREACH</button>
       <button class="chip" type="button" data-app="kids" aria-pressed="false">QUICKREACH KIDS</button>
-      <label class="search"><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search the FAQ</span><input id="q" type="search" placeholder="Search: PIN, location, Health ID…" autocomplete="off"></label>
+      <label class="search"><span data-i18n="search_lbl" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search the FAQ</span><input id="q" type="search" placeholder="Search: PIN, location, Health ID…" data-i18n-attr="placeholder:a_search" autocomplete="off"></label>
     </div>
 
     <div class="group">
-      <h3>Getting started</h3>
-      <details data-app="all"><summary>What do the apps do?</summary><div class="answer">
-        <p>Both apps put the people who care for you behind one big Call Button. Hold it to call, then send a text with your location. <strong>QUICKREACH</strong> is for adults and older relatives. <strong>QUICKREACH KIDS</strong> is set up by a parent or guardian on a child's phone.</p></div></details>
-      <details data-app="all"><summary>Do I need an account?</summary><div class="answer">
-        <p>No. There is no sign-up and no login. Everything you enter stays on the phone.</p></div></details>
-      <details data-app="all"><summary>How do I set up the app?</summary><div class="answer"><ol>
-        <li>Choose <strong>It's for me</strong> or <strong>I'm helping someone</strong>, and agree to the privacy details. If you set it up for someone else, they need to agree to it.</li>
-        <li>Create a 4-digit PIN, and send yourself the recovery code by text or email.</li>
-        <li>Add the phone numbers to call.</li></ol></div></details>
-      <details data-app="all"><summary>Does it cost anything?</summary><div class="answer">
-        <p>No. Both apps are free, with no in-app purchases, ads or subscriptions.</p></div></details>
-      <details data-app="all"><summary>Which languages are supported?</summary><div class="answer">
-        <p>English, Español, Français, Deutsch, Italiano, Português, हिन्दी, 日本語 and Filipino. Change the language with the <strong>EN</strong> button at the top of the screen.</p></div></details>
+      <h3 data-i18n="g1">Getting started</h3>
+      <details data-app="all"><summary data-i18n="q1">What do the apps do?</summary><div class="answer">
+        <p data-i18n="a1">Both apps put the people who care for you behind one big Call Button. Hold it to call, then send a text with your location. <strong>QUICKREACH</strong> is for adults and older relatives. <strong>QUICKREACH KIDS</strong> is set up by a parent or guardian on a child's phone.</p></div></details>
+      <details data-app="all"><summary data-i18n="q2">Do I need an account?</summary><div class="answer">
+        <p data-i18n="a2">No. There is no sign-up and no login. Everything you enter stays on the phone.</p></div></details>
+      <details data-app="all"><summary data-i18n="q3">How do I set up the app?</summary><div class="answer"><ol>
+        <li data-i18n="a3a">Choose <strong>It's for me</strong> or <strong>I'm helping someone</strong>, and agree to the privacy details. If you set it up for someone else, they need to agree to it.</li>
+        <li data-i18n="a3b">Create a 4-digit PIN, and send yourself the recovery code by text or email.</li>
+        <li data-i18n="a3c">Add the phone numbers to call.</li></ol></div></details>
+      <details data-app="all"><summary data-i18n="q4">Does it cost anything?</summary><div class="answer">
+        <p data-i18n="a4">No. Both apps are free, with no in-app purchases, ads or subscriptions.</p></div></details>
+      <details data-app="all"><summary data-i18n="q5">Which languages are supported?</summary><div class="answer">
+        <p data-i18n="a5">English, Español, Français, Deutsch, Italiano, Português, हिन्दी, 日本語 and Filipino. Change the language with the <strong>EN</strong> button at the top of the screen.</p></div></details>
     </div>
 
     <div class="group">
-      <h3>Calling</h3>
-      <details data-app="all"><summary>How does the Call Button work?</summary><div class="answer"><ol>
-        <li>Press and hold the Call Button for 1.5 seconds. A ring fills around it.</li>
-        <li>The app raises the volume and says who it's calling.</li>
-        <li>The call starts.</li>
-        <li>A text with your address and map links is ready. Tap <strong>Send</strong> in Messages.</li></ol></div></details>
-      <details data-app="qr"><summary>Who does QUICKREACH call?<span class="tag">QUICKREACH</span></summary><div class="answer">
-        <p>Your main contact. Change it by tapping <strong>LOCKED</strong> next to the contact and entering the PIN.</p></div></details>
-      <details data-app="kids"><summary>Who does QUICKREACH KIDS call?<span class="tag">KIDS</span></summary><div class="answer">
-        <ul><li><strong>Mom &amp; Dad</strong> each have a circle. Tap one to turn it off; one of them always stays on.</li>
-        <li>Only one of <strong>Caregiver</strong> or <strong>Other</strong> can be on. When one is on, the Call Button calls that helper. You can rename either tile.</li></ul>
-        <p>To switch helpers, tap the circle on a tile.</p></div></details>
-      <details data-app="all"><summary>Why do I have to hold the button?</summary><div class="answer">
-        <p>Holding for 1.5 seconds stops calls from a quick tap or a phone in a pocket.</p></div></details>
-      <details data-app="all"><summary>Does it work on Apple Watch?</summary><div class="answer">
-        <p>Yes. The Apple Watch app has the Call Button, and you can add it to your watch face. After a call, you can text your location from the watch.</p></div></details>
+      <h3 data-i18n="g2">Calling</h3>
+      <details data-app="all"><summary data-i18n="q6">How does the Call Button work?</summary><div class="answer"><ol>
+        <li data-i18n="a6a">Press and hold the Call Button for 1.5 seconds. A ring fills around it.</li>
+        <li data-i18n="a6b">The app raises the volume and says who it's calling.</li>
+        <li data-i18n="a6c">The call starts.</li>
+        <li data-i18n="a6d">A text with your address and map links is ready. Tap <strong>Send</strong> in Messages.</li></ol></div></details>
+      <details data-app="qr"><summary data-i18n="q7">Who does QUICKREACH call?<span class="tag">QUICKREACH</span></summary><div class="answer">
+        <p data-i18n="a7">Your main contact. Change it by tapping <strong>LOCKED</strong> next to the contact and entering the PIN.</p></div></details>
+      <details data-app="kids"><summary data-i18n="q8">Who does QUICKREACH KIDS call?<span class="tag">KIDS</span></summary><div class="answer">
+        <ul><li data-i18n="a8a"><strong>Mom &amp; Dad</strong> each have a circle. Tap one to turn it off; one of them always stays on.</li>
+        <li data-i18n="a8b">Only one of <strong>Other 1</strong> or <strong>Other 2</strong> can be on. When one is on, the Call Button calls that helper. You can rename either tile.</li></ul>
+        <p data-i18n="a8c">To switch helpers, tap the circle on a tile.</p></div></details>
+      <details data-app="all"><summary data-i18n="q9">Why do I have to hold the button?</summary><div class="answer">
+        <p data-i18n="a9">Holding for 1.5 seconds stops calls from a quick tap or a phone in a pocket.</p></div></details>
+      <details data-app="all"><summary data-i18n="q10">Does it work on Apple Watch?</summary><div class="answer">
+        <p data-i18n="a10">Yes. The Apple Watch app has the Call Button, and you can add it to your watch face. After a call, you can text your location from the watch.</p></div></details>
     </div>
 
     <div class="group">
-      <h3>Location</h3>
-      <details data-app="all"><summary>How do I send my location?</summary><div class="answer">
-        <p>After a call, or by tapping the red pin under the Call Button, the app prepares a text with your street address and Apple Maps and Google Maps links. Tap <strong>Send</strong> in Messages.</p></div></details>
-      <details data-app="all"><summary>Are texts sent automatically?</summary><div class="answer">
-        <p>No. The app writes the text and opens Messages. A person always taps Send.</p></div></details>
-      <details data-app="all"><summary>Does the app track me?</summary><div class="answer">
-        <p>No. Location is read only while the app is open on the screen. It isn't tracked in the background and isn't sent to us.</p></div></details>
-      <details data-app="all"><summary>Why is the address sometimes a little off?</summary><div class="answer">
-        <p>Indoors or with a weak signal, the address can be off by a few houses. The map links use the GPS position, which is usually closer.</p></div></details>
+      <h3 data-i18n="g3">Location</h3>
+      <details data-app="all"><summary data-i18n="q11">How do I send my location?</summary><div class="answer">
+        <p data-i18n="a11">After a call, or by tapping the red pin under the Call Button, the app prepares a text with your street address and Apple Maps and Google Maps links. Tap <strong>Send</strong> in Messages.</p></div></details>
+      <details data-app="all"><summary data-i18n="q12">Are texts sent automatically?</summary><div class="answer">
+        <p data-i18n="a12">No. The app writes the text and opens Messages. A person always taps Send.</p></div></details>
+      <details data-app="all"><summary data-i18n="q13">Does the app track me?</summary><div class="answer">
+        <p data-i18n="a13">No. Location is read only while the app is open on the screen. It isn't tracked in the background and isn't sent to us.</p></div></details>
+      <details data-app="all"><summary data-i18n="q14">Why is the address sometimes a little off?</summary><div class="answer">
+        <p data-i18n="a14">Indoors or with a weak signal, the address can be off by a few houses. The map links use the GPS position, which is usually closer.</p></div></details>
     </div>
 
     <div class="group">
-      <h3>QUICKREACH KIDS features</h3>
-      <details data-app="kids"><summary>What are Safe Zones and I'M SAFE?<span class="tag">KIDS</span></summary><div class="answer">
-        <p>Safe Zones are places your child goes often: Home, School and Other. When your child arrives, the banner turns green. Tapping <strong>I'M SAFE</strong> texts the family that they arrived.</p></div></details>
-      <details data-app="kids"><summary>How do I add a place?<span class="tag">KIDS</span></summary><div class="answer"><ol>
-        <li>Open <strong>Safe Zone / Health</strong>, tap <strong>Edit</strong> and enter the PIN.</li>
-        <li>Choose a place from the nearby list, or search for a place or an address. The search uses Apple Maps.</li>
-        <li>Tap <strong>Use this place</strong>, then <strong>Save</strong>.</li></ol>
-        <p>To remove a place, tap the red <strong>✕</strong> next to it and enter the PIN.</p></div></details>
-      <details data-app="kids"><summary>How does the siren work?<span class="tag">KIDS</span></summary><div class="answer">
-        <p>Hold the logo at the bottom of the screen for 2 seconds. A loud siren plays, even on silent, and the phone vibrates. Tap anywhere to stop. The volume goes back to where it was. The siren is off during setup.</p></div></details>
+      <h3 data-i18n="g4">QUICKREACH KIDS features</h3>
+      <details data-app="kids"><summary data-i18n="q15">What are Safe Zones and I'M SAFE?<span class="tag">KIDS</span></summary><div class="answer">
+        <p data-i18n="a15">Safe Zones are places your child goes often: Home, School and Other. When your child arrives, the banner turns green. Tapping <strong>I'M SAFE</strong> texts the family that they arrived.</p></div></details>
+      <details data-app="kids"><summary data-i18n="q16">How do I add a place?<span class="tag">KIDS</span></summary><div class="answer"><ol>
+        <li data-i18n="a16a">Open <strong>Safe Zone / Health</strong>, tap <strong>Edit</strong> and enter the PIN.</li>
+        <li data-i18n="a16b">Choose a place from the nearby list, or search for a place or an address. The search uses Apple Maps.</li>
+        <li data-i18n="a16c">Tap <strong>Use this place</strong>, then <strong>Save</strong>.</li></ol>
+        <p data-i18n="a16d">To remove a place, tap the red <strong>✕</strong> next to it and enter the PIN.</p></div></details>
+      <details data-app="kids"><summary data-i18n="q17">How does the siren work?<span class="tag">KIDS</span></summary><div class="answer">
+        <p data-i18n="a17">Hold the logo at the bottom of the screen for 2 seconds. A loud siren plays, even on silent, and the phone vibrates. Tap anywhere to stop. The volume goes back to where it was. The siren is off during setup.</p></div></details>
     </div>
 
     <div class="group">
-      <h3>Health ID</h3>
-      <details data-app="all"><summary>What is the Health ID?</summary><div class="answer">
-        <p>A card with what a helper needs to know: name, age, blood type, medications, allergies, conditions, notes and emergency contacts. It can be included in the help text. Tap <strong>LOCKED</strong> and enter the PIN to change it.</p></div></details>
-      <details data-app="all"><summary>Can it read from Apple Health?</summary><div class="answer">
-        <p>Only if you allow it. The app can fill in date of birth, sex, blood type, wheelchair use and medications from Apple Health. It never writes to Apple Health.</p></div></details>
+      <h3 data-i18n="g5">Health ID</h3>
+      <details data-app="all"><summary data-i18n="q18">What is the Health ID?</summary><div class="answer">
+        <p data-i18n="a18">A card with what a helper needs to know: name, age, blood type, medications, allergies, conditions, notes and emergency contacts. It can be included in the help text. Tap <strong>LOCKED</strong> and enter the PIN to change it.</p></div></details>
+      <details data-app="all"><summary data-i18n="q19">Can it read from Apple Health?</summary><div class="answer">
+        <p data-i18n="a19">Only if you allow it. The app can fill in date of birth, sex, blood type, wheelchair use and medications from Apple Health. It never writes to Apple Health.</p></div></details>
     </div>
 
     <div class="group">
-      <h3>PIN &amp; privacy</h3>
-      <details data-app="all"><summary>What does the PIN protect?</summary><div class="answer">
-        <p>Phone numbers, the Health ID, the language and withdrawing consent all need the PIN. In QUICKREACH KIDS, Safe Zones and turning Mom &amp; Dad off need it too.</p></div></details>
-      <details data-app="all"><summary>I forgot my PIN.</summary><div class="answer">
-        <p>Tap <strong>Forgot PIN?</strong> and enter the recovery code you sent yourself during setup. Without the code, you can reset the PIN after a 24-hour wait. Entering the right PIN during the wait cancels the reset.</p></div></details>
-      <details data-app="all"><summary>How do I withdraw consent or delete my information?</summary><div class="answer">
-        <p>Tap the <strong>ⓘ</strong> button at the top of the screen and choose <strong>Withdraw consent</strong> (needs the PIN). Deleting the app removes everything it stored on the phone. We don't keep a copy. Read the <a href="privacy.html">Privacy Policy</a>.</p></div></details>
+      <h3 data-i18n="g6">PIN &amp; privacy</h3>
+      <details data-app="all"><summary data-i18n="q20">What does the PIN protect?</summary><div class="answer">
+        <p data-i18n="a20">Phone numbers, the Health ID, the language and withdrawing consent all need the PIN. In QUICKREACH KIDS, Safe Zones and turning Mom &amp; Dad off need it too.</p></div></details>
+      <details data-app="all"><summary data-i18n="q21">I forgot my PIN.</summary><div class="answer">
+        <p data-i18n="a21">Tap <strong>Forgot PIN?</strong> and enter the recovery code you sent yourself during setup. Without the code, you can reset the PIN after a 24-hour wait. Entering the right PIN during the wait cancels the reset.</p></div></details>
+      <details data-app="all"><summary data-i18n="q22">How do I withdraw consent or delete my information?</summary><div class="answer">
+        <p data-i18n="a22">Tap the <strong>ⓘ</strong> button at the top of the screen and choose <strong>Withdraw consent</strong> (needs the PIN). Deleting the app removes everything it stored on the phone. We don't keep a copy. Read the <a data-i18n="ft_privacy" href="privacy.html">Privacy Policy</a>.</p></div></details>
     </div>
 
 
-    <p class="empty" id="empty" hidden>No questions match. <a href="#contact">Contact us</a> and we'll help.</p>
+    <p data-i18n="empty" class="empty" id="empty" hidden>No questions match. <a data-i18n="contact" href="#contact">Contact us</a> and we'll help.</p>
   </section>
 </main>
 
@@ -241,13 +261,165 @@
   <div class="wrap">
     <span>© 2026 QUICKREACH · QUICKREACHAPP.COM</span>
     <nav aria-label="Legal">
-      <a href="index.html">Home</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
+      <a data-i18n="nav_home" href="index.html">Home</a>
+      <a data-i18n="ft_privacy" href="privacy.html">Privacy Policy</a>
+      <a data-i18n="ft_eula" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use (EULA)</a>
     </nav>
   </div>
 </footer>
 
+<script type="application/json" id="i18n">
+{
+ "es": {
+  "lang_label": "Idioma",
+  "title": "Ayuda de QUICKREACH",
+  "description": "Ayuda y contacto para QUICKREACH y QUICKREACH KIDS: el Botón de Llamada, compartir su ubicación, las Zonas Seguras, el ID de Salud y el PIN.",
+  "nav_home": "Inicio",
+  "nav_faq": "Preguntas",
+  "nav_privacy": "Privacidad",
+  "eb": "Ayuda",
+  "h1": "¿Cómo podemos ayudarle?",
+  "intro": "Ayuda para QUICKREACH y QUICKREACH KIDS. Encuentre una respuesta abajo o contáctenos directamente.",
+  "n911": "QUICKREACH y QUICKREACH KIDS no llaman al 911.",
+  "n911p": "Contactan a su familia y amigos, no a la policía ni a una ambulancia. En una emergencia, llame usted mismo al 911 desde su teléfono.",
+  "empty": "Ninguna pregunta coincide. <a href=\"#contact\">Contáctenos</a> y le ayudamos.",
+  "contact": "Contáctenos",
+  "contact_p": "Una persona real lee cada mensaje. Díganos qué app usa, el modelo de su iPhone y qué pasó.",
+  "dt_email": "Correo",
+  "dt_phone": "Teléfono",
+  "dt_web": "Web",
+  "tip": "Por favor, no envíe un PIN, un código de recuperación ni datos de salud de nadie.",
+  "faq_h2": "Preguntas frecuentes",
+  "both": "Ambas apps",
+  "search_lbl": "Buscar en las preguntas",
+  "g1": "Primeros pasos",
+  "q1": "¿Qué hacen las apps?",
+  "a1": "Ambas apps ponen a quienes le cuidan detrás de un gran Botón de Llamada. Manténgalo presionado para llamar y luego envíe un mensaje con su ubicación. <strong>QUICKREACH</strong> es para adultos y familiares mayores. <strong>QUICKREACH KIDS</strong> lo configura un padre, una madre o un tutor en el teléfono del niño.",
+  "q2": "¿Necesito una cuenta?",
+  "a2": "No. No hay registro ni inicio de sesión. Todo lo que ingresa se queda en el teléfono.",
+  "q3": "¿Cómo configuro la app?",
+  "a3a": "Elija <strong>Es para mí</strong> o <strong>Estoy ayudando a alguien</strong> y acepte los detalles de privacidad. Si la configura para otra persona, esa persona debe aceptarlo.",
+  "a3b": "Cree un PIN de 4 dígitos y envíese el código de recuperación por mensaje o correo.",
+  "a3c": "Agregue los números de teléfono a los que llamar.",
+  "q4": "¿Cuesta algo?",
+  "a4": "No. Ambas apps son gratis, sin compras dentro de la app, anuncios ni suscripciones.",
+  "q5": "¿Qué idiomas están disponibles?",
+  "a5": "English, Español, Français, Deutsch, Italiano, Português, हिन्दी, 日本語 y Filipino. Cambie el idioma con el botón del idioma (<strong>EN</strong>, <strong>ES</strong>…) en la parte superior de la pantalla.",
+  "g2": "Llamadas",
+  "q6": "¿Cómo funciona el Botón de Llamada?",
+  "a6a": "Mantenga presionado el Botón de Llamada 1.5 segundos. Un anillo se llena alrededor.",
+  "a6b": "La app sube el volumen y dice a quién llama.",
+  "a6c": "Empieza la llamada.",
+  "a6d": "Un mensaje con su dirección y enlaces de mapas está listo. Toque <strong>Enviar</strong> en Mensajes.",
+  "q7": "¿A quién llama QUICKREACH?<span class=\"tag\">QUICKREACH</span>",
+  "a7": "A su contacto principal. Para cambiarlo, toque <strong>LOCKED</strong> junto al contacto e ingrese el PIN.",
+  "q8": "¿A quién llama QUICKREACH KIDS?<span class=\"tag\">KIDS</span>",
+  "a8a": "<strong>Mamá y Papá</strong> tienen cada uno un círculo. Toque uno para desactivarlo; uno de los dos siempre queda activo.",
+  "a8b": "Solo uno de <strong>Otro 1</strong> u <strong>Otro 2</strong> puede estar activo. Cuando uno está activo, el Botón de Llamada llama a ese ayudante. Puede cambiar el nombre de cualquiera de las dos tarjetas.",
+  "a8c": "Para cambiar de ayudante, toque el círculo de una tarjeta.",
+  "q9": "¿Por qué hay que mantener presionado el botón?",
+  "a9": "Mantenerlo presionado 1.5 segundos evita llamadas por un toque rápido o por un teléfono en el bolsillo.",
+  "q10": "¿Funciona en el Apple Watch?",
+  "a10": "Sí. La app del Apple Watch tiene el Botón de Llamada, y puede añadirlo a la esfera del reloj. Después de una llamada, puede enviar su ubicación por mensaje desde el reloj.",
+  "g3": "Ubicación",
+  "q11": "¿Cómo envío mi ubicación?",
+  "a11": "Después de una llamada, o al tocar el pin rojo debajo del Botón de Llamada, la app prepara un mensaje con su dirección y enlaces de Apple Maps y Google Maps. Toque <strong>Enviar</strong> en Mensajes.",
+  "q12": "¿Los mensajes se envían solos?",
+  "a12": "No. La app escribe el mensaje y abre Mensajes. Una persona siempre toca Enviar.",
+  "q13": "¿La app me rastrea?",
+  "a13": "No. La ubicación solo se lee mientras la app está abierta en la pantalla. No se rastrea en segundo plano y no se nos envía.",
+  "q14": "¿Por qué a veces la dirección no es exacta?",
+  "a14": "En interiores o con poca señal, la dirección puede variar unas casas. Los enlaces de mapas usan la posición GPS, que suele ser más precisa.",
+  "g4": "Funciones de QUICKREACH KIDS",
+  "q15": "¿Qué son las Zonas Seguras y ESTOY BIEN?<span class=\"tag\">KIDS</span>",
+  "a15": "Las Zonas Seguras son lugares a los que su hijo va a menudo: Casa, Escuela y Otro. Cuando su hijo llega, el aviso se pone verde. Al tocar <strong>ESTOY BIEN</strong>, la familia recibe un mensaje de que llegó.",
+  "q16": "¿Cómo agrego un lugar?<span class=\"tag\">KIDS</span>",
+  "a16a": "Abra <strong>Zona Segura / Salud</strong>, toque <strong>Editar</strong> e ingrese el PIN.",
+  "a16b": "Elija un lugar de la lista de lugares cercanos, o busque un lugar o una dirección. La búsqueda usa Apple Maps.",
+  "a16c": "Toque <strong>Usar este lugar</strong> y luego <strong>Guardar</strong>.",
+  "a16d": "Para quitar un lugar, toque la <strong>✕</strong> roja junto a él e ingrese el PIN.",
+  "q17": "¿Cómo funciona la sirena?<span class=\"tag\">KIDS</span>",
+  "a17": "Mantenga presionado el logo de la parte inferior de la pantalla 2 segundos. Suena una sirena fuerte, incluso en silencio, y el teléfono vibra. Toque en cualquier lugar para pararla. El volumen vuelve a como estaba. La sirena está desactivada durante la configuración.",
+  "g5": "ID de Salud",
+  "q18": "¿Qué es el ID de Salud?",
+  "a18": "Una tarjeta con lo que necesita saber quien le ayuda: nombre, edad, tipo de sangre, medicamentos, alergias, condiciones, notas y contactos de emergencia. Puede incluirse en el mensaje de ayuda. Para cambiarla, toque <strong>LOCKED</strong> e ingrese el PIN.",
+  "q19": "¿Puede leer datos de Salud de Apple?",
+  "a19": "Solo si usted lo permite. La app puede completar la fecha de nacimiento, el sexo, el tipo de sangre, el uso de silla de ruedas y los medicamentos desde Salud de Apple. Nunca escribe en Salud de Apple.",
+  "g6": "PIN y privacidad",
+  "q20": "¿Qué protege el PIN?",
+  "a20": "Los números de teléfono, el ID de Salud, el idioma y retirar el consentimiento requieren el PIN. En QUICKREACH KIDS, también lo requieren las Zonas Seguras y desactivar a Mamá y Papá.",
+  "q21": "Olvidé mi PIN.",
+  "a21": "Toque <strong>¿Olvidó el PIN?</strong> e ingrese el código de recuperación que se envió durante la configuración. Sin el código, puede restablecer el PIN tras una espera de 24 horas. Ingresar el PIN correcto durante la espera cancela el restablecimiento.",
+  "q22": "¿Cómo retiro el consentimiento o borro mi información?",
+  "a22": "Toque el botón <strong>ⓘ</strong> en la parte superior de la pantalla y elija <strong>Retirar consentimiento</strong> (requiere el PIN). Al borrar la app se elimina todo lo que guardó en el teléfono. No guardamos una copia. Lea la <a href=\"privacy.html\">Política de Privacidad</a>.",
+  "ft_privacy": "Política de Privacidad",
+  "ft_eula": "Términos de uso (EULA)",
+  "a_nav": "Sitio",
+  "a_search": "Buscar: PIN, ubicación, ID de Salud…",
+  "a_home": "Inicio de QUICKREACH"
+ }
+}
+</script>
+<script>
+// English / Spanish. The menu in the top bar switches language; links can pick
+// one with ?lang=es. The choice is shared with the other pages (qr-lang).
+(function () {
+  var T = {};
+  try { T = JSON.parse(document.getElementById('i18n').textContent); } catch (e) { return; }
+  var EN = {};
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) { EN[el.getAttribute('data-i18n')] = el.innerHTML; });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-attr]'), function (el) {
+    el.getAttribute('data-i18n-attr').split(';').forEach(function (p) { var a = p.split(':'); EN[a[1]] = el.getAttribute(a[0]); });
+  });
+  EN.title = document.title;
+  var meta = document.querySelector('meta[name="description"]');
+  if (meta) EN.description = meta.getAttribute('content');
+  T.en = EN;
+  function pick() {
+    var q = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+    if (T[q]) return q;
+    try { var saved = localStorage.getItem('qr-lang'); if (T[saved]) return saved; } catch (e) {}
+    var list = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < list.length; i++) { var base = String(list[i]).toLowerCase().split('-')[0]; if (T[base]) return base; }
+    return 'en';
+  }
+  function links(code) {
+    Array.prototype.forEach.call(document.querySelectorAll('a[href]'), function (a) {
+      var h = a.getAttribute('href'), m = h.match(/^(index|support|privacy)\.html(\?[^#]*)?(#.*)?$/);
+      if (!m) return;
+      a.setAttribute('href', m[1] + '.html' + (code === 'en' ? '' : '?lang=' + code) + (m[3] || ''));
+    });
+  }
+  function apply(code) {
+    var d = T[code], en = T.en;
+    function t(k) { return d[k] != null ? d[k] : en[k]; }
+    document.documentElement.lang = code;
+    document.title = t('title');
+    if (meta) meta.setAttribute('content', t('description'));
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n]'), function (el) { el.innerHTML = t(el.getAttribute('data-i18n')); });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-i18n-attr]'), function (el) {
+      el.getAttribute('data-i18n-attr').split(';').forEach(function (p) { var a = p.split(':'); el.setAttribute(a[0], t(a[1])); });
+    });
+    var sel = document.getElementById('lang');
+    sel.value = code; sel.setAttribute('aria-label', t('lang_label'));
+    links(code);
+    window.QR_LANG = code;
+    document.dispatchEvent(new CustomEvent('qrlang', { detail: code }));
+  }
+  var sel = document.getElementById('lang');
+  apply(pick());
+  sel.addEventListener('change', function () {
+    var code = sel.value;
+    apply(code);
+    try { localStorage.setItem('qr-lang', code); } catch (e) {}
+    try {
+      var url = new URL(location.href);
+      if (code === 'en') url.searchParams.delete('lang'); else url.searchParams.set('lang', code);
+      history.replaceState(null, '', url);
+    } catch (e) {}
+  });
+})();
+</script>
 <script>
 (function () {
   var q = document.getElementById('q');
