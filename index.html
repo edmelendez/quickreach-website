@@ -247,6 +247,8 @@
   .feat { padding: 24px 22px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; gap: 6px; align-content: start; min-width: 0; }
   .feat:nth-child(3n) { border-right: 0; }
   .feat:nth-last-child(-n+3) { border-bottom: 0; }
+  .feat.wide { grid-column: 1 / -1; border-right: 0; border-bottom: 0; }
+  .feats:has(.wide) .feat:not(.wide) { border-bottom: 1px solid var(--border); }
   .feat h3 { display: flex; align-items: center; gap: 10px; font-size: 1.08rem; }
   .feat p { margin: 0; color: var(--text-soft); font-size: 15.5px; }
   .tag { font-size: 11px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--text-soft); justify-self: start; }
@@ -441,6 +443,7 @@
           <ul class="checks">
             <li><span data-i18n="qr_c1"><strong>One red Call Button</strong> for your main contact</span></li>
             <li><span data-i18n="qr_c2"><strong>Help text</strong> with your street address and Apple Maps and Google Maps links</span></li>
+            <li><span data-i18n="qr_c6"><strong>Tap the location pin</strong> to text &ldquo;This is QUICKREACH, Please call Me&rdquo; with Apple Maps and Google Maps links</span></li>
             <li><span data-i18n="qr_c3"><strong>Health ID</strong> with medications, allergies, conditions and emergency contacts</span></li>
             <li><span data-i18n="qr_c4"><strong>Apple Watch</strong>, widgets and a Control Center button</span></li>
             <li><span data-i18n="qr_c5"><strong>Group Calling</strong> (Premium): up to 5 backup contacts</span></li>
@@ -506,6 +509,7 @@
         <div class="feat"><h3 data-i18n="f10"><span class="dot c-kids" aria-hidden="true"></span>Learn My Info</h3><p data-i18n="f10p">Kids practice Mom's and Dad's phone numbers and their home address. Hear it, then type it or pick it, and earn a star.</p><span class="tag">QUICKREACH KIDS</span></div>
         <div class="feat"><h3 data-i18n="f11"><span class="dot c-call" aria-hidden="true"></span>Practice the Call Button</h3><p data-i18n="f11p">A pretend Call Button to learn the press and hold. Nobody is called.</p><span class="tag">QUICKREACH KIDS</span></div>
         <div class="feat"><h3 data-i18n="f12"><span class="dot c-loc" aria-hidden="true"></span>Battery in texts</h3><p data-i18n="f12p">Help, location and I'M SAFE texts include the battery level, so you know if the phone is about to run out.</p><span class="tag">QUICKREACH KIDS</span></div>
+        <div class="feat wide"><h3 data-i18n="f13"><span class="dot c-loc" aria-hidden="true"></span>Tap the pin to text</h3><p data-i18n="f13p">Tap the red location pin to text your contacts &ldquo;This is QUICKREACH, Please call Me&rdquo;, with Apple Maps and Google Maps links to where you are. No call needed.</p><span class="tag">QUICKREACH</span></div>
       </div>
       <div class="langs" aria-label="Supported languages" data-i18n-attr="aria-label:a_langs">
         <span data-i18n="speak" class="lbl">Both apps speak</span>
@@ -631,6 +635,7 @@
   "qr_p": "Ayuda a un solo botón de distancia: para un padre o una madre que vive solo, un abuelo o cualquiera que quiera tener cerca a los suyos sin buscar en una lista de contactos.",
   "qr_c1": "<strong>Un Botón de Llamada rojo</strong> para su contacto principal",
   "qr_c2": "<strong>Mensaje de ayuda</strong> con su dirección y enlaces de Apple Maps y Google Maps",
+  "qr_c6": "<strong>Toque el pin de ubicación</strong> para enviar &ldquo;Este es QUICKREACH, por favor llámeme&rdquo; con enlaces de Apple Maps y Google Maps",
   "qr_c3": "<strong>ID de Salud</strong> con medicamentos, alergias, condiciones y contactos de emergencia",
   "qr_c4": "<strong>Apple Watch</strong>, widgets y un botón en el Centro de control",
   "qr_c5": "<strong>Llamada grupal</strong> (Premium): hasta 5 contactos de respaldo",
@@ -657,6 +662,8 @@
   "f1": "<span class=\"dot c-call\" aria-hidden=\"true\"></span>Botón de Llamada",
   "f1p": "Un gran botón. Manténgalo presionado 1.5 segundos y empieza la llamada.",
   "f2": "<span class=\"dot c-loc\" aria-hidden=\"true\"></span>Enviar mi ubicación",
+  "f13": "<span class=\"dot c-loc\" aria-hidden=\"true\"></span>Toque el pin para enviar un mensaje",
+  "f13p": "Toque el pin rojo de ubicación para enviar a sus contactos &ldquo;Este es QUICKREACH, por favor llámeme&rdquo;, con enlaces de Apple Maps y Google Maps a donde está. Sin necesidad de llamar.",
   "f2p": "La dirección, más enlaces de Apple Maps y Google Maps que abren en el lugar exacto.",
   "f3": "<span class=\"dot c-health\" aria-hidden=\"true\"></span>ID de Salud",
   "f3p": "Nombre, edad, tipo de sangre, medicamentos, alergias, condiciones y contactos de emergencia.",
@@ -793,8 +800,13 @@
     "icon": "img/icon-quickreach.png",
     "version": "1.0.0",
     "build": "46",
-    "updated": "2026-11-11",
+    "updated": "2026-11-15",
     "changes": [
+      [
+        "2026-11-15",
+        "Tap the red location pin to text your contacts “This is QUICKREACH, Please call Me” with Apple Maps and Google Maps links, without calling.",
+        "Toque el pin rojo de ubicación para enviar a sus contactos “Este es QUICKREACH, por favor llámeme” con enlaces de Apple Maps y Google Maps, sin llamar."
+      ],
       [
         "2026-11-11",
         "Rounder, pill-shaped buttons in windows and messages.",
