@@ -112,6 +112,7 @@
   .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
   .brand { display: flex; align-items: center; text-decoration: none; flex: none; }
   .brand img { height: 38px; width: auto; }
+  @media (min-width: 701px) { .brand img { height: 57px; } } /* 50% larger on computers */
   .brand .on-light { display: var(--logo-light); }
   .brand .on-dark { display: var(--logo-dark); }
   .nav { display: flex; gap: 2px; }
@@ -155,14 +156,24 @@
 
   /* ---------- Phone with the real screenshot ---------- */
   .phone {
-    --cx: 0.4992; --cy: 0.5180; --d: 0.8192; --ring: #DE1F4C;
+    --cx: 0.5; --cy: 0.5334; --d: 0.8191; --ring: #DE1F4C;
     width: min(300px, 100%); max-width: 100%; position: relative;
     border-radius: 46px; padding: 10px;
     background: linear-gradient(145deg, #F4F6F8 0%, #C3C9CF 28%, #E9ECEF 52%, #A9B0B7 78%, #DDE1E5 100%);
     outline: 1px solid rgba(255, 255, 255, 0.35); outline-offset: -1px;
     box-shadow: 0 30px 60px rgba(15, 76, 107, 0.28);
   }
-  .phone[data-app="kids"] { --cx: 0.5; --cy: 0.5890; --d: 0.7338; --ring: #DE1F4C; }
+  /* Where the Call Button's blue ring is in each picture (img/*-call-<lang>.jpg),
+     so the red hold ring sits on it: centre (--cx, --cy, as fractions of the
+     picture) and size (--d ≈ 0.963 × the blue ring's outer width). Re-measure
+     when the pictures are retaken. The KIDS button changes size a little with
+     the language (taller tile text makes it smaller). */
+  .phone[data-lang="hi"] { --cy: 0.5341; }
+  .phone[data-app="kids"] { --cx: 0.5; --cy: 0.5920; --d: 0.7202; --ring: #DE1F4C; }
+  .phone[data-app="kids"][data-lang="de"] { --cy: 0.5890; --d: 0.7324; }
+  .phone[data-app="kids"][data-lang="fil"] { --cy: 0.5913; --d: 0.7259; }
+  .phone[data-app="kids"][data-lang="pt"] { --cy: 0.5920; --d: 0.7227; }
+  .phone[data-app="kids"][data-lang="hi"] { --cy: 0.5959; --d: 0.6841; }
   .phone .shot { position: relative; border-radius: 36px; overflow: hidden; aspect-ratio: 1206 / 2622; background: #F4F7F9; box-shadow: 0 0 0 4px #14191D; }
   .phone .shot img { width: 100%; height: 100%; object-fit: cover; }
   .hold {
@@ -1927,6 +1938,7 @@
   function render(key) {
     var a = APPS[key]; current = key;
     phone.setAttribute('data-app', key);
+    phone.setAttribute('data-lang', LANG || 'en');
     phone.setAttribute('aria-labelledby', 'tab-' + key);
     // The app's screen in the page's language: img/qr-call-fr.jpg, img/kids-call-hi.jpg…
     img.src = a.img + '-' + (LANG || 'en') + '.jpg'; img.alt = L('js_alt_' + key, a.alt);
