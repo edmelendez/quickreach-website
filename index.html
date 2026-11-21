@@ -282,6 +282,10 @@
   .feats:has(.wide) .feat:not(.wide) { border-bottom: 1px solid var(--border); }
   .feat h3 { display: flex; align-items: center; gap: 10px; font-size: 1.08rem; }
   .feat p { margin: 0; color: var(--text-soft); font-size: 15.5px; }
+  /* Apple Watch box: the text on the left, the watch on the right. */
+  .feat.watch { grid-template-columns: minmax(0, 1fr) 92px; column-gap: 14px; }
+  .feat.watch > :not(img) { grid-column: 1; }
+  .feat.watch > img { grid-column: 2; grid-row: 1 / span 3; width: 92px; height: auto; align-self: center; filter: drop-shadow(0 6px 10px rgba(15, 40, 70, .18)); }
   .tag { font-size: 11px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: var(--surface-2); color: var(--text-soft); justify-self: start; }
   .dot { width: 14px; height: 14px; border-radius: 50%; flex: none; }
   .c-call { background: var(--qr-red); } .c-loc { background: var(--red); } .c-safe { background: var(--green); }
@@ -549,7 +553,7 @@
         <div class="feat"><h3 data-i18n="f1"><span class="dot c-call" aria-hidden="true"></span>Call Button</h3><p data-i18n="f1p">One big button. Hold 1.5 seconds and the call starts.</p><span data-i18n="both" class="tag">Both apps</span></div>
         <div class="feat"><h3 data-i18n="f2"><span class="dot c-loc" aria-hidden="true"></span>Text my location</h3><p data-i18n="f2p">The street address, plus Apple Maps and Google Maps links that open on the exact spot.</p><span data-i18n="both" class="tag">Both apps</span></div>
         <div class="feat"><h3 data-i18n="f3"><span class="dot c-health" aria-hidden="true"></span>Health ID</h3><p data-i18n="f3p">Name, age, blood type, medications, allergies, conditions and emergency contacts.</p><span data-i18n="both" class="tag">Both apps</span></div>
-        <div class="feat"><h3><span class="dot c-pin" aria-hidden="true"></span>Apple Watch</h3><p data-i18n="f4p">The Call Button on the wrist, plus a watch-face complication.</p><span data-i18n="both" class="tag">Both apps</span></div>
+        <div class="feat watch"><h3><span class="dot c-pin" aria-hidden="true"></span>Apple Watch</h3><p data-i18n="f4p">The Call Button on the wrist, plus a watch-face complication.</p><span data-i18n="both" class="tag">Both apps</span><img src="img/apple-watch.png" width="276" height="304" alt="Apple Watch with the QUICKREACH Call Button" data-i18n-attr="alt:a_watch" loading="lazy"></div>
         <div class="feat"><h3><span class="dot c-health" aria-hidden="true"></span>Widgets</h3><p data-i18n="f5p">Home Screen and Lock Screen widgets. QUICKREACH adds a Control Center button.</p><span data-i18n="both" class="tag">Both apps</span></div>
         <div class="feat"><h3 data-i18n="f6"><span class="dot c-pin" aria-hidden="true"></span>PIN-protected settings</h3><p data-i18n="f6p">Contacts, the Health ID and the language need the 4-digit PIN. A recovery code gets you back in.</p><span data-i18n="both" class="tag">Both apps</span></div>
         <div class="feat"><h3 data-i18n="f7"><span class="dot c-kids" aria-hidden="true"></span>Siren</h3><p data-i18n="f7p">Hold the logo for 2 seconds for a loud siren that plays even on silent. Tap to stop.</p><span class="tag">QUICKREACH KIDS</span></div>
@@ -674,6 +678,7 @@
   "ov_send": "Una persona siempre toca Enviar en Mensajes.",
   "ov_back": "Volver al Botón de Llamada",
   "demo_hint": "Pruébelo: mantenga presionado el Botón de Llamada. Es una demostración; no se llama a nadie.",
+  "a_watch": "Apple Watch con el Botón de Llamada de QUICKREACH",
   "siren_on": "Sirena activada",
   "siren_stop": "Toca para parar",
   "siren_demo": "Demostración: aquí no suena nada.",
@@ -806,6 +811,7 @@
   "ov_send": "Une personne touche toujours Envoyer dans Messages.",
   "ov_back": "Retour au Bouton d'appel",
   "demo_hint": "Essayez : maintenez le Bouton d'appel. C'est une démo ; personne n'est appelé.",
+  "a_watch": "Apple Watch avec le Bouton d'appel de QUICKREACH",
   "siren_on": "Sirène activée",
   "siren_stop": "Touchez pour arrêter",
   "siren_demo": "Démo : aucun son ici.",
@@ -938,6 +944,7 @@
   "ov_send": "Ein Mensch tippt in Nachrichten immer selbst auf Senden.",
   "ov_back": "Zurück zur Anruftaste",
   "demo_hint": "Probieren Sie es aus: Halten Sie die Anruftaste gedrückt. Das ist eine Demo; niemand wird angerufen.",
+  "a_watch": "Apple Watch mit der Anruftaste von QUICKREACH",
   "siren_on": "Sirene an",
   "siren_stop": "Zum Stoppen tippen",
   "siren_demo": "Demo: Hier ertönt kein Ton.",
@@ -1070,6 +1077,7 @@
   "ov_send": "Una persona tocca sempre Invia in Messaggi.",
   "ov_back": "Torna al Tasto chiamata",
   "demo_hint": "Prova: tieni premuto il Tasto chiamata. È una demo; nessuno viene chiamato.",
+  "a_watch": "Apple Watch con il Tasto chiamata di QUICKREACH",
   "siren_on": "Sirena attiva",
   "siren_stop": "Tocca per fermare",
   "siren_demo": "Demo: qui non suona nulla.",
@@ -1202,6 +1210,7 @@
   "ov_send": "Uma pessoa sempre toca em Enviar no Mensagens.",
   "ov_back": "Voltar ao Botão de chamada",
   "demo_hint": "Experimente: mantenha pressionado o Botão de chamada. É uma demonstração; ninguém recebe ligação.",
+  "a_watch": "Apple Watch com o Botão de chamada do QUICKREACH",
   "siren_on": "Sirene ligada",
   "siren_stop": "Toque para parar",
   "siren_demo": "Demonstração: aqui não toca som.",
@@ -1334,6 +1343,7 @@
   "ov_send": "Messages में 'भेजें' हमेशा कोई व्यक्ति ही दबाता है।",
   "ov_back": "कॉल बटन पर वापस",
   "demo_hint": "आज़माएँ: कॉल बटन को दबाकर रखें। यह डेमो है; किसी को कॉल नहीं होगी।",
+  "a_watch": "QUICKREACH कॉल बटन के साथ Apple Watch",
   "siren_on": "सायरन चालू है",
   "siren_stop": "रोकने के लिए टैप करें",
   "siren_demo": "डेमो: यहाँ कोई आवाज़ नहीं बजती।",
@@ -1466,6 +1476,7 @@
   "ov_send": "Laging tao ang nagta-tap ng Send sa Messages.",
   "ov_back": "Bumalik sa Call Button",
   "demo_hint": "Subukan: pindutin nang matagal ang Call Button. Demo lang ito; walang tatawagan.",
+  "a_watch": "Apple Watch na may Call Button ng QUICKREACH",
   "siren_on": "Naka-on ang sirena",
   "siren_stop": "I-tap para itigil",
   "siren_demo": "Demo: walang tunog dito.",
