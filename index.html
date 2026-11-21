@@ -274,6 +274,42 @@
   @media (max-width: 560px) { .flow { grid-template-columns: 1fr; } }
 
   /* ---------- Features ---------- */
+  /* "Help is one press away." banner (the Call Button ad), after Features. */
+  .cta-ad .ad {
+    display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; align-items: center;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 28px; padding: clamp(24px, 5vw, 56px);
+    box-shadow: var(--shadow);
+    background-image: radial-gradient(circle, rgba(41, 171, 226, .22) 2.2px, transparent 2.6px), radial-gradient(circle, rgba(222, 31, 76, .14) 2.2px, transparent 2.6px);
+    background-size: 64px 64px, 64px 64px; background-position: 8px 8px, 40px 40px;
+  }
+  .cta-ad .ad-logo { height: 54px; width: auto; }
+  .cta-ad .ad-logo.on-light { display: var(--logo-light); }
+  .cta-ad .ad-logo.on-dark { display: var(--logo-dark); }
+  .cta-ad h2 { font-size: clamp(2.3rem, 6.2vw, 4.2rem); line-height: 1.02; letter-spacing: -1px; margin: 22px 0 0; color: var(--text); }
+  .cta-ad .ad-text { min-width: 0; }
+  .cta-ad h2 .nw { white-space: nowrap; }
+  .cta-ad h2 .a { color: var(--qr-red); }
+  .cta-ad .ad-sub { margin: 14px 0 0; font-size: var(--step-1); color: var(--text-soft); max-width: 30ch; }
+  .cta-ad .ad-eb { margin: 26px 0 0; font-weight: 900; font-size: var(--step-0); letter-spacing: .16em; color: var(--sky); }
+  .cta-ad .ad-soon { margin: 4px 0 0; font-weight: 800; color: var(--text); }
+  .cta-ad .ad-note { display: flex; gap: 12px; align-items: center; margin-top: 26px; background: var(--notice-bg); color: var(--notice-text); border-left: 6px solid var(--red); border-radius: 14px; padding: 12px 16px; font-size: var(--step-0); }
+  .cta-ad .ad-note i { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--red); display: grid; place-items: center; }
+  .cta-ad .ad-note i svg { width: 60%; height: 60%; }
+  .cta-ad .ad-note strong { color: var(--notice-text); }
+  .cta-ad .ad-btn { text-align: center; }
+  .cta-ad .cb {
+    width: min(100%, 380px); aspect-ratio: 1; margin: 0 auto; border-radius: 50%; color: #fff;
+    background: radial-gradient(circle at 50% 18%, #F65A78 0%, #EC2F56 45%, #D6163F 100%);
+    border: 12px solid #14B3EB; box-shadow: 0 22px 44px rgba(20, 60, 100, .22);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; container-type: inline-size;
+  }
+  .cta-ad .cb svg { width: 24%; height: auto; }
+  .cta-ad .cb span { font-weight: 900; font-size: 13.5cqw; line-height: .98; letter-spacing: .5px; }
+  .cta-ad .ad-hold { margin: 16px 0 0; font-weight: 800; color: var(--text-soft); font-size: var(--step-1); }
+  @media (max-width: 760px) {
+    .cta-ad .ad { grid-template-columns: minmax(0, 1fr); }
+    .cta-ad .cb { width: min(78%, 320px); }
+  }
   .feats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--border); border-radius: 24px; overflow: hidden; background: var(--surface); }
   .feat { padding: 24px 22px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; gap: 6px; align-content: start; min-width: 0; }
   .feat:nth-child(3n) { border-right: 0; }
@@ -575,6 +611,47 @@
 
 
 
+  <section id="cta" class="cta-ad" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="ad">
+        <div class="ad-text">
+          <img class="ad-logo on-light" src="img/quickreach-logo.png" alt="QUICKREACH" width="596" height="163" loading="lazy">
+          <img class="ad-logo on-dark" src="img/quickreach-logo-white.png" alt="QUICKREACH" width="596" height="163" loading="lazy">
+          <h2 id="cta-title" data-i18n="cta_h">Help is<br><span class="nw">one press <span class="a">away.</span></span></h2>
+          <p class="ad-sub" data-i18n="cta_p">Hold the big Call Button. Your person’s phone rings.</p>
+          <p class="ad-eb" data-i18n="cta_free">FREE TO DOWNLOAD</p>
+          <p class="ad-soon" data-i18n="avail">Coming soon to the App Store for iPhone and Apple Watch.</p>
+          <div class="ad-note" role="note">
+            <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 19h18L12 4z"/><path d="M12 10v4"/><path d="M12 16.8h.01"/></svg></i>
+            <span><strong data-i18n="n911">QUICKREACH does not call 911.</strong> <span data-i18n="n911_p2">In an emergency, call 911 yourself from your phone.</span></span>
+          </div>
+        </div>
+        <div class="ad-btn" aria-hidden="true">
+          <div class="cb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span data-i18n="cta_btn">CALL<br>BUTTON</span></div>
+          <p class="ad-hold" data-i18n="cta_hold">Press and hold to call</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Keep "one press away." on one line: shrink the headline until it fits
+      // (long languages, narrow phones). Re-fits on resize and language change.
+      (function () {
+        var h = document.getElementById('cta-title');
+        function fit() {
+          h.style.fontSize = '';
+          var f = parseFloat(getComputedStyle(h).fontSize);
+          while (h.scrollWidth > h.clientWidth + 1 && f > 18) { f -= 1; h.style.fontSize = f + 'px'; }
+        }
+        fit();
+        if (document.fonts) document.fonts.ready.then(fit);
+        window.addEventListener('resize', fit);
+        document.addEventListener('DOMContentLoaded', fit);
+        window.addEventListener('load', fit);
+        document.addEventListener('qrlang', function () { setTimeout(fit, 0); });
+      })();
+    </script>
+  </section>
+
   <section id="latest" class="alt" aria-labelledby="latest-title">
     <div class="wrap">
       <div class="sec-head">
@@ -678,6 +755,11 @@
   "ov_send": "Una persona siempre toca Enviar en Mensajes.",
   "ov_back": "Volver al Botón de Llamada",
   "demo_hint": "Pruébelo: mantenga presionado el Botón de Llamada. Es una demostración; no se llama a nadie.",
+  "cta_h": "La ayuda está<br><span class=\"nw\">a un <span class=\"a\">toque.</span></span>",
+  "cta_p": "Mantenga presionado el Botón de Llamada grande. Suena el teléfono de su persona de confianza.",
+  "cta_free": "DESCARGA GRATUITA",
+  "cta_btn": "BOTÓN DE<br>LLAMADA",
+  "cta_hold": "Mantenga pulsado para llamar",
   "a_watch": "Apple Watch con el Botón de Llamada de QUICKREACH",
   "siren_on": "Sirena activada",
   "siren_stop": "Toca para parar",
@@ -811,6 +893,11 @@
   "ov_send": "Une personne touche toujours Envoyer dans Messages.",
   "ov_back": "Retour au Bouton d'appel",
   "demo_hint": "Essayez : maintenez le Bouton d'appel. C'est une démo ; personne n'est appelé.",
+  "cta_h": "L'aide est<br><span class=\"nw\">à une <span class=\"a\">pression.</span></span>",
+  "cta_p": "Maintenez le grand Bouton d'appel. Le téléphone de votre proche sonne.",
+  "cta_free": "TÉLÉCHARGEMENT GRATUIT",
+  "cta_btn": "BOUTON<br>D'APPEL",
+  "cta_hold": "Maintenez pour appeler",
   "a_watch": "Apple Watch avec le Bouton d'appel de QUICKREACH",
   "siren_on": "Sirène activée",
   "siren_stop": "Touchez pour arrêter",
@@ -944,6 +1031,11 @@
   "ov_send": "Ein Mensch tippt in Nachrichten immer selbst auf Senden.",
   "ov_back": "Zurück zur Anruftaste",
   "demo_hint": "Probieren Sie es aus: Halten Sie die Anruftaste gedrückt. Das ist eine Demo; niemand wird angerufen.",
+  "cta_h": "Hilfe ist nur<br><span class=\"nw\">einen Druck <span class=\"a\">entfernt.</span></span>",
+  "cta_p": "Halten Sie die große Anruftaste gedrückt. Das Telefon Ihrer Vertrauensperson klingelt.",
+  "cta_free": "KOSTENLOSER DOWNLOAD",
+  "cta_btn": "ANRUF-<br>TASTE",
+  "cta_hold": "Zum Anrufen gedrückt halten",
   "a_watch": "Apple Watch mit der Anruftaste von QUICKREACH",
   "siren_on": "Sirene an",
   "siren_stop": "Zum Stoppen tippen",
@@ -1077,6 +1169,11 @@
   "ov_send": "Una persona tocca sempre Invia in Messaggi.",
   "ov_back": "Torna al Tasto chiamata",
   "demo_hint": "Prova: tieni premuto il Tasto chiamata. È una demo; nessuno viene chiamato.",
+  "cta_h": "L'aiuto è<br><span class=\"nw\">a una <span class=\"a\">pressione.</span></span>",
+  "cta_p": "Tieni premuto il grande Tasto chiamata. Squilla il telefono della tua persona di fiducia.",
+  "cta_free": "DOWNLOAD GRATUITO",
+  "cta_btn": "TASTO<br>CHIAMATA",
+  "cta_hold": "Tieni premuto per chiamare",
   "a_watch": "Apple Watch con il Tasto chiamata di QUICKREACH",
   "siren_on": "Sirena attiva",
   "siren_stop": "Tocca per fermare",
@@ -1210,6 +1307,11 @@
   "ov_send": "Uma pessoa sempre toca em Enviar no Mensagens.",
   "ov_back": "Voltar ao Botão de chamada",
   "demo_hint": "Experimente: mantenha pressionado o Botão de chamada. É uma demonstração; ninguém recebe ligação.",
+  "cta_h": "A ajuda está<br><span class=\"nw\">a um <span class=\"a\">toque.</span></span>",
+  "cta_p": "Mantenha pressionado o grande Botão de chamada. O telefone da sua pessoa de confiança toca.",
+  "cta_free": "DOWNLOAD GRATUITO",
+  "cta_btn": "BOTÃO DE<br>CHAMADA",
+  "cta_hold": "Mantenha pressionado para ligar",
   "a_watch": "Apple Watch com o Botão de chamada do QUICKREACH",
   "siren_on": "Sirene ligada",
   "siren_stop": "Toque para parar",
@@ -1343,6 +1445,11 @@
   "ov_send": "Messages में 'भेजें' हमेशा कोई व्यक्ति ही दबाता है।",
   "ov_back": "कॉल बटन पर वापस",
   "demo_hint": "आज़माएँ: कॉल बटन को दबाकर रखें। यह डेमो है; किसी को कॉल नहीं होगी।",
+  "cta_h": "मदद बस<br><span class=\"nw\">एक दबाव <span class=\"a\">दूर है।</span></span>",
+  "cta_p": "बड़े कॉल बटन को दबाकर रखें। आपके भरोसेमंद व्यक्ति का फ़ोन बजेगा।",
+  "cta_free": "मुफ़्त डाउनलोड",
+  "cta_btn": "कॉल<br>बटन",
+  "cta_hold": "कॉल करने के लिए दबाकर रखें",
   "a_watch": "QUICKREACH कॉल बटन के साथ Apple Watch",
   "siren_on": "सायरन चालू है",
   "siren_stop": "रोकने के लिए टैप करें",
@@ -1476,6 +1583,11 @@
   "ov_send": "Laging tao ang nagta-tap ng Send sa Messages.",
   "ov_back": "Bumalik sa Call Button",
   "demo_hint": "Subukan: pindutin nang matagal ang Call Button. Demo lang ito; walang tatawagan.",
+  "cta_h": "Ang tulong ay<br><span class=\"nw\">isang pindot <span class=\"a\">lang.</span></span>",
+  "cta_p": "Pindutin nang matagal ang malaking Call Button. Tutunog ang telepono ng taong pinagkakatiwalaan mo.",
+  "cta_free": "LIBRENG I-DOWNLOAD",
+  "cta_btn": "CALL<br>BUTTON",
+  "cta_hold": "Pindutin nang matagal para tumawag",
   "a_watch": "Apple Watch na may Call Button ng QUICKREACH",
   "siren_on": "Naka-on ang sirena",
   "siren_stop": "I-tap para itigil",
