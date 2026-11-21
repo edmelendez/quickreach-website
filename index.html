@@ -190,6 +190,23 @@
   .hold svg { position: absolute; inset: -4%; width: 108%; height: 108%; transform: rotate(-90deg); pointer-events: none; overflow: visible; }
   .hold .prog { stroke: var(--ring); transition: stroke-dashoffset .06s linear; }
 
+  /* QUICKREACH KIDS: hold the logo at the bottom of the picture for the Siren demo. */
+  .siren-hold {
+    display: none; position: absolute; aspect-ratio: 1; width: 22%; left: 39%; top: 93.79%; transform: translateY(-50%);
+    border-radius: 50%; border: 0; padding: 0; background: transparent; cursor: pointer;
+    touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+  }
+  .phone[data-app="kids"] .siren-hold { display: block; }
+  .siren-hold:focus-visible { outline-offset: 4px; }
+  .siren-hold svg { position: absolute; inset: -8%; width: 116%; height: 116%; transform: rotate(-90deg); pointer-events: none; overflow: visible; }
+  .siren-hold .prog { stroke: #D7263D; transition: stroke-dashoffset .06s linear; }
+  .overlay.siren { background: #D7263D; gap: 14px; cursor: pointer; }
+  .overlay.siren .icon { width: 96px; height: 96px; border-radius: 50%; background: #fff; display: grid; place-items: center; }
+  .overlay.siren .icon svg { width: 52px; height: 52px; }
+  .overlay.siren h4 { font-size: 26px; }
+  .overlay.siren .stop { margin-top: 8px; display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #D7263D; border: 0; border-radius: 999px; padding: 12px 22px; font: inherit; font-size: 18px; font-weight: 900; cursor: pointer; }
+  .overlay.siren .stop svg { width: 22px; height: 22px; }
+  .overlay.siren .note { margin: 6px 0 0; font-size: 13px; opacity: .9; }
   .overlay {
     position: absolute; inset: 0; border-radius: 36px; background: #0F4C6B; color: #fff;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 22px; text-align: center;
@@ -414,6 +431,17 @@
                 <circle class="prog" id="ring" cx="50" cy="50" r="47" fill="none" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="295.31" stroke-dashoffset="295.31"/>
               </svg>
             </button>
+            <button type="button" class="siren-hold" id="siren-hold" aria-label="Siren demo: press and hold the logo for 2 seconds" data-i18n-attr="aria-label:a_siren" aria-describedby="siren-hint">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <circle class="prog" id="siren-ring" cx="50" cy="50" r="47" fill="none" stroke-width="5" stroke-linecap="round" stroke-dasharray="295.31" stroke-dashoffset="295.31"/>
+              </svg>
+            </button>
+            <div class="overlay siren" id="ov-siren" hidden>
+              <div class="icon"><svg viewBox="0 0 24 24" fill="#D7263D" aria-hidden="true"><path d="M19 3.5v14l-8.2-3.3H9.5l1.4 5.1a.9.9 0 0 1-.87 1.15H8.3a.9.9 0 0 1-.87-.66L5.8 14.2H4.6A1.6 1.6 0 0 1 3 12.6V8.9a1.6 1.6 0 0 1 1.6-1.6h6.2L19 3.5zm1.6 4.6a3.6 3.6 0 0 1 0 5.3"/><path d="M20.6 8.1a3.6 3.6 0 0 1 0 5.3" fill="none" stroke="#D7263D" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+              <h4 data-i18n="siren_on">Siren on</h4>
+              <button type="button" class="stop" id="siren-stop"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#D7263D"/><rect x="8.5" y="8.5" width="7" height="7" rx="1.2" fill="#fff"/></svg><span data-i18n="siren_stop">Tap to stop</span></button>
+              <p class="note" data-i18n="siren_demo">Demo: no sound plays here.</p>
+            </div>
             <div class="overlay" id="ov-calling" hidden>
               <div class="pulse"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div>
               <h4 id="ov-title">Calling Sarah</h4>
@@ -428,6 +456,7 @@
           </div>
         </div>
         <p data-i18n="demo_hint" class="stage-note" id="call-hint">Try it: press and hold the Call Button. This is a demo; nothing is called.</p>
+        <p data-i18n="kids_siren_hint" class="stage-note" id="siren-hint" hidden>On QUICKREACH KIDS, hold the logo at the bottom for 2 seconds to try the Siren.</p>
       </div>
     </div>
   </section>
@@ -645,6 +674,11 @@
   "ov_send": "Una persona siempre toca Enviar en Mensajes.",
   "ov_back": "Volver al Botón de Llamada",
   "demo_hint": "Pruébelo: mantenga presionado el Botón de Llamada. Es una demostración; no se llama a nadie.",
+  "siren_on": "Sirena activada",
+  "siren_stop": "Toca para parar",
+  "siren_demo": "Demostración: aquí no suena nada.",
+  "kids_siren_hint": "En QUICKREACH KIDS, mantenga presionado el logo de abajo 2 segundos para probar la Sirena.",
+  "a_siren": "Demostración de la Sirena: mantenga presionado el logo 2 segundos",
   "n911": "QUICKREACH no llama al 911.",
   "n911_p1": "QUICKREACH y QUICKREACH KIDS contactan a su familia y amigos, no a la policía ni a una ambulancia.",
   "n911_p2": "En una emergencia, llame usted mismo al 911 desde su teléfono.",
@@ -772,6 +806,11 @@
   "ov_send": "Une personne touche toujours Envoyer dans Messages.",
   "ov_back": "Retour au Bouton d'appel",
   "demo_hint": "Essayez : maintenez le Bouton d'appel. C'est une démo ; personne n'est appelé.",
+  "siren_on": "Sirène activée",
+  "siren_stop": "Touchez pour arrêter",
+  "siren_demo": "Démo : aucun son ici.",
+  "kids_siren_hint": "Sur QUICKREACH KIDS, maintenez le logo en bas 2 secondes pour essayer la Sirène.",
+  "a_siren": "Démo de la Sirène : maintenez le logo 2 secondes",
   "n911": "QUICKREACH n'appelle pas le 112.",
   "n911_p1": "QUICKREACH et QUICKREACH KIDS contactent votre famille et vos amis, pas la police ni une ambulance.",
   "n911_p2": "En cas d'urgence, appelez vous-même le 112 depuis votre téléphone.",
@@ -899,6 +938,11 @@
   "ov_send": "Ein Mensch tippt in Nachrichten immer selbst auf Senden.",
   "ov_back": "Zurück zur Anruftaste",
   "demo_hint": "Probieren Sie es aus: Halten Sie die Anruftaste gedrückt. Das ist eine Demo; niemand wird angerufen.",
+  "siren_on": "Sirene an",
+  "siren_stop": "Zum Stoppen tippen",
+  "siren_demo": "Demo: Hier ertönt kein Ton.",
+  "kids_siren_hint": "Bei QUICKREACH KIDS halten Sie das Logo unten 2 Sekunden lang, um die Sirene auszuprobieren.",
+  "a_siren": "Sirenen-Demo: Logo 2 Sekunden gedrückt halten",
   "n911": "QUICKREACH wählt nicht die 112.",
   "n911_p1": "QUICKREACH und QUICKREACH KIDS erreichen Ihre Familie und Freunde, nicht die Polizei oder einen Rettungswagen.",
   "n911_p2": "Im Notfall wählen Sie die 112 selbst mit Ihrem Telefon.",
@@ -1026,6 +1070,11 @@
   "ov_send": "Una persona tocca sempre Invia in Messaggi.",
   "ov_back": "Torna al Tasto chiamata",
   "demo_hint": "Prova: tieni premuto il Tasto chiamata. È una demo; nessuno viene chiamato.",
+  "siren_on": "Sirena attiva",
+  "siren_stop": "Tocca per fermare",
+  "siren_demo": "Demo: qui non suona nulla.",
+  "kids_siren_hint": "In QUICKREACH KIDS, tieni premuto il logo in basso per 2 secondi per provare la Sirena.",
+  "a_siren": "Demo della Sirena: tieni premuto il logo per 2 secondi",
   "n911": "QUICKREACH non chiama il 112.",
   "n911_p1": "QUICKREACH e QUICKREACH KIDS contattano la tua famiglia e i tuoi amici, non la polizia né un'ambulanza.",
   "n911_p2": "In caso di emergenza, chiama tu il 112 dal tuo telefono.",
@@ -1153,6 +1202,11 @@
   "ov_send": "Uma pessoa sempre toca em Enviar no Mensagens.",
   "ov_back": "Voltar ao Botão de chamada",
   "demo_hint": "Experimente: mantenha pressionado o Botão de chamada. É uma demonstração; ninguém recebe ligação.",
+  "siren_on": "Sirene ligada",
+  "siren_stop": "Toque para parar",
+  "siren_demo": "Demonstração: aqui não toca som.",
+  "kids_siren_hint": "No QUICKREACH KIDS, segure o logo embaixo por 2 segundos para testar a Sirene.",
+  "a_siren": "Demonstração da Sirene: segure o logo por 2 segundos",
   "n911": "O QUICKREACH não liga para o 192 ou 190.",
   "n911_p1": "O QUICKREACH e o QUICKREACH KIDS contatam sua família e seus amigos, não a polícia nem uma ambulância.",
   "n911_p2": "Em uma emergência, ligue você mesmo do seu telefone.",
@@ -1280,6 +1334,11 @@
   "ov_send": "Messages में 'भेजें' हमेशा कोई व्यक्ति ही दबाता है।",
   "ov_back": "कॉल बटन पर वापस",
   "demo_hint": "आज़माएँ: कॉल बटन को दबाकर रखें। यह डेमो है; किसी को कॉल नहीं होगी।",
+  "siren_on": "सायरन चालू है",
+  "siren_stop": "रोकने के लिए टैप करें",
+  "siren_demo": "डेमो: यहाँ कोई आवाज़ नहीं बजती।",
+  "kids_siren_hint": "QUICKREACH KIDS में, सायरन आज़माने के लिए नीचे के लोगो को 2 सेकंड तक दबाकर रखें।",
+  "a_siren": "सायरन डेमो: लोगो को 2 सेकंड तक दबाकर रखें",
   "n911": "QUICKREACH 112 पर कॉल नहीं करता।",
   "n911_p1": "QUICKREACH और QUICKREACH KIDS आपके परिवार और दोस्तों से संपर्क करते हैं, पुलिस या एम्बुलेंस से नहीं।",
   "n911_p2": "आपातकाल में अपने फ़ोन से खुद 112 पर कॉल करें।",
@@ -1407,6 +1466,11 @@
   "ov_send": "Laging tao ang nagta-tap ng Send sa Messages.",
   "ov_back": "Bumalik sa Call Button",
   "demo_hint": "Subukan: pindutin nang matagal ang Call Button. Demo lang ito; walang tatawagan.",
+  "siren_on": "Naka-on ang sirena",
+  "siren_stop": "I-tap para itigil",
+  "siren_demo": "Demo: walang tunog dito.",
+  "kids_siren_hint": "Sa QUICKREACH KIDS, pindutin nang 2 segundo ang logo sa ibaba para subukan ang Sirena.",
+  "a_siren": "Demo ng Sirena: pindutin nang 2 segundo ang logo",
   "n911": "Hindi tumatawag ang QUICKREACH sa 911.",
   "n911_p1": "Ang QUICKREACH at QUICKREACH KIDS ay tumatawag sa iyong pamilya at mga kaibigan, hindi sa pulis o ambulansya.",
   "n911_p2": "Sa emergency, ikaw mismo ang tumawag sa 911 gamit ang iyong telepono.",
@@ -1933,6 +1997,10 @@
   var ring = document.getElementById('ring');
   var ovCall = document.getElementById('ov-calling');
   var ovText = document.getElementById('ov-text');
+  var sbtn = document.getElementById('siren-hold');
+  var sring = document.getElementById('siren-ring');
+  var ovSiren = document.getElementById('ov-siren');
+  var sStart = 0, sRaf = 0, SIREN_HOLD = 2000;
   var C = 295.31, HOLD = 1500;
   var current = 'adult', start = 0, raf = 0, busy = false, timers = [];
 
@@ -1944,6 +2012,7 @@
     // The app's screen in the page's language: img/qr-call-fr.jpg, img/kids-call-hi.jpg…
     img.src = a.img + '-' + (LANG || 'en') + '.jpg'; img.alt = L('js_alt_' + key, a.alt);
     tabs.forEach(function (b) { b.setAttribute('aria-selected', b.getAttribute('data-app') === key ? 'true' : 'false'); });
+    document.getElementById('siren-hint').hidden = key !== 'kids';
     reset();
   }
   function setRing(p) { ring.setAttribute('stroke-dashoffset', String(C * (1 - p))); }
@@ -1987,9 +2056,51 @@
   }
   function reset() {
     timers.forEach(clearTimeout); timers = [];
-    cancelAnimationFrame(raf);
-    busy = false; ovCall.hidden = true; ovText.hidden = true; setRing(0);
+    cancelAnimationFrame(raf); cancelAnimationFrame(sRaf);
+    busy = false; ovCall.hidden = true; ovText.hidden = true; ovSiren.hidden = true; setRing(0); sSet(0);
   }
+
+  // QUICKREACH KIDS Siren demo: hold the logo for 2 seconds, like the app.
+  // The red Siren window opens (no sound here); a tap anywhere closes it.
+  function sSet(p) { sring.setAttribute('stroke-dashoffset', String(C * (1 - p))); }
+  function sTick(now) {
+    var p = Math.min(1, (now - sStart) / SIREN_HOLD);
+    sSet(p);
+    if (p >= 1) { sirenOn(); return; }
+    sRaf = requestAnimationFrame(sTick);
+  }
+  function sBegin(e) {
+    if (busy) return;
+    if (e && e.type === 'keydown') { if (e.repeat || (e.key !== ' ' && e.key !== 'Enter')) return; e.preventDefault(); }
+    if (e && e.pointerId !== undefined) { try { sbtn.setPointerCapture(e.pointerId); } catch (_) {} }
+    sStart = performance.now();
+    cancelAnimationFrame(sRaf);
+    sRaf = requestAnimationFrame(sTick);
+  }
+  function sRelease(e) {
+    if (e && e.type === 'keyup' && e.key !== ' ' && e.key !== 'Enter') return;
+    if (busy) return;
+    cancelAnimationFrame(sRaf);
+    sSet(0);
+  }
+  function sirenOn() {
+    busy = true; sSet(0);
+    ovSiren.hidden = false; document.getElementById('siren-stop').focus({ preventScroll: true });
+    // Closes on its own after 10 seconds.
+    timers.push(setTimeout(sirenOff, 10000));
+  }
+  function sirenOff() {
+    var hadFocus = ovSiren.contains(document.activeElement);
+    reset();
+    if (hadFocus) sbtn.focus({ preventScroll: true });
+  }
+  sbtn.addEventListener('pointerdown', sBegin);
+  sbtn.addEventListener('pointerup', sRelease);
+  sbtn.addEventListener('pointercancel', sRelease);
+  sbtn.addEventListener('keydown', sBegin);
+  sbtn.addEventListener('keyup', sRelease);
+  sbtn.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  ovSiren.addEventListener('click', sirenOff);
 
   btn.addEventListener('pointerdown', begin);
   btn.addEventListener('pointerup', release);
