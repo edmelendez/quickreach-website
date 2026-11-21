@@ -299,12 +299,13 @@
   .cta-ad .ad-btn { text-align: center; }
   .cta-ad .cb {
     width: min(100%, 380px); aspect-ratio: 1; margin: 0 auto; border-radius: 50%; color: #fff;
-    background: radial-gradient(circle at 50% 18%, #F65A78 0%, #EC2F56 45%, #D6163F 100%);
-    border: 12px solid #14B3EB; box-shadow: 0 22px 44px rgba(20, 60, 100, .22);
+    /* The app's Call Button: red top left to bottom right, logo blue outline, faint top light. */
+    background: linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,0) 50%), linear-gradient(135deg, #FF2D55 0%, #E8234C 50%, #C8173F 100%);
+    border: 9px solid #00BCF2; box-shadow: 0 22px 44px rgba(20, 60, 100, .22);
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; container-type: inline-size;
   }
-  .cta-ad .cb svg { width: 24%; height: auto; }
-  .cta-ad .cb span { font-weight: 900; font-size: 13.5cqw; line-height: .98; letter-spacing: .5px; }
+  .cta-ad .cb svg { width: 26%; height: auto; }
+  .cta-ad .cb span { font-family: -apple-system, "SF Pro Display", system-ui, sans-serif; font-weight: 900; font-size: 12.2cqw; line-height: 1.05; letter-spacing: .3cqw; margin-top: 4cqw; }
   .cta-ad .ad-hold { margin: 16px 0 0; font-weight: 800; color: var(--text-soft); font-size: var(--step-1); }
   @media (max-width: 760px) {
     .cta-ad .ad { grid-template-columns: minmax(0, 1fr); }
@@ -483,7 +484,7 @@
               <p class="note" data-i18n="siren_demo">Demo: no sound plays here.</p>
             </div>
             <div class="overlay" id="ov-calling" hidden>
-              <div class="pulse"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div>
+              <div class="pulse"><svg viewBox="0 0 512 512" fill="#fff" aria-hidden="true"><path d="M89.9 1.1Q89.9 1.1 89.9 1.1Q93.3 1.1 100.1 1.1Q112.6 0.0 130.8 19.3Q163.8 51.2 190.0 105.8Q203.7 133.1 203.1 146.2Q202.5 159.3 186.6 180.9Q175.2 196.8 175.2 203.7Q177.5 221.9 208.2 260.6Q226.4 284.4 253.2 304.9Q279.9 325.4 299.2 332.2Q307.2 334.5 311.2 333.4Q315.2 332.2 327.7 323.1Q341.3 312.9 348.2 309.5Q355.0 306.1 364.1 306.1Q376.6 304.9 398.2 316.3Q436.9 335.6 467.6 359.0Q498.3 382.3 506.3 397.1Q510.9 406.2 509.2 414.2Q507.4 422.1 498.3 440.3Q468.8 498.3 424.4 508.6Q407.3 512.0 386.8 507.4Q347.0 499.5 284.4 461.9Q203.7 414.2 135.4 341.3Q87.6 292.4 58.0 244.6Q0.0 151.3 0.0 99.0Q0.0 78.5 8.0 63.7Q19.3 42.1 46.6 23.9Q72.8 6.8 89.9 1.1Z"/></svg></div>
               <h4 id="ov-title">Calling Sarah</h4>
               <p data-i18n="ov_said">The name is said out loud</p>
             </div>
@@ -627,7 +628,7 @@
           </div>
         </div>
         <div class="ad-btn" aria-hidden="true">
-          <div class="cb"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span data-i18n="cta_btn">CALL<br>BUTTON</span></div>
+          <div class="cb"><svg viewBox="0 0 512 512" fill="#fff" aria-hidden="true"><path d="M89.9 1.1Q89.9 1.1 89.9 1.1Q93.3 1.1 100.1 1.1Q112.6 0.0 130.8 19.3Q163.8 51.2 190.0 105.8Q203.7 133.1 203.1 146.2Q202.5 159.3 186.6 180.9Q175.2 196.8 175.2 203.7Q177.5 221.9 208.2 260.6Q226.4 284.4 253.2 304.9Q279.9 325.4 299.2 332.2Q307.2 334.5 311.2 333.4Q315.2 332.2 327.7 323.1Q341.3 312.9 348.2 309.5Q355.0 306.1 364.1 306.1Q376.6 304.9 398.2 316.3Q436.9 335.6 467.6 359.0Q498.3 382.3 506.3 397.1Q510.9 406.2 509.2 414.2Q507.4 422.1 498.3 440.3Q468.8 498.3 424.4 508.6Q407.3 512.0 386.8 507.4Q347.0 499.5 284.4 461.9Q203.7 414.2 135.4 341.3Q87.6 292.4 58.0 244.6Q0.0 151.3 0.0 99.0Q0.0 78.5 8.0 63.7Q19.3 42.1 46.6 23.9Q72.8 6.8 89.9 1.1Z"/></svg><span data-i18n="cta_btn">CALL<br>BUTTON</span></div>
           <p class="ad-hold" data-i18n="cta_hold">Press and hold to call</p>
         </div>
       </div>
