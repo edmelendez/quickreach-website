@@ -147,6 +147,7 @@
   .spec span { font-size: var(--step--1); color: var(--text-soft); font-weight: 700; }
   .stores { margin: 26px 0 0; }
   .stores p { margin: 0 0 12px; font-size: var(--step--1); color: var(--text-soft); font-weight: 800; }
+  .stores .price { margin: 12px 0 0; font-weight: 700; }
   .stores ul { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; padding: 0; list-style: none; }
   .badge { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 18px 0 14px; border-radius: 12px; background: #000; color: #fff; border: 1.5px solid #a6a6a6; text-decoration: none; }
   .badge svg { width: 28px; height: 28px; flex: none; }
@@ -470,6 +471,7 @@
             <li><span class="badge" role="img" aria-label="Get it on Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#00A0FF" d="M3.6 1.8 13.8 12 3.6 22.2c-.4-.2-.6-.6-.6-1.1V2.9c0-.5.2-.9.6-1.1z"/><path fill="#00F076" d="M3.6 1.8 13.8 12l3.1-3.1L5.2 2.1c-.6-.3-1.2-.5-1.6-.3z"/><path fill="#FF3A44" d="M3.6 22.2c.4.2 1 0 1.6-.3l11.7-6.8-3.1-3.1z"/><path fill="#FFD500" d="m16.9 8.9-3.1 3.1 3.1 3.1 3.5-2c1-.6 1-1.6 0-2.2z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></span></li>
             <li><span class="badge" role="img" aria-label="Download on the App Store"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span><small>Download on the</small><b>App Store</b></span></span></li>
           </ul>
+          <p class="price" data-i18n="price_line">7-day free trial, then $2.99 a month or $30 a year.</p>
         </div>
       </div>
 
@@ -522,7 +524,7 @@
       <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg></div>
       <div>
         <strong data-i18n="n911">QUICKREACH does not call 911.</strong>
-        <p data-i18n="n911_p1">QUICKREACH and QUICKREACH KIDS contact your family and friends, not the police or an ambulance.</p> <p data-i18n="n911_p2">In an emergency, call 911 yourself from your phone.</p>
+        <p data-i18n="n911_p1">QUICKREACH and QUICKREACH KIDS contact your family and friends, not the police or an ambulance.</p> <p data-i18n="n911_p2">In an emergency, call 911 yourself from your phone.</p> <p data-i18n="n_device">The apps may work slightly differently depending on your phone and its operating system.</p>
       </div>
     </div>
   </div>
@@ -635,7 +637,7 @@
           <img class="ad-logo on-dark" src="img/quickreach-logo-white.png" alt="QUICKREACH" width="596" height="163" loading="lazy">
           <h2 id="cta-title" data-i18n="cta_h">Help is<br><span class="nw">one press <span class="a">away.</span></span></h2>
           <p class="ad-sub" data-i18n="cta_p">Hold the big Call Button. Your person’s phone rings.</p>
-          <p class="ad-eb" data-i18n="cta_free">FREE TO DOWNLOAD</p>
+          <p class="ad-eb" data-i18n="cta_free">7-DAY FREE TRIAL</p>
           <p class="ad-soon" data-i18n="avail">Coming soon to the App Store for iPhone and Apple Watch.</p>
           <div class="ad-note" role="note">
             <i aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 3 19h18L12 4z"/><path d="M12 10v4"/><path d="M12 16.8h.01"/></svg></i>
@@ -684,7 +686,7 @@
       <div>
         <span data-i18n="priv_eb" class="eyebrow">Privacy</span>
         <h2 data-i18n="priv_h2" id="priv-title">Your information stays on this phone</h2>
-        <p data-i18n="priv_lead" class="lead">Contacts, places and the Health ID are saved on the device. Your location is sent only when you call for help. Both apps are free to download, with no ads or subscriptions. QUICKREACH has one optional in-app purchase, Group Calling (Premium), paid once; QUICKREACH KIDS has no in-app purchases.</p>
+        <p data-i18n="priv_lead" class="lead">Contacts, places and the Health ID are saved on the device. Your location is sent only when you call for help. Both apps start with a 7-day free trial, then cost $2.99 a month or $30 a year (1-year subscription). No ads. QUICKREACH has one optional in-app purchase, Group Calling (Premium), paid once; QUICKREACH KIDS has no in-app purchases.</p>
         <p class="lead"><a data-i18n="priv_read" href="privacy.html" class="band-link">Read the Privacy Policy</a></p>
       </div>
       <div class="facts">
@@ -767,6 +769,7 @@
   "spec_pin": "PIN protege los ajustes",
   "spec_zero": "cuentas, anuncios ni rastreo",
   "avail_os": "Muy pronto en Android e iOS",
+  "price_line": "Prueba gratuita de 7 días; después $2.99 al mes o $30 al año.",
   "ov_said": "El nombre se dice en voz alta",
   "ov_ready": "Mensaje listo para enviar",
   "ov_send": "Una persona siempre toca Enviar en Mensajes.",
@@ -774,7 +777,7 @@
   "demo_hint": "Pruébelo: mantenga presionado el Botón de Llamada. Es una demostración; no se llama a nadie.",
   "cta_h": "La ayuda está<br><span class=\"nw\">a un <span class=\"a\">toque.</span></span>",
   "cta_p": "Mantenga presionado el Botón de Llamada grande. Suena el teléfono de su persona de confianza.",
-  "cta_free": "DESCARGA GRATUITA",
+  "cta_free": "PRUEBA GRATIS DE 7 DÍAS",
   "cta_btn": "BOTÓN DE<br>LLAMADA",
   "cta_hold": "Mantenga pulsado para llamar",
   "a_watch": "Apple Watch con el Botón de Llamada de QUICKREACH",
@@ -786,6 +789,7 @@
   "n911": "QUICKREACH no llama al 911.",
   "n911_p1": "QUICKREACH y QUICKREACH KIDS contactan a su familia y amigos, no a la policía ni a una ambulancia.",
   "n911_p2": "En una emergencia, llame usted mismo al 911 desde su teléfono.",
+  "n_device": "Las apps pueden funcionar de forma ligeramente distinta según su teléfono y su sistema operativo.",
   "apps_eb": "Las apps",
   "apps_h2": "El mismo gran botón, hecho para dos tipos de personas",
   "apps_lead": "Configúrela para usted o para alguien a quien ayuda. Después de la configuración, todo está en una sola pantalla.",
@@ -847,7 +851,7 @@
   "new_lead": "Mejoras recientes en cada app.",
   "priv_eb": "Privacidad",
   "priv_h2": "Su información se queda en este teléfono",
-  "priv_lead": "Los contactos, los lugares y el ID de Salud se guardan en el dispositivo. Su ubicación se envía solo cuando pide ayuda. Ambas apps se descargan gratis, sin anuncios ni suscripciones. QUICKREACH tiene una sola compra opcional dentro de la app, la Llamada grupal (Premium), que se paga una vez; QUICKREACH KIDS no tiene compras dentro de la app.",
+  "priv_lead": "Los contactos, los lugares y el ID de Salud se guardan en el dispositivo. Su ubicación se envía solo cuando pide ayuda. Ambas apps incluyen una prueba gratuita de 7 días; después cuestan $2.99 al mes o $30 al año (suscripción de 1 año). Sin anuncios. QUICKREACH tiene una sola compra opcional dentro de la app, la Llamada grupal (Premium), que se paga una vez; QUICKREACH KIDS no tiene compras dentro de la app.",
   "priv_read": "Lea la Política de Privacidad",
   "fact1": "Sin cuenta, sin anuncios, sin rastreo",
   "fact1p": "QUICKREACH no le rastrea en segundo plano. La ubicación solo se lee mientras la app está en pantalla.",
@@ -906,6 +910,7 @@
   "spec_pin": "Le code PIN protège les réglages",
   "spec_zero": "compte, publicité ou pistage",
   "avail_os": "Bientôt sur Android et iOS",
+  "price_line": "Essai gratuit de 7 jours, puis 2,99 $ par mois ou 30 $ par an.",
   "ov_said": "Le nom est dit à voix haute",
   "ov_ready": "SMS prêt à envoyer",
   "ov_send": "Une personne touche toujours Envoyer dans Messages.",
@@ -913,7 +918,7 @@
   "demo_hint": "Essayez : maintenez le Bouton d'appel. C'est une démo ; personne n'est appelé.",
   "cta_h": "L'aide est<br><span class=\"nw\">à une <span class=\"a\">pression.</span></span>",
   "cta_p": "Maintenez le grand Bouton d'appel. Le téléphone de votre proche sonne.",
-  "cta_free": "TÉLÉCHARGEMENT GRATUIT",
+  "cta_free": "ESSAI GRATUIT DE 7 JOURS",
   "cta_btn": "BOUTON<br>D'APPEL",
   "cta_hold": "Maintenez pour appeler",
   "a_watch": "Apple Watch avec le Bouton d'appel de QUICKREACH",
@@ -925,6 +930,7 @@
   "n911": "QUICKREACH n'appelle pas le 112.",
   "n911_p1": "QUICKREACH et QUICKREACH KIDS contactent votre famille et vos amis, pas la police ni une ambulance.",
   "n911_p2": "En cas d'urgence, appelez vous-même le 112 depuis votre téléphone.",
+  "n_device": "Les applications peuvent fonctionner légèrement différemment selon votre téléphone et son système d'exploitation.",
   "apps_eb": "Les applications",
   "apps_h2": "Le même grand bouton, pensé pour deux publics",
   "apps_lead": "Configurez-la pour vous ou pour une personne que vous aidez. Ensuite, tout tient sur un seul écran.",
@@ -986,7 +992,7 @@
   "new_lead": "Les dernières améliorations de chaque application.",
   "priv_eb": "Confidentialité",
   "priv_h2": "Vos informations restent sur ce téléphone",
-  "priv_lead": "Les contacts, les lieux et l'ID Santé sont enregistrés sur l'appareil. Votre position n'est envoyée que lorsque vous appelez à l'aide. Les deux applications sont gratuites, sans publicité ni abonnement. QUICKREACH propose un achat intégré facultatif, l'Appel de groupe (Premium), payé une seule fois ; QUICKREACH KIDS n'a aucun achat intégré.",
+  "priv_lead": "Les contacts, les lieux et l'ID Santé sont enregistrés sur l'appareil. Votre position n'est envoyée que lorsque vous appelez à l'aide. Les deux applications offrent un essai gratuit de 7 jours, puis coûtent 2,99 $ par mois ou 30 $ par an (abonnement d'un an). Sans publicité. QUICKREACH propose un achat intégré facultatif, l'Appel de groupe (Premium), payé une seule fois ; QUICKREACH KIDS n'a aucun achat intégré.",
   "priv_read": "Lire la politique de confidentialité",
   "fact1": "Pas de compte, pas de publicité, pas de pistage",
   "fact1p": "QUICKREACH ne vous suit pas en arrière-plan. La position n'est lue que lorsque l'application est à l'écran.",
@@ -1045,6 +1051,7 @@
   "spec_pin": "PIN schützt die Einstellungen",
   "spec_zero": "Konten, Werbung oder Tracking",
   "avail_os": "Bald für Android und iOS",
+  "price_line": "7 Tage kostenlos testen, danach 2,99 $ pro Monat oder 30 $ pro Jahr.",
   "ov_said": "Der Name wird laut gesagt",
   "ov_ready": "SMS bereit zum Senden",
   "ov_send": "Ein Mensch tippt in Nachrichten immer selbst auf Senden.",
@@ -1052,7 +1059,7 @@
   "demo_hint": "Probieren Sie es aus: Halten Sie die Anruftaste gedrückt. Das ist eine Demo; niemand wird angerufen.",
   "cta_h": "Hilfe ist nur<br><span class=\"nw\">einen Druck <span class=\"a\">entfernt.</span></span>",
   "cta_p": "Halten Sie die große Anruftaste gedrückt. Das Telefon Ihrer Vertrauensperson klingelt.",
-  "cta_free": "KOSTENLOSER DOWNLOAD",
+  "cta_free": "7 TAGE KOSTENLOS TESTEN",
   "cta_btn": "ANRUF-<br>TASTE",
   "cta_hold": "Zum Anrufen gedrückt halten",
   "a_watch": "Apple Watch mit der Anruftaste von QUICKREACH",
@@ -1064,6 +1071,7 @@
   "n911": "QUICKREACH wählt nicht die 112.",
   "n911_p1": "QUICKREACH und QUICKREACH KIDS erreichen Ihre Familie und Freunde, nicht die Polizei oder einen Rettungswagen.",
   "n911_p2": "Im Notfall wählen Sie die 112 selbst mit Ihrem Telefon.",
+  "n_device": "Die Apps können je nach Telefon und Betriebssystem leicht unterschiedlich funktionieren.",
   "apps_eb": "Die Apps",
   "apps_h2": "Dieselbe große Taste, gemacht für zwei Gruppen",
   "apps_lead": "Richten Sie sie für sich selbst oder für jemanden ein, dem Sie helfen. Danach ist alles auf einem Bildschirm.",
@@ -1125,7 +1133,7 @@
   "new_lead": "Aktuelle Verbesserungen in jeder App.",
   "priv_eb": "Datenschutz",
   "priv_h2": "Ihre Daten bleiben auf diesem Telefon",
-  "priv_lead": "Kontakte, Orte und die Health-ID werden auf dem Gerät gespeichert. Ihr Standort wird nur gesendet, wenn Sie um Hilfe rufen. Beide Apps sind kostenlos, ohne Werbung oder Abos. QUICKREACH hat einen optionalen In-App-Kauf, Gruppenanruf (Premium), einmal bezahlt; QUICKREACH KIDS hat keine In-App-Käufe.",
+  "priv_lead": "Kontakte, Orte und die Health-ID werden auf dem Gerät gespeichert. Ihr Standort wird nur gesendet, wenn Sie um Hilfe rufen. Beide Apps bieten eine 7-tägige kostenlose Testphase, danach kosten sie 2,99 $ pro Monat oder 30 $ pro Jahr (Jahresabo). Ohne Werbung. QUICKREACH hat einen optionalen In-App-Kauf, Gruppenanruf (Premium), einmal bezahlt; QUICKREACH KIDS hat keine In-App-Käufe.",
   "priv_read": "Datenschutzerklärung lesen",
   "fact1": "Kein Konto, keine Werbung, kein Tracking",
   "fact1p": "QUICKREACH verfolgt Sie nicht im Hintergrund. Der Standort wird nur gelesen, solange die App auf dem Bildschirm ist.",
@@ -1184,6 +1192,7 @@
   "spec_pin": "Il PIN protegge le impostazioni",
   "spec_zero": "account, pubblicità o tracciamento",
   "avail_os": "Presto su Android e iOS",
+  "price_line": "Prova gratuita di 7 giorni, poi 2,99 $ al mese o 30 $ all'anno.",
   "ov_said": "Il nome viene detto ad alta voce",
   "ov_ready": "SMS pronto da inviare",
   "ov_send": "Una persona tocca sempre Invia in Messaggi.",
@@ -1191,7 +1200,7 @@
   "demo_hint": "Prova: tieni premuto il Tasto chiamata. È una demo; nessuno viene chiamato.",
   "cta_h": "L'aiuto è<br><span class=\"nw\">a una <span class=\"a\">pressione.</span></span>",
   "cta_p": "Tieni premuto il grande Tasto chiamata. Squilla il telefono della tua persona di fiducia.",
-  "cta_free": "DOWNLOAD GRATUITO",
+  "cta_free": "PROVA GRATUITA DI 7 GIORNI",
   "cta_btn": "TASTO<br>CHIAMATA",
   "cta_hold": "Tieni premuto per chiamare",
   "a_watch": "Apple Watch con il Tasto chiamata di QUICKREACH",
@@ -1203,6 +1212,7 @@
   "n911": "QUICKREACH non chiama il 112.",
   "n911_p1": "QUICKREACH e QUICKREACH KIDS contattano la tua famiglia e i tuoi amici, non la polizia né un'ambulanza.",
   "n911_p2": "In caso di emergenza, chiama tu il 112 dal tuo telefono.",
+  "n_device": "Le app possono funzionare in modo leggermente diverso a seconda del telefono e del sistema operativo.",
   "apps_eb": "Le app",
   "apps_h2": "Lo stesso grande tasto, pensato per due tipi di persone",
   "apps_lead": "Configurala per te o per qualcuno che aiuti. Dopo la configurazione, tutto è in una sola schermata.",
@@ -1264,7 +1274,7 @@
   "new_lead": "I miglioramenti recenti di ogni app.",
   "priv_eb": "Privacy",
   "priv_h2": "I tuoi dati restano su questo telefono",
-  "priv_lead": "Contatti, luoghi e ID Salute sono salvati sul dispositivo. La tua posizione viene inviata solo quando chiedi aiuto. Entrambe le app sono gratuite, senza pubblicità né abbonamenti. QUICKREACH ha un acquisto in-app facoltativo, la Chiamata di gruppo (Premium), pagata una sola volta; QUICKREACH KIDS non ha acquisti in-app.",
+  "priv_lead": "Contatti, luoghi e ID Salute sono salvati sul dispositivo. La tua posizione viene inviata solo quando chiedi aiuto. Entrambe le app offrono una prova gratuita di 7 giorni, poi costano 2,99 $ al mese o 30 $ all'anno (abbonamento di 1 anno). Senza pubblicità. QUICKREACH ha un acquisto in-app facoltativo, la Chiamata di gruppo (Premium), pagata una sola volta; QUICKREACH KIDS non ha acquisti in-app.",
   "priv_read": "Leggi l'Informativa sulla privacy",
   "fact1": "Nessun account, nessuna pubblicità, nessun tracciamento",
   "fact1p": "QUICKREACH non ti segue in background. La posizione viene letta solo mentre l'app è sullo schermo.",
@@ -1323,6 +1333,7 @@
   "spec_pin": "O PIN protege os ajustes",
   "spec_zero": "contas, anúncios ou rastreamento",
   "avail_os": "Em breve no Android e iOS",
+  "price_line": "Teste grátis de 7 dias; depois US$ 2,99 por mês ou US$ 30 por ano.",
   "ov_said": "O nome é dito em voz alta",
   "ov_ready": "SMS pronto para enviar",
   "ov_send": "Uma pessoa sempre toca em Enviar no Mensagens.",
@@ -1330,7 +1341,7 @@
   "demo_hint": "Experimente: mantenha pressionado o Botão de chamada. É uma demonstração; ninguém recebe ligação.",
   "cta_h": "A ajuda está<br><span class=\"nw\">a um <span class=\"a\">toque.</span></span>",
   "cta_p": "Mantenha pressionado o grande Botão de chamada. O telefone da sua pessoa de confiança toca.",
-  "cta_free": "DOWNLOAD GRATUITO",
+  "cta_free": "TESTE GRÁTIS DE 7 DIAS",
   "cta_btn": "BOTÃO DE<br>CHAMADA",
   "cta_hold": "Mantenha pressionado para ligar",
   "a_watch": "Apple Watch com o Botão de chamada do QUICKREACH",
@@ -1342,6 +1353,7 @@
   "n911": "O QUICKREACH não liga para o 192 ou 190.",
   "n911_p1": "O QUICKREACH e o QUICKREACH KIDS contatam sua família e seus amigos, não a polícia nem uma ambulância.",
   "n911_p2": "Em uma emergência, ligue você mesmo do seu telefone.",
+  "n_device": "Os apps podem funcionar de forma um pouco diferente dependendo do seu telefone e do sistema operacional.",
   "apps_eb": "Os apps",
   "apps_h2": "O mesmo botão grande, feito para dois tipos de pessoas",
   "apps_lead": "Configure para você ou para alguém que você ajuda. Depois da configuração, tudo fica em uma só tela.",
@@ -1403,7 +1415,7 @@
   "new_lead": "Melhorias recentes em cada app.",
   "priv_eb": "Privacidade",
   "priv_h2": "Suas informações ficam neste celular",
-  "priv_lead": "Contatos, lugares e o ID de Saúde ficam salvos no aparelho. Sua localização só é enviada quando você pede ajuda. Os dois apps são gratuitos, sem anúncios nem assinaturas. O QUICKREACH tem uma compra opcional no app, a Chamada em grupo (Premium), paga uma única vez; o QUICKREACH KIDS não tem compras no app.",
+  "priv_lead": "Contatos, lugares e o ID de Saúde ficam salvos no aparelho. Sua localização só é enviada quando você pede ajuda. Os dois apps têm um teste grátis de 7 dias; depois custam US$ 2,99 por mês ou US$ 30 por ano (assinatura de 1 ano). Sem anúncios. O QUICKREACH tem uma compra opcional no app, a Chamada em grupo (Premium), paga uma única vez; o QUICKREACH KIDS não tem compras no app.",
   "priv_read": "Leia a Política de Privacidade",
   "fact1": "Sem conta, sem anúncios, sem rastreamento",
   "fact1p": "O QUICKREACH não rastreia você em segundo plano. A localização só é lida enquanto o app está na tela.",
@@ -1462,6 +1474,7 @@
   "spec_pin": "PIN सेटिंग्स की रक्षा करता है",
   "spec_zero": "अकाउंट, विज्ञापन या ट्रैकिंग",
   "avail_os": "जल्द ही Android और iOS पर",
+  "price_line": "7 दिन का मुफ़्त ट्रायल, उसके बाद $2.99 प्रति माह या $30 प्रति वर्ष।",
   "ov_said": "नाम ज़ोर से बोला जाता है",
   "ov_ready": "मैसेज भेजने के लिए तैयार",
   "ov_send": "Messages में 'भेजें' हमेशा कोई व्यक्ति ही दबाता है।",
@@ -1469,7 +1482,7 @@
   "demo_hint": "आज़माएँ: कॉल बटन को दबाकर रखें। यह डेमो है; किसी को कॉल नहीं होगी।",
   "cta_h": "मदद बस<br><span class=\"nw\">एक दबाव <span class=\"a\">दूर है।</span></span>",
   "cta_p": "बड़े कॉल बटन को दबाकर रखें। आपके भरोसेमंद व्यक्ति का फ़ोन बजेगा।",
-  "cta_free": "मुफ़्त डाउनलोड",
+  "cta_free": "7 दिन का मुफ़्त ट्रायल",
   "cta_btn": "कॉल<br>बटन",
   "cta_hold": "कॉल करने के लिए दबाकर रखें",
   "a_watch": "QUICKREACH कॉल बटन के साथ Apple Watch",
@@ -1481,6 +1494,7 @@
   "n911": "QUICKREACH 112 पर कॉल नहीं करता।",
   "n911_p1": "QUICKREACH और QUICKREACH KIDS आपके परिवार और दोस्तों से संपर्क करते हैं, पुलिस या एम्बुलेंस से नहीं।",
   "n911_p2": "आपातकाल में अपने फ़ोन से खुद 112 पर कॉल करें।",
+  "n_device": "आपके फ़ोन और उसके ऑपरेटिंग सिस्टम के अनुसार ऐप्स थोड़े अलग तरीके से काम कर सकते हैं।",
   "apps_eb": "ऐप्स",
   "apps_h2": "वही बड़ा बटन, दो तरह के लोगों के लिए",
   "apps_lead": "इसे अपने लिए या किसी ऐसे व्यक्ति के लिए सेट करें जिसकी आप मदद कर रहे हैं। सेटअप के बाद सब कुछ एक ही स्क्रीन पर होता है।",
@@ -1542,7 +1556,7 @@
   "new_lead": "हर ऐप में हाल के सुधार।",
   "priv_eb": "गोपनीयता",
   "priv_h2": "आपकी जानकारी इसी फ़ोन पर रहती है",
-  "priv_lead": "संपर्क, जगहें और हेल्थ ID डिवाइस पर ही सेव होते हैं। आपकी लोकेशन सिर्फ़ तब भेजी जाती है जब आप मदद के लिए कॉल करते हैं। दोनों ऐप्स मुफ़्त हैं, बिना विज्ञापन या सब्सक्रिप्शन के। QUICKREACH में एक वैकल्पिक इन-ऐप खरीद है, ग्रुप कॉलिंग (प्रीमियम), जिसका एक बार भुगतान होता है; QUICKREACH KIDS में कोई इन-ऐप खरीद नहीं है।",
+  "priv_lead": "संपर्क, जगहें और हेल्थ ID डिवाइस पर ही सेव होते हैं। आपकी लोकेशन सिर्फ़ तब भेजी जाती है जब आप मदद के लिए कॉल करते हैं। दोनों ऐप्स में 7 दिन का मुफ़्त ट्रायल है, उसके बाद $2.99 प्रति माह या $30 प्रति वर्ष (1 साल की सदस्यता)। कोई विज्ञापन नहीं। QUICKREACH में एक वैकल्पिक इन-ऐप खरीद है, ग्रुप कॉलिंग (प्रीमियम), जिसका एक बार भुगतान होता है; QUICKREACH KIDS में कोई इन-ऐप खरीद नहीं है।",
   "priv_read": "गोपनीयता नीति पढ़ें",
   "fact1": "न अकाउंट, न विज्ञापन, न ट्रैकिंग",
   "fact1p": "QUICKREACH बैकग्राउंड में आपको ट्रैक नहीं करता। लोकेशन सिर्फ़ तब पढ़ी जाती है जब ऐप स्क्रीन पर हो।",
@@ -1601,6 +1615,7 @@
   "spec_pin": "PIN ang nagbabantay sa settings",
   "spec_zero": "account, ad o tracking",
   "avail_os": "Malapit na sa Android at iOS",
+  "price_line": "7 araw na libreng trial, pagkatapos ay $2.99 kada buwan o $30 kada taon.",
   "ov_said": "Sinasabi nang malakas ang pangalan",
   "ov_ready": "Handa nang ipadala ang text",
   "ov_send": "Laging tao ang nagta-tap ng Send sa Messages.",
@@ -1608,7 +1623,7 @@
   "demo_hint": "Subukan: pindutin nang matagal ang Call Button. Demo lang ito; walang tatawagan.",
   "cta_h": "Ang tulong ay<br><span class=\"nw\">isang pindot <span class=\"a\">lang.</span></span>",
   "cta_p": "Pindutin nang matagal ang malaking Call Button. Tutunog ang telepono ng taong pinagkakatiwalaan mo.",
-  "cta_free": "LIBRENG I-DOWNLOAD",
+  "cta_free": "7 ARAW NA LIBRENG TRIAL",
   "cta_btn": "CALL<br>BUTTON",
   "cta_hold": "Pindutin nang matagal para tumawag",
   "a_watch": "Apple Watch na may Call Button ng QUICKREACH",
@@ -1620,6 +1635,7 @@
   "n911": "Hindi tumatawag ang QUICKREACH sa 911.",
   "n911_p1": "Ang QUICKREACH at QUICKREACH KIDS ay tumatawag sa iyong pamilya at mga kaibigan, hindi sa pulis o ambulansya.",
   "n911_p2": "Sa emergency, ikaw mismo ang tumawag sa 911 gamit ang iyong telepono.",
+  "n_device": "Maaaring bahagyang mag-iba ang paggana ng mga app depende sa iyong telepono at sa operating system nito.",
   "apps_eb": "Ang mga app",
   "apps_h2": "Iisang malaking button, ginawa para sa dalawang uri ng tao",
   "apps_lead": "I-set up ito para sa iyong sarili o para sa taong tinutulungan mo. Pagkatapos ng setup, nasa iisang screen na ang lahat.",
@@ -1681,7 +1697,7 @@
   "new_lead": "Mga bagong pagbabago sa bawat app.",
   "priv_eb": "Privacy",
   "priv_h2": "Nananatili sa teleponong ito ang iyong impormasyon",
-  "priv_lead": "Naka-save sa device ang mga contact, lugar at Health ID. Ipinapadala lang ang iyong lokasyon kapag humingi ka ng tulong. Libreng i-download ang parehong app, walang ad o subscription. May isang opsyonal na in-app purchase ang QUICKREACH, ang Group calling (Premium), na isang beses lang babayaran; walang in-app purchase ang QUICKREACH KIDS.",
+  "priv_lead": "Naka-save sa device ang mga contact, lugar at Health ID. Ipinapadala lang ang iyong lokasyon kapag humingi ka ng tulong. May 7 araw na libreng trial ang parehong app, pagkatapos ay $2.99 kada buwan o $30 kada taon (1 taong subscription). Walang ad. May isang opsyonal na in-app purchase ang QUICKREACH, ang Group calling (Premium), na isang beses lang babayaran; walang in-app purchase ang QUICKREACH KIDS.",
   "priv_read": "Basahin ang Privacy Policy",
   "fact1": "Walang account, walang ad, walang tracking",
   "fact1p": "Hindi ka sinusubaybayan ng QUICKREACH sa background. Binabasa lang ang lokasyon habang nasa screen ang app.",
